@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7": {
+      "ProjectGuid": "6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7",
+      "DisplayName": "CareerSite.Core",
+      "ColorIndex": 0
+    },
+    "3c44fe1e-b037-497c-9892-1695f6d11939": {
+      "ProjectGuid": "3c44fe1e-b037-497c-9892-1695f6d11939",
+      "DisplayName": "CareerSite.Entities",
+      "ColorIndex": 1
+    },
+    "cecbd483-1bec-4ca4-9a37-76e54028a6ff": {
+      "ProjectGuid": "cecbd483-1bec-4ca4-9a37-76e54028a6ff",
+      "DisplayName": "CareerSite.DataAccess",
+      "ColorIndex": 2
+    },
+    "cefeee59-f070-4573-a665-d919ce0353d8": {
+      "ProjectGuid": "cefeee59-f070-4573-a665-d919ce0353d8",
+      "DisplayName": "CareerSite.Business",
+      "ColorIndex": 3
+    },
+    "bae48c60-d4f8-4e20-913b-0b7fca4ee216": {
+      "ProjectGuid": "bae48c60-d4f8-4e20-913b-0b7fca4ee216",
+      "DisplayName": "CareerSite.MvcWebUI",
+      "ColorIndex": 4
+    },
+    "611ee6ea-bcb1-44e2-8276-bf73f997f383": {
+      "ProjectGuid": "611ee6ea-bcb1-44e2-8276-bf73f997f383",
+      "DisplayName": "WebApplication1",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

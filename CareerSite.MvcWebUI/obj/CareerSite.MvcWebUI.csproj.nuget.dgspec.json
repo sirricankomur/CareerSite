@@ -1,0 +1,321 @@
+{
+  "format": 1,
+  "restore": {
+    "A:\\CareerSite\\CareerSite\\CareerSite.MvcWebUI\\CareerSite.MvcWebUI.csproj": {}
+  },
+  "projects": {
+    "A:\\CareerSite\\CareerSite\\CareerSite.Business\\CareerSite.Business.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.Business\\CareerSite.Business.csproj",
+        "projectName": "CareerSite.Business",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Business\\CareerSite.Business.csproj",
+        "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.Business\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\CareerSite.DataAccess.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\CareerSite.DataAccess.csproj"
+              },
+              "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj",
+        "projectName": "CareerSite.Core",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj",
+        "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\CareerSite.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\CareerSite.DataAccess.csproj",
+        "projectName": "CareerSite.DataAccess",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\CareerSite.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj"
+              },
+              "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj",
+        "projectName": "CareerSite.Entities",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj",
+        "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "A:\\CareerSite\\CareerSite\\CareerSite.MvcWebUI\\CareerSite.MvcWebUI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.MvcWebUI\\CareerSite.MvcWebUI.csproj",
+        "projectName": "CareerSite.MvcWebUI",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.MvcWebUI\\CareerSite.MvcWebUI.csproj",
+        "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.MvcWebUI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "A:\\CareerSite\\CareerSite\\CareerSite.Business\\CareerSite.Business.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Business\\CareerSite.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
