@@ -151,3 +151,4 @@ A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\CareerSite.Core.pd
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\CareerSite.DataAccess.pdb
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\CareerSite.Entities.pdb
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\Razor\Views\Job\Index.cshtml.g.cs
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll

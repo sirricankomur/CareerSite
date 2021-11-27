@@ -15,3 +15,6 @@ A:\CareerSite\CareerSite\CareerSite.DataAccess\obj\Debug\net5.0\CareerSite.DataA
 A:\CareerSite\CareerSite\CareerSite.DataAccess\obj\Debug\net5.0\CareerSite.DataAccess.dll
 A:\CareerSite\CareerSite\CareerSite.DataAccess\obj\Debug\net5.0\ref\CareerSite.DataAccess.dll
 A:\CareerSite\CareerSite\CareerSite.DataAccess\obj\Debug\net5.0\CareerSite.DataAccess.pdb
+A:\CareerSite\CareerSite\CareerSite.DataAccess\bin\Debug\net5.0\CareerSite.DataAccess.runtimeconfig.json
+A:\CareerSite\CareerSite\CareerSite.DataAccess\bin\Debug\net5.0\CareerSite.DataAccess.runtimeconfig.dev.json
+A:\CareerSite\CareerSite\CareerSite.DataAccess\obj\Debug\net5.0\CareerSite.DataAccess.genruntimeconfig.cache

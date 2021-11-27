@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Business.Abstract
 {
-    public interface IPersonService
+    public interface IMemberService
     {
-        List<Person> GetAll();
+        List<Member> GetAll();
         
-        void Add(Person person);
-        void Update(Person person);
-        void Delete(Person person);
+        void Add(Member person);
+        void Update(Member person);
+        void Delete(Member person);
     }
 }

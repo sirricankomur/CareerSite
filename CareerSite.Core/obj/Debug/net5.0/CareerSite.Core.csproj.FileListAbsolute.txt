@@ -2,7 +2,6 @@ A:\CareerSite\CareerSite\CareerSite.Core\bin\Debug\net5.0\CareerSite.Core.deps.j
 A:\CareerSite\CareerSite\CareerSite.Core\bin\Debug\net5.0\CareerSite.Core.dll
 A:\CareerSite\CareerSite\CareerSite.Core\bin\Debug\net5.0\ref\CareerSite.Core.dll
 A:\CareerSite\CareerSite\CareerSite.Core\bin\Debug\net5.0\CareerSite.Core.pdb
-A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.csproj.AssemblyReference.cache
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.GeneratedMSBuildEditorConfig.editorconfig
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.AssemblyInfoInputs.cache
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.AssemblyInfo.cs
@@ -10,3 +9,4 @@ A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.csproj
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.dll
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\ref\CareerSite.Core.dll
 A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.pdb
+A:\CareerSite\CareerSite\CareerSite.Core\obj\Debug\net5.0\CareerSite.Core.csproj.AssemblyReference.cache

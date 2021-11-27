@@ -9,31 +9,31 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Business.Concrete
 {
-    public class PersonManager : IPersonService
+    public class MemberManager : IMemberService
     {
-        private IPersonDal _personDal;
+        private IMemberDal _personDal;
 
-        public PersonManager(IPersonDal personDal)
+        public MemberManager(IMemberDal personDal)
         {
             _personDal = personDal;
         }
 
-        public List<Person> GetAll()
+        public List<Member> GetAll()
         {
             return _personDal.GetList();
         }
 
-        public void Add(Person person)
+        public void Add(Member person)
         {
             _personDal.Add(person);
         }
 
-        public void Delete(Person person)
+        public void Delete(Member person)
         {
             _personDal.Delete(person);
         }
 
-        public void Update(Person person)
+        public void Update(Member person)
         {
             _personDal.Update(person);
         }

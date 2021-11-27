@@ -1,4 +1,5 @@
 ﻿using CareerSite.Business.Abstract;
+using CareerSite.MvcWebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CareerSite.MvcWebUI.Controllers
@@ -14,7 +15,13 @@ namespace CareerSite.MvcWebUI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var jobs = _jobService.GetByCategory(1);
+            JobListViewModel model = new JobListViewModel
+            {
+                Jobs = jobs
+            };
+
+            return View(model);
         }
     }
 }

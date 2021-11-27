@@ -13,6 +13,7 @@ namespace CareerSite.Core.DataAccess.EntityFramework
         where TEntity : class, IEntity, new()
         where TContext : DbContext, new()
     {
+       
         public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
         {
             using(var context = new TContext())

@@ -12,10 +12,15 @@ namespace CareerSite.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB; Database=Career; Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Data Source=.\SQLExpress;Initial Catalog=Career;Integrated Security=True");
         }
 
-        public DbSet<Person> People { get; set; }
+      /*  public CareerContext(DbContextOptions<CareerContext> options) : base(options)
+        {
+        }*/
+     
+
+        public DbSet<Member> Persons { get; set; }
         public DbSet<Job> Jobs { get; set; }
     }
 }
