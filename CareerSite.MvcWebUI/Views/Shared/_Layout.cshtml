@@ -30,9 +30,22 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="row">
+            <div class="col-3">
+                @await Component.InvokeAsync("CategoryList")
+            </div>
+            <div class="col-9">
+                <main role="main" class="pb-3">
+                    @if (TempData["message"] != null)
+                    {
+                        <div class="alert alert-info" role="alert">@TempData["message"]</div>
+                    }
+                    @RenderBody()
+                </main>
+            </div>
+        </div>
+
+
     </div>
 
     <footer class="border-top footer text-muted">

@@ -21,6 +21,7 @@ namespace CareerSite.DataAccess.Concrete.EntityFramework
      
 
         public DbSet<Member> Persons { get; set; }
-        public DbSet<Job> Jobs { get; set; }
+        public DbSet<Course> Courses { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

@@ -1,0 +1,33 @@
+﻿@model CareerSite.MvcWebUI.Models.CourseListViewModel
+@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<div>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>CategoryId</th>
+        <th>UnitPrice</th>
+        <th>UnitsInStock</th>
+    </tr>
+    @foreach (var course in Model.Courses)
+   {
+       <tr>
+           <td>@course.Id</td>
+           <td>@course.Name</td>
+           <td>@course.CategoryId</td>
+           <td>@course.UnitPrice</td>
+           <td>@course.UnitsInStock</td>
+
+           <td><a class="btn btn-btn-success" asp-controller="Course" asp-action="AddToCart" asp-route-courseId="@course.Id">Sepete Ekle</a></td>
+       </tr>
+   }
+</table>
+</div>
+
+<course-list-pager current-category="Model.CurrentCategory" current-page="Model.CurrentPage" page-size="Model.PageSize" page-count="Model.PageCount"></course-list-pager>

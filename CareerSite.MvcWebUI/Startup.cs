@@ -2,8 +2,10 @@ using CareerSite.Business.Abstract;
 using CareerSite.Business.Concrete;
 using CareerSite.DataAccess.Abstract;
 using CareerSite.DataAccess.Concrete.EntityFramework;
+using CareerSite.MvcWebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,9 +30,16 @@ namespace CareerSite.MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IJobService, JobManager>();
-            services.AddScoped<IJobDal, EfJobDal>();
-            //services.AddDbContext<CareerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<ICourseService, CourseManager>();
+            services.AddScoped<ICourseDal, EfCourseDal>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<ICategoryDal, EfCategoryDal>();
+            services.AddSingleton<ICartSessionService, CartSessionService>();
+            services.AddScoped<ICartService, CartService>();
+
+            services.AddSession();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
         }
 
@@ -53,6 +62,7 @@ namespace CareerSite.MvcWebUI
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

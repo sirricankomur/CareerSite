@@ -14,19 +14,18 @@ namespace CareerSite.Core.DataAccess.EntityFramework
         where TContext : DbContext, new()
     {
        
-        public TEntity Get(Expression<Func<TEntity, bool>> filter = null)
+        public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             using(var context = new TContext())
             {
                 return context.Set<TEntity>().SingleOrDefault(filter);
             }
         }
-
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
         {
-            using(var context = new TContext())
+            using (var context = new TContext())
             {
-                return filter == null 
+                return filter == null
                     ? context.Set<TEntity>().ToList()
                     : context.Set<TEntity>().Where(filter).ToList();
             }
