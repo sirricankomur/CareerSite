@@ -1,6 +1,6 @@
 # CareerSite
- Job and Personality Test Site
+Eğitim ve Kişilik Testi Sitesi
 
-İş bulma ya da çalışan arama platformu
+Eğitim platformu
 
 Bu platformda her işveren kendi kişilik testleri yapabilir.
