@@ -18,13 +18,13 @@
     @foreach (var course in Model.Courses)
    {
        <tr>
-           <td>@course.Id</td>
+           <td>@course.CourseID</td>
            <td>@course.Name</td>
-           <td>@course.CategoryId</td>
+           <td>@course.CategoryID</td>
            <td>@course.UnitPrice</td>
            <td>@course.UnitsInStock</td>
 
-           <td><a class="btn btn-btn-success" asp-controller="Course" asp-action="AddToCart" asp-route-courseId="@course.Id">Sepete Ekle</a></td>
+           <td><a class="btn btn-btn-success" asp-controller="Course" asp-action="AddToCart" asp-route-courseId="@course.CourseID">Sepete Ekle</a></td>
        </tr>
    }
 </table>

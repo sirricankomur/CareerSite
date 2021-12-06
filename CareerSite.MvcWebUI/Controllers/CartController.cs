@@ -53,7 +53,7 @@ namespace CareerSite.MvcWebUI.Controllers
             _cartService.RemoveFromCart(cart, courseId);
             _cartSessionService.SetCart(cart);
             TempData.Add("message", String.Format("Your course was successfully removed from the cart!"));
-            return RedirectToAction("List");
+            return RedirectToAction("Index", "Course");
         }
 
         /*

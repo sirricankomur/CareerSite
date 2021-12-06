@@ -12,7 +12,7 @@ namespace CareerSite.Business.Concrete
     {
         public void AddToCart(Cart cart, Course course)
         {
-            CartLine cartLine = cart.CartLines.FirstOrDefault(c => c.Course.Id == course.Id);
+            CartLine cartLine = cart.CartLines.FirstOrDefault(c => c.Course.CourseID == course.CourseID);
             if (cartLine != null)
             //if (cartLine.Quantity == 1)
             {
@@ -24,7 +24,7 @@ namespace CareerSite.Business.Concrete
 
         public void RemoveFromCart(Cart cart, int courseId)
         {
-            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Course.Id == courseId));
+            cart.CartLines.Remove(cart.CartLines.FirstOrDefault(c => c.Course.CourseID == courseId));
         }
 
         public List<CartLine> List(Cart cart)

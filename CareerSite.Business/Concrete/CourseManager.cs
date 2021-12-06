@@ -25,12 +25,12 @@ namespace CareerSite.Business.Concrete
 
         public List<Course> GetByCategory(int categoryId)
         {
-            return _courseDal.GetList(c => c.CategoryId == categoryId || categoryId == 0);
+            return _courseDal.GetList(c => c.CategoryID == categoryId || categoryId == 0);
         }
 
         public Course GetById(int courseId)
         {
-            return _courseDal.Get(c => c.Id == courseId);
+            return _courseDal.Get(c => c.CourseID == courseId);
         }
 
         public void Add(Course course)
