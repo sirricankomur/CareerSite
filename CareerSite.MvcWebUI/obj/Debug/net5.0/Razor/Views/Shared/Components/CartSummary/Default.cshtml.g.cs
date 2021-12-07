@@ -26,8 +26,15 @@ using CareerSite.MvcWebUI.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "A:\CareerSite\CareerSite\CareerSite.MvcWebUI\Views\_ViewImports.cshtml"
+using CareerSite.Entities.Concrete;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a52a7c9610b1e57cf8de115b3c035717ad002864", @"/Views/Shared/Components/CartSummary/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fd5c3b7da184d8c0153d5951c0f9632cd22c4ab7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"20d41c8c4cfe63159fa550310341f535ee319121", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_CartSummary_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CareerSite.MvcWebUI.Models.CartSummaryViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Cart", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -98,7 +105,7 @@ using CareerSite.MvcWebUI.Models;
 #line hidden
 #nullable disable
             WriteLiteral("</a>\r\n    </li>\r\n    <li role=\"separator\" class=\"divider\"></li>\r\n    <li>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a52a7c9610b1e57cf8de115b3c035717ad0028645564", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a52a7c9610b1e57cf8de115b3c035717ad0028645752", async() => {
                 WriteLiteral("Go to cart details");
             }
             );
