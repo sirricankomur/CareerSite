@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Business.Abstract
 {
-    public interface IMemberService
+    public interface IRecordService
     {
-        List<Member> GetAll();
-        
-        void Add(Member person);
-        void Update(Member person);
-        void Delete(Member person);
+        void Create(Record entity);
+        List<Record> GetRecords(string userId);
     }
 }

@@ -8,8 +8,4 @@
     <Folder Include="ComplexTypes\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CareerSite.Core\CareerSite.Core.csproj" />
-  </ItemGroup>
-
 </Project>

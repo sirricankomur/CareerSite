@@ -6,16 +6,12 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Entities.Concrete
 {
-    public class Enrollment
+    public class CourseCategory
     {
-        public int EnrollmentID { get; set; }
-        public int CategoryID { get; set; }
-        public int CourseID { get; set; }
-        public int MemberID { get; set; }
-
+        public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public int CourseId { get; set; }
         public Course Course { get; set; }
-        public Member Member { get; set; }
 
     }
 }

@@ -1,143 +1,157 @@
 ﻿++Solution 'CareerSite' ‎(5 of 5 projects)
-i:{00000000-0000-0000-0000-000000000000}:CareerSite.sln
+++CareerSite.Core
+i:{00000000-0000-0000-0000-000000000000}:CareerSite.Core
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.core\careersite.core.csproj
+++Dependencies
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:>304
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:>352
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:>552
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1230
+++Abstract
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\
+++ICartRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\icartrepository.cs
+++ICategoryRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\icategoryrepository.cs
+++ICourseRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\icourserepository.cs
+++IRecordRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\irecordrepository.cs
+++IRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\irepository.cs
+++IUnitOfWork.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\abstract\iunitofwork.cs
+++Configuration
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\configuration\
+++CategoryConfiguration.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\configuration\categoryconfiguration.cs
+++CourseCategoryConfiguration.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\configuration\coursecategoryconfiguration.cs
+++CourseConfiguration.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\configuration\courseconfiguration.cs
+++ModelBuilderExtensions.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\configuration\modelbuilderextensions.cs
+++DataAccess
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\
+++EntityFramework
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\
+++CareerContext.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\careercontext.cs
+++EfCoreCartRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efcorecartrepository.cs
+++EfCoreCategoryRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efcorecategoryrepository.cs
+++EfCoreCourseRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efcorecourserepository.cs
+++EfCoreGenericRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efcoregenericrepository.cs
+++EfCoreRecordRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efcorerecordrepository.cs
+++EfEntityRepositoryBase.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efentityrepositorybase.cs
+++UnitOfWork.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\unitofwork.cs
+++IEntityRepository.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\ientityrepository.cs
+++Entities
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\entities\
+++IEntity.cs
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\entities\ientity.cs
+++Analyzers
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:analyzers
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:analyzers
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:analyzers
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:analyzers
+++Frameworks
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:frameworks
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:frameworks
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:frameworks
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:frameworks
+++Packages
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:packages
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:packages
+++Projects
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:projects
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:projects
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:projects
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.NETCore.App
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\microsoft.netcore.app
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\microsoft.netcore.app
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\microsoft.netcore.app
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\microsoft.netcore.app
+++Microsoft.EntityFrameworkCore (5.0.12)
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:>1247
 ++CareerSite.Entities
+i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.entities\careersite.entities.csproj
 i:{00000000-0000-0000-0000-000000000000}:CareerSite.Entities
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.entities\careersite.entities.csproj
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.entities\bin\debug\net5.0\careersite.entities.dll
-++Dependencies
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:>303
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:>401
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:>302
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:>304
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1200
 ++ComplexTypes
 i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\complextypes\
 ++Concrete
 i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\
 ++Cart.cs
 i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\cart.cs
-++CartLine.cs
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\cartline.cs
+++CartItem.cs
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\cartitem.cs
 ++Category.cs
 i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\category.cs
 ++Course.cs
 i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\course.cs
-++Member.cs
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\member.cs
-++Analyzers
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:analyzers
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:analyzers
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:analyzers
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:analyzers
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:analyzers
-++Frameworks
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:frameworks
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:frameworks
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:frameworks
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:frameworks
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:frameworks
-++Projects
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:projects
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:projects
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:projects
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:projects
-++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
-++Microsoft.CodeAnalysis.NetAnalyzers
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\program files\dotnet\sdk\6.0.100\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
-++Microsoft.EntityFrameworkCore.Analyzers
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\microsoft.entityframeworkcore.analyzers\5.0.12\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
-++Microsoft.NETCore.App
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\microsoft.netcore.app
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\microsoft.netcore.app
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\microsoft.netcore.app
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\microsoft.netcore.app
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\microsoft.netcore.app
-++CareerSite.Core
-i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.core\careersite.core.csproj
-i:{00000000-0000-0000-0000-000000000000}:CareerSite.Core
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.core\bin\debug\net5.0\careersite.core.dll
+++CourseCategory.cs
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\coursecategory.cs
+++Record.cs
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\record.cs
+++RecordItem.cs
+i:{3c44fe1e-b037-497c-9892-1695f6d11939}:a:\careersite\careersite\careersite.entities\concrete\recorditem.cs
+++CareerSite.DataAccess
+++ICategoryDal.cs
+++ICourseDal.cs
+++IMemberDal.cs
+++EfCategoryDal.cs
+++EfCourseDal.cs
+++EfMemberDal.cs
+++Microsoft.EntityFrameworkCore.SqlServer (5.0.12)
+++Microsoft.EntityFrameworkCore.Tools (5.0.12)
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1289
 ++CareerSite.Business
 i:{00000000-0000-0000-0000-000000000000}:CareerSite.Business
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.business\careersite.business.csproj
-++Abstract
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\abstract\
 ++ICartService.cs
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\icartservice.cs
 ++ICategoryService.cs
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\icategoryservice.cs
 ++ICourseService.cs
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\icourseservice.cs
-++IMemberService.cs
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\imemberservice.cs
-++CartService.cs
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\cartservice.cs
+++IRecordService.cs
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\abstract\irecordservice.cs
+++CartManager.cs
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\cartmanager.cs
 ++CategoryManager.cs
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\categorymanager.cs
 ++CourseManager.cs
 i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\coursemanager.cs
-++MemberManager.cs
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\membermanager.cs
-++CareerSite.DataAccess
-i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.dataaccess\careersite.dataaccess.csproj
-i:{00000000-0000-0000-0000-000000000000}:CareerSite.DataAccess
-++DataAccess
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\
-++Entities
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\entities\
-++Packages
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:packages
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:packages
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:packages
-++EntityFramework
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\entityframework\
-++IEntityRepository.cs
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\ientityrepository.cs
-++IEntity.cs
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\entities\ientity.cs
-++Microsoft.EntityFrameworkCore (5.0.12)
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:>1240
-++EfEntityRepositoryBase.cs
-i:{6bf4b3c7-17a2-4d4a-b6f7-9b9e6e03dad7}:a:\careersite\careersite\careersite.core\dataaccess\entityframework\efentityrepositorybase.cs
-++ICategoryDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\abstract\icategorydal.cs
-++ICourseDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\abstract\icoursedal.cs
-++IMemberDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\abstract\imemberdal.cs
-++Microsoft.EntityFrameworkCore.SqlServer (5.0.12)
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:>1261
-++Microsoft.EntityFrameworkCore.Tools (5.0.12)
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:>1262
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1220
-++CareerContext.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\entityframework\careercontext.cs
-++EfCategoryDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\entityframework\efcategorydal.cs
-++EfCourseDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\entityframework\efcoursedal.cs
-++EfMemberDal.cs
-i:{cecbd483-1bec-4ca4-9a37-76e54028a6ff}:a:\careersite\careersite\careersite.dataaccess\concrete\entityframework\efmemberdal.cs
+++RecordManager.cs
+i:{cefeee59-f070-4573-a665-d919ce0353d8}:a:\careersite\careersite\careersite.business\concrete\recordmanager.cs
 ++CareerSite.MvcWebUI
 i:{00000000-0000-0000-0000-000000000000}:CareerSite.MvcWebUI
 ++Connected Services 
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1201
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1231
 ++Properties
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\properties\
 ++wwwroot
@@ -152,28 +166,10 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvc
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\controllers\homecontroller.cs
 ++ExtensionMethods
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\extensionmethods\
-++SessionExtensionMethods.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\extensionmethods\sessionextensionmethods.cs
 ++Models
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\
-++CartListViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\cartlistviewmodel.cs
-++CartSummaryViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\cartsummaryviewmodel.cs
-++CategoryListViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\categorylistviewmodel.cs
-++CourseListViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\courselistviewmodel.cs
-++ErrorViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\errorviewmodel.cs
-++ShippingDetailsViewModel.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\shippingdetailsviewmodel.cs
 ++Services
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\services\
-++CartSessionService.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\services\cartsessionservice.cs
-++ICartSessionService.cs
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\services\icartsessionservice.cs
 ++TagHelpers
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\taghelpers\
 ++ViewComponents
@@ -199,13 +195,17 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvc
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\
 ++CartSummary
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\cartsummary\
-++Default.cshtml
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\cartsummary\default.cshtml
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\categorylist\default.cshtml
 ++CategoryList
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\categorylist\
+++Default.cshtml
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\categorylist\default.cshtml
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\components\cartsummary\default.cshtml
+++_Course.cshtml
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\_course.cshtml
 ++_Layout.cshtml
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\_layout.cshtml
+++_Navbar.cshtml
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\_navbar.cshtml
 ++_ValidationScriptsPartial.cshtml
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\views\shared\_validationscriptspartial.cshtml
 ++Error.cshtml
@@ -221,12 +221,14 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvc
 ++Startup.cs
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\startup.cs
 ++No service dependencies discovered
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1202
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1232
 ++launchSettings.json
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\properties\launchsettings.json
 ++css
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\css\
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\bootstrap\dist\css\
+++images
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\images\
 ++js
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\js\
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\bootstrap\dist\js\
@@ -234,6 +236,24 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvc
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\
 ++favicon.ico
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\favicon.ico
+++SessionExtensionMethods.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\extensionmethods\sessionextensionmethods.cs
+++CartListViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\cartlistviewmodel.cs
+++CartSummaryViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\cartsummaryviewmodel.cs
+++CategoryListViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\categorylistviewmodel.cs
+++CourseListViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\courselistviewmodel.cs
+++ErrorViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\errorviewmodel.cs
+++ShippingDetailsViewModel.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\models\shippingdetailsviewmodel.cs
+++CartSessionService.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\services\cartsessionservice.cs
+++ICartSessionService.cs
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\services\icartsessionservice.cs
 ++PagingTagHelper.cs
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\taghelpers\pagingtaghelper.cs
 ++appsettings.Development.json
@@ -251,23 +271,23 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\microsof
 ++Microsoft.AspNetCore.App
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\microsoft.aspnetcore.app
 ++bootstrap (5.1.2)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1213
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1282
 ++jQuery (3.6.0)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1214
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1283
 ++jQuery.Validation (1.19.3)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1215
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1284
 ++jQuery.Validation.Unobtrusive (2.0.20710)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1222
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1291
 ++Microsoft.AspNetCore.Mvc.Razor (2.2.0)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1216
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1285
 ++Microsoft.AspNetCore.Razor.Language (5.0.12)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1218
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1287
 ++Microsoft.AspNetCore.Razor.Tools (1.1.0-preview4-final)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1219
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1288
 ++Microsoft.jQuery.Unobtrusive.Validation (3.2.12)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1217
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1286
 ++Microsoft.VisualStudio.Web.CodeGeneration.Design (5.0.2)
-i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1221
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:>1290
 ++bootstrap.css
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\bootstrap\5.1.2\contentfiles\any\any\wwwroot\css\bootstrap.css
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\bootstrap\dist\css\bootstrap.css
@@ -279,8 +299,14 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\bootstra
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
 ++bootstrap-utilities.css
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\bootstrap\5.1.2\contentfiles\any\any\wwwroot\css\bootstrap-utilities.css
+++navbar.css
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\css\navbar.css
+++pricing.css
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\css\pricing.css
 ++site.css
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\css\site.css
+++1.jpg
+i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\images\1.jpg
 ++bootstrap.js
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:c:\users\scank\.nuget\packages\bootstrap\5.1.2\contentfiles\any\any\wwwroot\js\bootstrap.js
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\bootstrap\dist\js\bootstrap.js
@@ -417,3 +443,5 @@ i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvc
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
 ++jquery.min.map
 i:{bae48c60-d4f8-4e20-913b-0b7fca4ee216}:a:\careersite\careersite\careersite.mvcwebui\wwwroot\lib\jquery\dist\jquery.min.map
+++Solution 'CareerSite' ‎(4 of 4 projects)
+i:{00000000-0000-0000-0000-000000000000}:CareerSite.sln

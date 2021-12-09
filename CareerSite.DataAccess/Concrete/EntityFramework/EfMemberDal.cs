@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CareerSite.DataAccess.Concrete.EntityFramework
 {
-    public class EfMemberDal : EfEntityRepositoryBase<Member, CareerContext>, IMemberDal 
+    public class EfMemberDal : EfEntityRepositoryBase<Record, CareerContext>, IMemberDal 
     {
         
     }

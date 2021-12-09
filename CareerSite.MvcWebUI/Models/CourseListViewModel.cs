@@ -6,9 +6,9 @@ namespace CareerSite.MvcWebUI.Models
     public class CourseListViewModel
     {
         public List<Course> Courses { get; set; }
-        public int PageCount { get; internal set; }
-        public int PageSize { get; internal set; }
-        public int CurrentCategory { get; internal set; }
-        public int CurrentPage { get; internal set; }
+        public int PageCount { get; set; }
+        public int PageSize { get; set; }
+        public int CurrentCategory { get; set; }
+        public int CurrentPage { get; set; }
     }
 }

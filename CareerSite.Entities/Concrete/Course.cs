@@ -1,5 +1,4 @@
-﻿using CareerSite.Core.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +6,19 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Entities.Concrete
 {
-    public class Course : IEntity
+    public class Course
     {
-        public int CourseID { get; set; }
-        public int CategoryID { get; set; }
+        public int CourseId { get; set; }
         public string Name { get; set; }
+        public string Url { get; set; }
+        public double? Price { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public decimal UnitPrice { get; set; }
-        public int UnitsInStock { get; set; }
+        public bool IsApproved { get; set; }
+        public bool IsHome { get; set; }
+
+        public DateTime DateAdded { get; set; }
+
+        public List<CourseCategory> CourseCategories { get; set; }
     }
 }

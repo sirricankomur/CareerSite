@@ -73,7 +73,7 @@ namespace CareerSite.MvcWebUI.Controllers
             {
                 return View();
             }
-            TempData.Add("message", String.Format("Thank you {0}, you order is in process", shippingDetails.FirstName));
+            TempData.Create("message", String.Format("Thank you {0}, you order is in process", shippingDetails.FirstName));
             return View();
         }*/
     }

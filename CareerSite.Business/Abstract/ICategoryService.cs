@@ -9,10 +9,16 @@ namespace CareerSite.Business.Abstract
 {
     public interface ICategoryService
     {
+        Category GetById(int id);
+
+        Category GetByIdWithCourses(int categoryId);
+
         List<Category> GetAll();
 
-        void Add(Category category);
-        void Update(Category category);
-        void Delete(Category category);
+        void Create(Category entity);
+
+        void Update(Category entity);
+        void Delete(Category entity);
+        void DeleteFromCategory(int courseId, int categoryId);
     }
 }

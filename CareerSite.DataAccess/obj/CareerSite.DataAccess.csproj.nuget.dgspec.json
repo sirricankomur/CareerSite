@@ -27,7 +27,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -160,11 +164,7 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {
-              "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj": {
-                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Core\\CareerSite.Core.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

@@ -8,16 +8,8 @@ namespace CareerSite.Entities.Concrete
 {
     public class Cart
     {
-        public List<CartLine> CartLines { get; set; }
-
-        public decimal Total
-        {
-            get { return CartLines.Sum(c => c.Course.UnitPrice); }
-        }
-
-        public Cart()
-        {
-            CartLines = new List<CartLine>();
-        }
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public List<CartItem> CartItems { get; set; }
     }
 }

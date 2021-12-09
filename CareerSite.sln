@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CareerSite.Core", "CareerSi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CareerSite.Entities", "CareerSite.Entities\CareerSite.Entities.csproj", "{3C44FE1E-B037-497C-9892-1695F6D11939}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CareerSite.DataAccess", "CareerSite.DataAccess\CareerSite.DataAccess.csproj", "{CECBD483-1BEC-4CA4-9A37-76E54028A6FF}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CareerSite.Business", "CareerSite.Business\CareerSite.Business.csproj", "{CEFEEE59-F070-4573-A665-D919CE0353D8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CareerSite.MvcWebUI", "CareerSite.MvcWebUI\CareerSite.MvcWebUI.csproj", "{BAE48C60-D4F8-4E20-913B-0B7FCA4EE216}"
@@ -27,10 +25,6 @@ Global
 		{3C44FE1E-B037-497C-9892-1695F6D11939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C44FE1E-B037-497C-9892-1695F6D11939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C44FE1E-B037-497C-9892-1695F6D11939}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CECBD483-1BEC-4CA4-9A37-76E54028A6FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CECBD483-1BEC-4CA4-9A37-76E54028A6FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CECBD483-1BEC-4CA4-9A37-76E54028A6FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CECBD483-1BEC-4CA4-9A37-76E54028A6FF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CEFEEE59-F070-4573-A665-D919CE0353D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEFEEE59-F070-4573-A665-D919CE0353D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFEEE59-F070-4573-A665-D919CE0353D8}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -160,6 +160,16 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "CareerSite.Entities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/CareerSite.Entities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CareerSite.Entities.dll": {}
+        }
       }
     }
   },
@@ -519,10 +529,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CareerSite.Entities/1.0.0": {
+      "type": "project",
+      "path": "../CareerSite.Entities/CareerSite.Entities.csproj",
+      "msbuildProject": "../CareerSite.Entities/CareerSite.Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "CareerSite.Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.12"
     ]
   },
@@ -552,7 +568,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+              "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

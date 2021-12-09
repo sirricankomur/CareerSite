@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CareerSite.DataAccess\CareerSite.DataAccess.csproj" />
+    <ProjectReference Include="..\CareerSite.Core\CareerSite.Core.csproj" />
     <ProjectReference Include="..\CareerSite.Entities\CareerSite.Entities.csproj" />
   </ItemGroup>
 

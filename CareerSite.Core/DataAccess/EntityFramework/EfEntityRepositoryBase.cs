@@ -60,5 +60,13 @@ namespace CareerSite.Core.DataAccess.EntityFramework
                 context.SaveChanges();
             }
         }
+
+        public List<TEntity> GetHomePageProducts()
+        {
+            using (var context = new TContext())
+            {
+                return context.Set<TEntity>().ToList();
+            }
+        }
     }
 }

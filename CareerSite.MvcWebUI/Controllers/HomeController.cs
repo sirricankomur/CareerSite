@@ -1,4 +1,5 @@
-﻿using CareerSite.MvcWebUI.Models;
+﻿using CareerSite.Business.Abstract;
+using CareerSite.MvcWebUI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +13,27 @@ namespace CareerSite.MvcWebUI.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private ICategoryService _categoryService;
 
-        public HomeController(ILogger<HomeController> logger)
+ 
+
+        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService)
         {
             _logger = logger;
+            _categoryService = categoryService;
+
         }
 
         public IActionResult Index()
         {
-            return View();
+            var model = new CategoryListViewModel
+            {
+
+                Categories = _categoryService.GetAll(),
+                CurrentCategory = Convert.ToInt32(HttpContext.Request.Query["category"])
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()
@@ -33,5 +46,7 @@ namespace CareerSite.MvcWebUI.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CareerSite.DataAccess.Abstract
 {
-    public interface IMemberDal : IEntityRepository<Member>
+    public interface IMemberDal : IEntityRepository<Record>
     {
     }
 }

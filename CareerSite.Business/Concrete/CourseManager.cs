@@ -1,5 +1,5 @@
 ﻿using CareerSite.Business.Abstract;
-using CareerSite.DataAccess.Abstract;
+using CareerSite.Core.Abstract;
 using CareerSite.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -11,41 +11,118 @@ namespace CareerSite.Business.Concrete
 {
     public class CourseManager : ICourseService
     {
-        private ICourseDal _courseDal;
-
-        public CourseManager(ICourseDal courseDal)
+        private readonly IUnitOfWork _unitofwork;
+        public CourseManager(IUnitOfWork unitofwork)
         {
-            _courseDal = courseDal;
+            _unitofwork = unitofwork;
+        }
+
+        public bool Create(Course entity)
+        {
+            if (Validation(entity))
+            {
+                _unitofwork.Courses.Create(entity);
+                _unitofwork.Save();
+                return true;
+            }
+            return false;
+        }
+
+        public void Delete(Course entity)
+        {
+            _unitofwork.Courses.Delete(entity);
+            _unitofwork.Save();
         }
 
         public List<Course> GetAll()
         {
-            return _courseDal.GetList();
+            return _unitofwork.Courses.GetAll();
         }
 
-        public List<Course> GetByCategory(int categoryId)
+        public Course GetById(int id)
         {
-            return _courseDal.GetList(c => c.CategoryID == categoryId || categoryId == 0);
+            return _unitofwork.Courses.GetById(id);
         }
 
-        public Course GetById(int courseId)
+        public Course GetByIdWithCategories(int id)
         {
-            return _courseDal.Get(c => c.CourseID == courseId);
+            return _unitofwork.Courses.GetByIdWithCategories(id);
         }
 
-        public void Add(Course course)
+        public int GetCountByCategory(string category)
         {
-            _courseDal.Add(course);
+            return _unitofwork.Courses.GetCountByCategory(category);
         }
 
-        public void Delete(Course course)
+        public List<Course> GetHomePageCourses()
         {
-            _courseDal.Delete(course);
+            return _unitofwork.Courses.GetHomePageCourses();
         }
 
-        public void Update(Course course)
+        public Course GetCourseDetails(string url)
         {
-            _courseDal.Update(course);
+            return _unitofwork.Courses.GetCourseDetails(url);
         }
+
+        public List<Course> GetCoursesByCategory(string name, int page, int pageSize)
+        {
+            return _unitofwork.Courses.GetCoursesByCategory(name, page, pageSize);
+        }
+
+        //public List<Course> GetNavbarByCategory(string name)
+        //{
+        //    return _unitofwork.Courses.GetNavbarByCategory(name);
+        //}
+
+        public List<Course> GetSearchResult(string searchString)
+        {
+            return _unitofwork.Courses.GetSearchResult(searchString);
+        }
+
+        public void Update(Course entity)
+        {
+            _unitofwork.Courses.Update(entity);
+            _unitofwork.Save();
+        }
+
+        public bool Update(Course entity, int[] categoryIds)
+        {
+            if (Validation(entity))
+            {
+                if (categoryIds.Length == 0)
+                {
+                    ErrorMessage += "Ürün için en az bir kategori seçmelisiniz.";
+                    return false;
+                }
+                _unitofwork.Courses.Update(entity, categoryIds);
+                _unitofwork.Save();
+                return true;
+            }
+            return false;
+        }
+
+        public string ErrorMessage { get; set; }
+
+        public bool Validation(Course entity)
+        {
+            var isValid = true;
+
+            if (string.IsNullOrEmpty(entity.Name))
+            {
+                ErrorMessage += "ürün ismi girmelisiniz.\n";
+                isValid = false;
+            }
+
+            if (entity.Price < 0)
+            {
+                ErrorMessage += "ürün fiyatı negatif olamaz.\n";
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+
+
     }
 }

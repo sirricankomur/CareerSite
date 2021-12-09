@@ -10,6 +10,6 @@ namespace CareerSite.DataAccess.Abstract
 {
     public interface ICourseDal : IEntityRepository<Course>
     {
-
+        
     }
 }

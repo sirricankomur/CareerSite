@@ -1,7 +1,5 @@
 using CareerSite.Business.Abstract;
 using CareerSite.Business.Concrete;
-using CareerSite.DataAccess.Abstract;
-using CareerSite.DataAccess.Concrete.EntityFramework;
 using CareerSite.MvcWebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,11 +29,9 @@ namespace CareerSite.MvcWebUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ICourseService, CourseManager>();
-            services.AddScoped<ICourseDal, EfCourseDal>();
             services.AddScoped<ICategoryService, CategoryManager>();
-            services.AddScoped<ICategoryDal, EfCategoryDal>();
-            services.AddSingleton<ICartSessionService, CartSessionService>();
-            services.AddScoped<ICartService, CartService>();
+            services.AddScoped<ICartService, CartManager>();
+            services.AddScoped<IRecordService, RecordManager>();
 
             services.AddSession();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

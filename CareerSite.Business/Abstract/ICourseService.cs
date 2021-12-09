@@ -9,11 +9,19 @@ namespace CareerSite.Business.Abstract
 {
     public interface ICourseService
     {
-        List<Course> GetAll();
-        List<Course> GetByCategory(int categoryId);
         Course GetById(int id);
-        void Add(Course course);
-        void Update(Course course);
-        void Delete(Course course);
+        Course GetByIdWithCategories(int id);
+        Course GetCourseDetails(string url);
+        List<Course> GetCoursesByCategory(string name, int page, int pageSize);
+        //List<Course> GetNavbarByCategory(string name);
+        int GetCountByCategory(string category);
+
+        List<Course> GetHomePageCourses();
+        List<Course> GetSearchResult(string searchString);
+        List<Course> GetAll();
+        bool Create(Course entity);
+        void Update(Course entity);
+        void Delete(Course entity);
+        bool Update(Course entity, int[] categoryIds);
     }
 }

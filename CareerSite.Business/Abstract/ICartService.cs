@@ -9,8 +9,10 @@ namespace CareerSite.Business.Abstract
 {
     public interface ICartService
     {
-        void AddToCart(Cart cart, Course course);
-        void RemoveFromCart(Cart cart, int courseId);
-        List<CartLine> List(Cart cart);
+        void InitializeCart(string userId);
+        Cart GetCartByUserId(string userId);
+        void AddToCart(string userId, int courseId, int quantity);
+        void DeleteFromCart(string userId, int courseId);
+        void ClearCart(int cartId);
     }
 }
