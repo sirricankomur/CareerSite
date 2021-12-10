@@ -12,39 +12,31 @@ namespace CareerSite.MvcWebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private ICategoryService _categoryService;
 
- 
-
-        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService)
+        private ICourseService _courseService;
+        public HomeController(ICourseService courseService)
         {
-            _logger = logger;
-            _categoryService = categoryService;
-
+            this._courseService = courseService;
         }
 
         public IActionResult Index()
         {
-            var model = new CategoryListViewModel
+            var courseViewModel = new CourseListViewModel()
             {
-
-                Categories = _categoryService.GetAll(),
-                CurrentCategory = Convert.ToInt32(HttpContext.Request.Query["category"])
+                Courses = _courseService.GetHomePageCourses()
             };
 
-            return View(model);
+            return View(courseViewModel);
         }
 
-        public IActionResult Privacy()
+        public IActionResult About()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult Contact()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View("MyView");
         }
 
 
