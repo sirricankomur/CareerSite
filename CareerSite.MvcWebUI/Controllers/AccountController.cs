@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CareerSite.Business.Abstract;
+using CareerSite.MvcWebUI.EmailServices;
+using CareerSite.MvcWebUI.Identity;
+using CareerSite.MvcWebUI.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace CareerSite.MvcWebUI.Controllers
 {

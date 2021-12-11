@@ -1,4 +1,7 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class CartModel
     {

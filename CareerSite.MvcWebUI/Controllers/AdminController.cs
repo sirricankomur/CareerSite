@@ -1,4 +1,16 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CareerSite.Business.Abstract;
+using CareerSite.Entities.Concrete;
+using CareerSite.MvcWebUI.Identity;
+using CareerSite.MvcWebUI.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace CareerSite.MvcWebUI.Controllers
 {
