@@ -1,5 +1,4 @@
-﻿using CareerSite.Entities.Concrete;
-using Microsoft.Extensions.Primitives;
+﻿using CareerSite.Entity.Concrete;
 using System.Collections.Generic;
 
 namespace CareerSite.MvcWebUI.Models

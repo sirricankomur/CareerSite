@@ -1,4 +1,7 @@
-﻿namespace CareerSite.MvcWebUI.Identity
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace CareerSite.MvcWebUI.Identity
 {
     public class ApplicationContext : IdentityDbContext<User>
     {
@@ -7,5 +10,4 @@
 
         }
     }
-}
 }

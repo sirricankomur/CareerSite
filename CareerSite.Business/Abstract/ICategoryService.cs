@@ -1,4 +1,4 @@
-﻿using CareerSite.Entities.Concrete;
+﻿using CareerSite.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Business.Abstract
 {
-    public interface ICategoryService
+    public interface ICategoryService : IValidator<Category>
     {
         Category GetById(int id);
-
         Category GetByIdWithCourses(int categoryId);
-
         List<Category> GetAll();
 
         void Create(Category entity);
-
         void Update(Category entity);
         void Delete(Category entity);
         void DeleteFromCategory(int courseId, int categoryId);

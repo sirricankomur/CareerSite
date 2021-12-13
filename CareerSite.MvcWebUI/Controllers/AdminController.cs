@@ -1,8 +1,10 @@
 ﻿using CareerSite.Business.Abstract;
-using CareerSite.Entities.Concrete;
+using CareerSite.Entity.Concrete;
+using CareerSite.MvcWebUI.Extensions;
 using CareerSite.MvcWebUI.Identity;
 using CareerSite.MvcWebUI.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;

@@ -1,4 +1,6 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class ResetPasswordModel
     {
@@ -10,6 +12,5 @@
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
     }
 }

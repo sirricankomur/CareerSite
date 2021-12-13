@@ -1,4 +1,5 @@
-﻿using CareerSite.Entities.Concrete;
+﻿using CareerSite.Entity.Concrete;
+using System.Collections.Generic;
 
 namespace CareerSite.MvcWebUI.Models
 {
@@ -6,6 +7,5 @@ namespace CareerSite.MvcWebUI.Models
     {
         public PageInfo PageInfo { get; set; }
         public List<Course> Courses { get; set; }
-
     }
 }

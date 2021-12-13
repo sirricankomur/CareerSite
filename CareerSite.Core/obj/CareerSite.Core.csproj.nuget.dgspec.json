@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
-                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj"
+              "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\CareerSite.Entity.csproj": {
+                "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\CareerSite.Entity.csproj"
               }
             }
           }
@@ -45,6 +45,10 @@
           "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.12, )"
             }
@@ -68,14 +72,14 @@
         }
       }
     },
-    "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj": {
+    "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\CareerSite.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj",
-        "projectName": "CareerSite.Entities",
-        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\CareerSite.Entities.csproj",
+        "projectUniqueName": "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\CareerSite.Entity.csproj",
+        "projectName": "CareerSite.Entity",
+        "projectPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\CareerSite.Entity.csproj",
         "packagesPath": "C:\\Users\\scank\\.nuget\\packages\\",
-        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entities\\obj\\",
+        "outputPath": "A:\\CareerSite\\CareerSite\\CareerSite.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\scank\\AppData\\Roaming\\NuGet\\NuGet.Config",

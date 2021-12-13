@@ -8,7 +8,7 @@
     },
     "3c44fe1e-b037-497c-9892-1695f6d11939": {
       "ProjectGuid": "3c44fe1e-b037-497c-9892-1695f6d11939",
-      "DisplayName": "CareerSite.Entities",
+      "DisplayName": "CareerSite.Entity",
       "ColorIndex": 1
     },
     "cecbd483-1bec-4ca4-9a37-76e54028a6ff": {
@@ -35,7 +35,17 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "29eb63ca-e30b-4841-be88-3c4760cd16a1": {
+      "ProjectGuid": "29eb63ca-e30b-4841-be88-3c4760cd16a1",
+      "DisplayName": "CareerSite.Entity",
+      "ColorIndex": 6
+    },
+    "7fa2b6b1-ea56-41d5-b82e-3bff7a7f93d7": {
+      "ProjectGuid": "7fa2b6b1-ea56-41d5-b82e-3bff7a7f93d7",
+      "DisplayName": "CareerSite.MvcWebUI",
+      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 6
+  "NextColorIndex": 8
 }

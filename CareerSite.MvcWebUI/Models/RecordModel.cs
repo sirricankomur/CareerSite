@@ -16,6 +16,5 @@
         public string Cvc { get; set; }
 
         public CartModel CartModel { get; set; }
-
     }
 }

@@ -129,7 +129,7 @@ namespace CareerSite.MvcWebUI.Controllers
             }
             return View(model);
         }
-
+        
         public IActionResult GetRecords()
         {
             var userId = _userManager.GetUserId(User);
@@ -209,7 +209,7 @@ namespace CareerSite.MvcWebUI.Controllers
             _recordService.Create(record);
         }
 
-
+        
         private Payment PaymentProcess(RecordModel model)
         {
             Options options = new Options();
@@ -290,7 +290,7 @@ namespace CareerSite.MvcWebUI.Controllers
             request.BasketItems = basketItems;
             return Payment.Create(request, options);
         }
-
+       
 
     }
 }

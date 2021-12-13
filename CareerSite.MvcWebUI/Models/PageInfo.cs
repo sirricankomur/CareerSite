@@ -1,4 +1,8 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using CareerSite.Entity.Concrete;
+using System;
+using System.Collections.Generic;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class PageInfo
     {
@@ -11,6 +15,7 @@
         {
             return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage);
         }
-
     }
+
+  
 }

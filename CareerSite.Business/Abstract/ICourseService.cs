@@ -1,4 +1,4 @@
-﻿using CareerSite.Entities.Concrete;
+﻿using CareerSite.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CareerSite.Business.Abstract
 {
-    public interface ICourseService
+    public interface ICourseService : IValidator<Course>
     {
         Course GetById(int id);
         Course GetByIdWithCategories(int id);

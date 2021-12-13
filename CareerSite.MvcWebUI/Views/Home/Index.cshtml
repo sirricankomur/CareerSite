@@ -1,16 +1,20 @@
-﻿@model CareerSite.MvcWebUI.Models.CourseListViewModel
+﻿@model CourseListViewModel
 
-@{
-    ViewData["Title"] = "Home";
-}
+<partial name="_header">
 
-
-<div class="row">  
-    <div class="col-md-12">
+<div class="row">
+    <div class="col-md-3">
+        @await Component.InvokeAsync("Categories")
+    </div>
+    <div class="col-md-9">
         <div class="row">                  
-              
-                <p>@Model.Courses</p>     
-                       
+            @foreach (var course in Model.Courses)
+            {    
+                <div class="col-md-4">
+                    @await Html.PartialAsync("_course", course)   
+                </div>       
+            }           
         </div>
     </div>
 </div>
+

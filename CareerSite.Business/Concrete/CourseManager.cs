@@ -1,6 +1,6 @@
 ﻿using CareerSite.Business.Abstract;
 using CareerSite.Core.Abstract;
-using CareerSite.Entities.Concrete;
+using CareerSite.Entity.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -122,7 +122,6 @@ namespace CareerSite.Business.Concrete
             return isValid;
         }
 
-
-
+      
     }
 }

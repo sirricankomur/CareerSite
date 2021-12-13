@@ -1,0 +1,19 @@
+﻿<div class="jumbotron bg-dark text-light">
+    <h1 class="display-4">Kendine Fırsat Yarat</h1>
+    <p class="lead">Kariyerin İçin Adım Atma Vakti Geldi</p>
+    <hr class="my-4 bg-light">
+    <p>Her eğitim seni hayallerine ulaştıracak bir adımdır. Değişime hazır mısın?</p>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+            <a class="btn btn-lg btn-outline-light" href="/account/login">Giriş</a>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+            <a class="btn btn-lg btn-outline-light" href="/account/register">Kayıt Ol</a>
+            </div>
+        </div>
+    }
+</div>
+
+

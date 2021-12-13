@@ -1,0 +1,28 @@
+﻿@model CourseListViewModel
+
+
+@{
+    var popularClass = Model.Courses.Count>2? "popular":"";
+    var courses = Model.Courses;
+}
+
+@section Categories
+{
+    @await Component.InvokeAsync("Categories")
+}
+
+@if(courses.Count == 0)
+{
+    @await Html.PartialAsync("_nocourse")
+}
+else
+{
+    <div class="row">                  
+        @foreach (var course in courses)
+        {    
+            <div class="col-md-4">
+                @await Html.PartialAsync("_course", course)   
+        </div>       
+        }   
+    </div>
+}

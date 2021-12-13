@@ -1,8 +1,10 @@
 ﻿using CareerSite.Business.Abstract;
 using CareerSite.MvcWebUI.EmailServices;
+using CareerSite.MvcWebUI.Extensions;
 using CareerSite.MvcWebUI.Identity;
 using CareerSite.MvcWebUI.Models;
 using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -227,6 +229,5 @@ namespace CareerSite.MvcWebUI.Controllers
         {
             return View();
         }
-
     }
 }

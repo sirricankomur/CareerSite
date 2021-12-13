@@ -1,6 +1,12 @@
-﻿namespace CareerSite.MvcWebUI.Extensions
+﻿using CareerSite.Core.Concrete.EfCore;
+using CareerSite.MvcWebUI.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace CareerSite.MvcWebUI.Extensions
 {
-    public class MigrationManager
+    public static class MigrationManager
     {
         public static IHost MigrateDatabase(this IHost host)
         {
@@ -35,6 +41,5 @@
 
             return host;
         }
-
     }
 }

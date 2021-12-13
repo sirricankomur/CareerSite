@@ -1,6 +1,9 @@
-﻿namespace CareerSite.MvcWebUI.Extensions
+﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Newtonsoft.Json;
+
+namespace CareerSite.MvcWebUI.Extensions
 {
-    public class TempDataExtensions
+    public static class TempDataExtensions
     {
         public static void Put<T>(this ITempDataDictionary tempData, string key, T value) where T : class
         {
@@ -14,6 +17,5 @@
             tempData.TryGetValue(key, out o);
             return o == null ? null : JsonConvert.DeserializeObject<T>((string)o);
         }
-
     }
 }

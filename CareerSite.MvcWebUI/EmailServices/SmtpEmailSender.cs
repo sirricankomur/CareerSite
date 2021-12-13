@@ -1,6 +1,10 @@
-﻿namespace CareerSite.MvcWebUI.EmailServices
+﻿using System.Net;
+using System.Net.Mail;
+using System.Threading.Tasks;
+
+namespace CareerSite.MvcWebUI.EmailServices
 {
-    public class SmtpEmailSender
+    public class SmtpEmailSender : IEmailSender
     {
         private string _host;
         private int _port;

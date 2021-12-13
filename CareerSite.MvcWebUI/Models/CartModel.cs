@@ -12,6 +12,15 @@ namespace CareerSite.MvcWebUI.Models
         {
             return CartItems.Sum(i => i.Price * i.Quantity);
         }
+    }
 
+    public class CartItemModel
+    {
+        public int CartItemId { get; set; }
+        public int CourseId { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
+        public string ImageUrl { get; set; }
+        public int Quantity { get; set; }
     }
 }

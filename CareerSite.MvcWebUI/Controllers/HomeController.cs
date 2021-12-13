@@ -1,12 +1,6 @@
 ﻿using CareerSite.Business.Abstract;
 using CareerSite.MvcWebUI.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CareerSite.MvcWebUI.Controllers
 {
@@ -19,7 +13,7 @@ namespace CareerSite.MvcWebUI.Controllers
             this._courseService = courseService;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string language)
         {
             var courseViewModel = new CourseListViewModel()
             {
@@ -38,7 +32,6 @@ namespace CareerSite.MvcWebUI.Controllers
         {
             return View("MyView");
         }
-
-
     }
+
 }

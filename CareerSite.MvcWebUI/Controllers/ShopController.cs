@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CareerSite.Business.Abstract;
+using CareerSite.Entity.Concrete;
+using CareerSite.MvcWebUI.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 
 namespace CareerSite.MvcWebUI.Controllers
 {
@@ -13,7 +17,7 @@ namespace CareerSite.MvcWebUI.Controllers
         // localhost/products/telefon?page=1
         public IActionResult List(string category, int page = 1)
         {
-            const int pageSize = 2;
+            const int pageSize = 6;
             var courseViewModel = new CourseListViewModel()
             {
                 PageInfo = new PageInfo()
@@ -31,7 +35,7 @@ namespace CareerSite.MvcWebUI.Controllers
 
         //public IActionResult NavbarList(string category)
         //{
-
+            
         //    var courseNavbarViewModel = new CourseNavbarListViewModel()
         //    {
         //        PageInfo = new PageInfo()

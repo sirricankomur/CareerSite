@@ -8,8 +8,8 @@
     ".NETCoreApp,Version=v5.0": {
       "CareerSite.Business/1.0.0": {
         "dependencies": {
-          "CareerSite.DataAccess": "1.0.0",
-          "CareerSite.Entities": "1.0.0"
+          "CareerSite.Core": "1.0.0",
+          "CareerSite.Entity": "1.0.0"
         },
         "runtime": {
           "CareerSite.Business.dll": {}
@@ -1042,28 +1042,17 @@
       },
       "CareerSite.Core/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.12"
+          "CareerSite.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.12",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12"
         },
         "runtime": {
           "CareerSite.Core.dll": {}
         }
       },
-      "CareerSite.DataAccess/1.0.0": {
-        "dependencies": {
-          "CareerSite.Core": "1.0.0",
-          "CareerSite.Entities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.12"
-        },
+      "CareerSite.Entity/1.0.0": {
         "runtime": {
-          "CareerSite.DataAccess.dll": {}
-        }
-      },
-      "CareerSite.Entities/1.0.0": {
-        "dependencies": {
-          "CareerSite.Core": "1.0.0"
-        },
-        "runtime": {
-          "CareerSite.Entities.dll": {}
+          "CareerSite.Entity.dll": {}
         }
       }
     }
@@ -1737,12 +1726,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "CareerSite.DataAccess/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "CareerSite.Entities/1.0.0": {
+    "CareerSite.Entity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

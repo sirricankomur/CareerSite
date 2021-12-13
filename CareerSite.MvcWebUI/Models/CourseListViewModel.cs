@@ -1,4 +1,4 @@
-﻿using CareerSite.Entities.Concrete;
+﻿using CareerSite.Entity.Concrete;
 using System.Collections.Generic;
 
 namespace CareerSite.MvcWebUI.Models

@@ -1,0 +1,113 @@
+﻿@model RegisterModel
+
+
+<div class="row">
+    <div class="col-md-8">
+        <form asp-controller="Account" asp-action="Register" method="POST">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group row">
+            <label asp-for="FirstName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="FirstName">
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label asp-for="LastName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="LastName">
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+       <div class="form-group row">
+            <label asp-for="UserName" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="UserName">
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label asp-for="Password" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Password">
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label asp-for="RePassword" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="RePassword">
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Email">
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+        </div>   
+
+        <div class="form-group row">
+            <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-md-8 mx-auto">
+        <br />
+        <h1 class="h3">Kayıt ol</h1>
+        <p>Giriş yaparak eğitimlere kayıt olabilirsin.</p>
+        <hr>
+        <form asp-controller="Account" asp-action="Register" method="POST">
+
+
+            <div class="form-group">
+                <label asp-for="FirstName">Ad</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Adınızı girin">
+                <small><span asp-validation-for="FirstName" class="text-danger"></span></small>
+
+            </div>
+
+            <div class="form-group">
+                <label asp-for="LastName">Soyad</label>
+                <input class="form-control" asp-for="LastName" placeholder="Soyadınızı girin">
+                <small><span asp-validation-for="LastName" class="text-danger"></span></small>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserName">Kullanıcı Adı</label>
+                <input class="form-control" asp-for="UserName"  placeholder="Kullanıcı Adınızı girin">
+                <small><span asp-validation-for="UserName" class="text-danger"></span></small>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password">Şifre</label>
+                <input class="form-control" asp-for="Password"  placeholder="Şifrenizi girin">
+                <small><span asp-validation-for="Password" class="text-danger"></span></small>
+            </div>
+            <div class="form-group">
+                <label asp-for="RePassword">Şifre Onay</label>
+                <input class="form-control" asp-for="RePassword"  placeholder="Şifrenizi yeniden girin">
+                <small><span asp-validation-for="RePassword" class="text-danger"></span></small>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email">E-posta</label>
+                <input class="form-control" asp-for="Email"  placeholder="E-postanızı girin">
+                <small><span asp-validation-for="Email" class="text-danger"></span></small>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Kayıt ol</button>
+            </div>
+        </form>
+    </div>
+</div>
+*@
+@section Scripts
+{
+<script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}

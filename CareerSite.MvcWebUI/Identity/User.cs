@@ -6,6 +6,6 @@ namespace CareerSite.MvcWebUI.Identity
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
+    
     }
 }

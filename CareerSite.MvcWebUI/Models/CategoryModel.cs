@@ -1,4 +1,8 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using CareerSite.Entity.Concrete;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class CategoryModel
     {
@@ -14,6 +18,5 @@
         public string Url { get; set; }
 
         public List<Course> Courses { get; set; }
-
     }
 }

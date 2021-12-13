@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CareerSite.Core\CareerSite.Core.csproj" />
-    <ProjectReference Include="..\CareerSite.Entities\CareerSite.Entities.csproj" />
+    <ProjectReference Include="..\CareerSite.Entity\CareerSite.Entity.csproj" />
   </ItemGroup>
 
 </Project>

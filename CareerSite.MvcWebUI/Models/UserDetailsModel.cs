@@ -1,4 +1,6 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using System.Collections.Generic;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class UserDetailsModel
     {
@@ -9,6 +11,5 @@
         public string Email { get; set; }
         public bool EmailConfirmed { get; set; }
         public IEnumerable<string> SelectedRoles { get; set; }
-
     }
 }

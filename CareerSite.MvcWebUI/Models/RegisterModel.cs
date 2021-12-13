@@ -1,4 +1,6 @@
-﻿namespace CareerSite.MvcWebUI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CareerSite.MvcWebUI.Models
 {
     public class RegisterModel
     {
@@ -24,6 +26,5 @@
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
-
     }
 }
