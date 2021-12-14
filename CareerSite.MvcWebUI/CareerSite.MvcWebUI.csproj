@@ -21,4 +21,8 @@
     <ProjectReference Include="..\CareerSite.Entity\CareerSite.Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>
