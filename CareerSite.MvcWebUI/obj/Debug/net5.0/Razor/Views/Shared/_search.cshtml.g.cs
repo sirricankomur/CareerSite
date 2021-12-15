@@ -54,8 +54,22 @@ using CareerSite.MvcWebUI.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "A:\CareerSite\CareerSite\CareerSite.MvcWebUI\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "A:\CareerSite\CareerSite\CareerSite.MvcWebUI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Mvc.Localization;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b814e8339fd8832cc86900d9584936d424933a8a", @"/Views/Shared/_search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d4ffcd7bc7b9081e83a945ec8bd0a9f7f114214", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1731af330be67a18a7605a9e1913083b1a7b58f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("action", new global::Microsoft.AspNetCore.Html.HtmlString("/search"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,7 +99,7 @@ using CareerSite.MvcWebUI.Identity;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("  <div class=\"card mt-3\">\r\n      <div class=\"card-header\">\r\n          <h5>Search</h5>\r\n      </div>\r\n      <div class=\"card-body\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b814e8339fd8832cc86900d9584936d424933a8a4475", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b814e8339fd8832cc86900d9584936d424933a8a4865", async() => {
                 WriteLiteral(@"
                 <div class=""form-group"">
                     <input name=""q"" type=""text"" class=""form-control"" placeholder=""Search"">

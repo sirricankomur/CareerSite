@@ -54,8 +54,22 @@ using CareerSite.MvcWebUI.Identity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 8 "A:\CareerSite\CareerSite\CareerSite.MvcWebUI\Views\_ViewImports.cshtml"
+using Microsoft.Extensions.Localization;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 9 "A:\CareerSite\CareerSite\CareerSite.MvcWebUI\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Mvc.Localization;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f08ed7652243a6c3b0fc4ef353b86e8b36ea7db1", @"/Views/Shared/_course.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5d4ffcd7bc7b9081e83a945ec8bd0a9f7f114214", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a1731af330be67a18a7605a9e1913083b1a7b58f", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__course : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Course>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("card-img-top"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -104,7 +118,7 @@ using CareerSite.MvcWebUI.Identity;
 #line hidden
 #nullable disable
             WriteLiteral("</h3>\r\n        </div>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db17628", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db18018", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -145,7 +159,7 @@ AddHtmlAttributeValue("", 1016, Model.ImageUrl, 1016, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("</p>\r\n            <div class=\"d-flex justify-content-between align-items-center\">\r\n                <div class=\"btn-group\">\r\n\r\n                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db110142", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db110532", async() => {
                 WriteLiteral("İncele");
             }
             );
@@ -210,7 +224,7 @@ WriteAttributeValue("", 1788, Model.CourseId, 1788, 15, false);
 #line hidden
 #nullable disable
             WriteLiteral("                </div>\r\n            </div>\r\n            <div class=\"pt-3\">\r\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db113818", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f08ed7652243a6c3b0fc4ef353b86e8b36ea7db114208", async() => {
                 WriteLiteral("\r\n                    <input type=\"hidden\" name=\"courseId\"");
                 BeginWriteAttribute("value", " value=\"", 2108, "\"", 2131, 1);
 #nullable restore

@@ -264,3 +264,16 @@ A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebU
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\ref\CareerSite.MvcWebUI.dll
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.pdb
 A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.genruntimeconfig.cache
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.csproj.GenerateResource.cache
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\en\CareerSite.MvcWebUI.resources.dll
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.Shared._navbar.en.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\en\CareerSite.MvcWebUI.resources.dll
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\bin\Debug\net5.0\tr\CareerSite.MvcWebUI.resources.dll
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.Shared._navbar.tr.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\tr\CareerSite.MvcWebUI.resources.dll
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.SharedResource.en.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.SharedResource.tr.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.SharedModelResource.en.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.SharedModelResource.tr.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.Shared._Footer.en.resources
+A:\CareerSite\CareerSite\CareerSite.MvcWebUI\obj\Debug\net5.0\CareerSite.MvcWebUI.Resources.Views.Shared._Footer.tr.resources

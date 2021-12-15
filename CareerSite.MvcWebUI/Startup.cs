@@ -4,11 +4,13 @@ using CareerSite.Core.Abstract;
 using CareerSite.Core.Concrete.EfCore;
 using CareerSite.MvcWebUI.EmailServices;
 using CareerSite.MvcWebUI.Identity;
+using CareerSite.MvcWebUI.Resources.Views;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Localization.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,6 +22,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace CareerSite.MvcWebUI
@@ -29,6 +32,8 @@ namespace CareerSite.MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         private readonly IConfiguration _configuration;
+        private const string trCulture = "tr";
+        private const string enCulture = "en";
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -96,16 +101,24 @@ namespace CareerSite.MvcWebUI
 
             services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
 
-            services.AddMvc().AddDataAnnotationsLocalization();
+            services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(opt => opt.DataAnnotationLocalizerProvider = (type, factory) =>
+              {
+                  var assemblyName = new AssemblyName(typeof(SharedModelResource).GetTypeInfo().Assembly.FullName);
+                  return factory.Create(nameof(SharedModelResource), assemblyName.Name);
+
+              });
+
+
+
             services.Configure<RequestLocalizationOptions>(opt =>
             {
                 var supportedCultures = new List<CultureInfo>
                 {
-                    new CultureInfo("tr-TR"),
-                    new CultureInfo("en-US")
+                    new CultureInfo(trCulture),
+                    new CultureInfo(enCulture)
                 };
 
-                opt.DefaultRequestCulture = new RequestCulture("tr-TR");
+                opt.DefaultRequestCulture = new RequestCulture(trCulture);
                 opt.SupportedCultures = supportedCultures;
                 opt.SupportedUICultures = supportedCultures;
 
@@ -116,6 +129,10 @@ namespace CareerSite.MvcWebUI
                     new AcceptLanguageHeaderRequestCultureProvider()
                 };
 
+                opt.RequestCultureProviders = new[] {new RouteDataRequestCultureProvider()
+                {
+                    Options = opt
+                } };
             });
 
         }
@@ -182,9 +199,6 @@ namespace CareerSite.MvcWebUI
                     pattern: "dashboard",
                     defaults: new { controller = "Admin", action = "Dashboard" }
                 );
-
-
-
 
                 endpoints.MapControllerRoute(
                    name: "adminuseredit",
@@ -269,14 +283,34 @@ namespace CareerSite.MvcWebUI
 
                 endpoints.MapControllerRoute(
                     name: "courses",
-                    pattern: "courses/{category?}",
+                    pattern: "{culture?}/courses/{category?}",
                     defaults: new { controller = "Shop", action = "list" }
                 );
 
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                    name: "homesite",
+                    pattern: "",
+                    defaults: new { controller = "Home", action = "Index" }
                 );
+                //endpoints.MapControllerRoute(
+                //    name: "en",
+                //   pattern: "{culture=en}/{controller=Home}/{action=Index}/{id?}"
+                //);
+                endpoints.MapControllerRoute(
+                    name: "tr",
+                    pattern: "tr",
+                    defaults: new { controller = "Home", action = "Index" }
+                );
+
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{culture?}/{controller=Home}/{action=Index}/{id?}"
+               );
+
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Home}/{action=Index}/{id?}"
+                //);
 
 
             });

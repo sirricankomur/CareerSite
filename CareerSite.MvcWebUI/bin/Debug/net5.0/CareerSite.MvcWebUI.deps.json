@@ -321,6 +321,17 @@
         "runtime": {
           "CareerSite.MvcWebUI.dll": {}
         },
+        "resources": {
+          "en-US/CareerSite.MvcWebUI.resources.dll": {
+            "locale": "en-US"
+          },
+          "tr-TR/CareerSite.MvcWebUI.resources.dll": {
+            "locale": "tr-TR"
+          },
+          "tr/CareerSite.MvcWebUI.resources.dll": {
+            "locale": "tr"
+          }
+        },
         "compile": {
           "CareerSite.MvcWebUI.dll": {}
         }

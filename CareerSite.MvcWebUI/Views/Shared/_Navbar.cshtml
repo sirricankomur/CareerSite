@@ -1,65 +1,7 @@
-﻿@*<div class="navbar bg-danger navbar-dark navbar-expand-sm">
-    <div class="container">
-    <a href="/" class="navbar-brand">Shopapp</a>
-    <ul class="navbar-nav mr-auto">
-    <li class="nav-item">
-    <a href="/courses" class="nav-link">Courses</a>
-    </li>
-
-    @if (User.Identity.IsAuthenticated)
-    {
-    <li class="nav-item">
-    <a href="/cart" class="nav-link">Cart</a>
-    </li>
-    <li class="nav-item">
-    <a href="/records" class="nav-link">Records</a>
-    </li>
-
-    if (User.IsInRole("admin"))
-    {
-    <li class="nav-item">
-    <a href="/admin/courses" class="nav-link">Admin Courses</a>
-    </li>
-    <li class="nav-item">
-    <a href="/admin/categories" class="nav-link">Admin Categories</a>
-    </li>
-    <li class="nav-item">
-    <a href="/admin/role/list" class="nav-link">Roles</a>
-    </li>
-    <li class="nav-item">
-    <a href="/admin/user/list" class="nav-link">Users</a>
-    </li>
-    }
-    }
-    </ul>
-
-    <ul class="navbar-nav ml-auto">
-
-    @if (User.Identity.IsAuthenticated)
-    {
-    <li class="nav-item">
-    <a href="/account/manage" class="nav-link">
-    @User.Identity.Name
-    </a>
-    </li>
-    <li class="nav-item">
-    <a href="/account/logout" class="nav-link">Logout</a>
-    </li>
-    }
-    else
-    {
-    <li class="nav-item">
-    <a href="/account/login" class="nav-link">Login</a>
-    </li>
-    <li class="nav-item">
-    <a href="/account/register" class="nav-link">Register</a>
-    </li>
-    }
-    </ul>
-
-
-    </div>
-    </div>*@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Options
+@inject IViewLocalizer Localizer
 
 <div class="container">
 
@@ -73,21 +15,7 @@
                     if (User.IsInRole("admin"))
                     {
                         <div class="pr-3">
-
-                            <a class="btn btn-sm btn-outline-danger" href="/dashboard">Admin Paneli</a>
-
-                            @*<div class="dropdown">
-                                <button class="btn btn-sm btn-outline-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Admin Kontrolleri
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="/admin/courses">Admin Courses</a>
-                                <a class="dropdown-item" href="/admin/categories">Admin Categories</a>
-                                <a class="dropdown-item" href="/admin/role/list">Roles</a>
-                                <a class="dropdown-item" href="/admin/user/list">Users</a>
-                                </div>
-                                </div>*@
-
+                            <a class="btn btn-sm btn-outline-danger" href="/dashboard">@Localizer["Dashboard"]</a>
                         </div>
                     }
                 }
@@ -95,7 +23,7 @@
                     <form action="/search">
                         <div class="input-group input-group-sm">
 
-                            <input name="q" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Ara">
+                            <input name="q" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="@Localizer["Search"]">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-dark" type="submit" id="button-addon2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -112,7 +40,7 @@
 
             </div>
             <div class="col-4 pt-3 text-center">
-                <a class="blog-header-logo text-dark" href="/home/index">CareerSite</a>
+                <a class="blog-header-logo text-dark" href="/">CareerSite</a>
             </div>
             <div class="col-4 pt-3 d-flex justify-content-end align-items-center">
 
@@ -132,18 +60,18 @@
                             @User.Identity.Name
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/records">Kayıtlar</a>
-                            <a class="dropdown-item text-danger" href="/account/logout">Çıkış</a>
+                            <a class="dropdown-item" href="/records">@Localizer["Records"]</a>
+                            <a class="dropdown-item text-danger" href="/account/logout">@Localizer["LogOut"]</a>
                         </div>
                     </div>
                 }
                 else
                 {
                     <div class="mr-2">
-                        <a class="btn btn-sm btn-outline-success" href="/account/login">Giriş</a>
+                        <a class="btn btn-sm btn-outline-success" href="/account/login">@Localizer["LogIn"]</a>
                     </div>
                     <div>
-                        <a class="btn btn-sm btn-outline-primary" href="/account/register">Kayıt Ol</a>
+                        <a class="btn btn-sm btn-outline-primary" href="/account/register">@Localizer["Register"]</a>
                     </div>
                 }
             </div>
@@ -152,18 +80,18 @@
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="/courses/yazilim">Yazılım</a>
-            <a class="p-2 text-muted" href="/courses/saglik">Sağlık</a>
-            <a class="p-2 text-muted" href="/courses/muzik">Müzik</a>
-            <a class="p-2 text-muted" href="/courses/akademi">Akademi</a>
-            <a class="p-2 text-muted" href="/courses/finans">Finans</a>
-            <a class="p-2 text-muted" href="/courses/fotograf">Fotoğraf</a>
-            <a class="p-2 text-muted" href="/courses/isletme">İşletme</a>
-            <a class="p-2 text-muted" href="/courses/pazarlama">Pazarlama</a>
-            <a class="p-2 text-muted" href="/courses/kisisel-gelisim">Kişisel Gelişim</a>
-            <a class="p-2 text-muted" href="/courses/tasarim">Tasarım</a>
-            <a class="p-2 text-muted" href="/courses/bt">BT</a>
-            <a class="p-2 text-muted" href="/courses/yasam-tarzi">Yaşam Tarzı</a>
+            <a class="p-2 text-muted" href="/courses/yazilim">@Localizer["Software"]</a>
+            <a class="p-2 text-muted" href="/courses/saglik">@Localizer["Health"]</a>
+            <a class="p-2 text-muted" href="/courses/muzik">@Localizer["Music"]</a>
+            <a class="p-2 text-muted" href="/courses/akademi">@Localizer["Academy"]</a>
+            <a class="p-2 text-muted" href="/courses/finans">@Localizer["Finance"]</a>
+            <a class="p-2 text-muted" href="/courses/fotograf">@Localizer["Photograph"]</a>
+            <a class="p-2 text-muted" href="/courses/isletme">@Localizer["Management"]</a>
+            <a class="p-2 text-muted" href="/courses/pazarlama">@Localizer["Marketing"]</a>
+            <a class="p-2 text-muted" href="/courses/kisisel-gelisim">@Localizer["Self-Improvement"]</a>
+            <a class="p-2 text-muted" href="/courses/tasarim">@Localizer["Design"]</a>
+            <a class="p-2 text-muted" href="/courses/bt">@Localizer["IT"]</a>
+            <a class="p-2 text-muted" href="/courses/yasam-tarzi">@Localizer["Life Style"]</a>
         </nav>
     </div>
 
