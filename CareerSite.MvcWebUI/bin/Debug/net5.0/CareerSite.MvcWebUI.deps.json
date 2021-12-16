@@ -322,11 +322,8 @@
           "CareerSite.MvcWebUI.dll": {}
         },
         "resources": {
-          "en-US/CareerSite.MvcWebUI.resources.dll": {
-            "locale": "en-US"
-          },
-          "tr-TR/CareerSite.MvcWebUI.resources.dll": {
-            "locale": "tr-TR"
+          "en/CareerSite.MvcWebUI.resources.dll": {
+            "locale": "en"
           },
           "tr/CareerSite.MvcWebUI.resources.dll": {
             "locale": "tr"

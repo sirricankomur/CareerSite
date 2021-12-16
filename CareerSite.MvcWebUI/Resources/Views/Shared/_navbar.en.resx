@@ -120,41 +120,89 @@
   <data name="Academy" xml:space="preserve">
     <value>Academy</value>
   </data>
+  <data name="AcademyHref" xml:space="preserve">
+    <value>/en/courses/Academy</value>
+  </data>
+  <data name="CareerSiteLogo" xml:space="preserve">
+    <value>/en/home</value>
+  </data>
   <data name="Dashboard" xml:space="preserve">
     <value>Dashboard</value>
+  </data>
+  <data name="DashboardHref" xml:space="preserve">
+    <value>/en/dashboard</value>
   </data>
   <data name="Design" xml:space="preserve">
     <value>Design</value>
   </data>
+  <data name="DesignHref" xml:space="preserve">
+    <value>/en/courses/Design</value>
+  </data>
   <data name="Finance" xml:space="preserve">
     <value>Finance</value>
+  </data>
+  <data name="FinanceHref" xml:space="preserve">
+    <value>/en/courses/Finance</value>
+  </data>
+  <data name="GetStarted" xml:space="preserve">
+    <value />
   </data>
   <data name="Health" xml:space="preserve">
     <value>Health</value>
   </data>
+  <data name="HealthHref" xml:space="preserve">
+    <value>/en/courses/Health</value>
+  </data>
   <data name="IT" xml:space="preserve">
     <value>IT</value>
   </data>
-  <data name="Life Style" xml:space="preserve">
+  <data name="ITHref" xml:space="preserve">
+    <value>/en/courses/it</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>/en</value>
+  </data>
+  <data name="LifeStyle" xml:space="preserve">
     <value>Life Style</value>
+  </data>
+  <data name="LifeStyleHref" xml:space="preserve">
+    <value>/en/courses/Life-Style</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Log in</value>
   </data>
+  <data name="LogInHref" xml:space="preserve">
+    <value>/en/account/login</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Log out</value>
+  </data>
+  <data name="LogOutHref" xml:space="preserve">
+    <value>/en/account/logout</value>
   </data>
   <data name="Management" xml:space="preserve">
     <value>Management</value>
   </data>
+  <data name="ManagementHref" xml:space="preserve">
+    <value>/en/courses/management</value>
+  </data>
   <data name="Marketing" xml:space="preserve">
     <value>Marketing</value>
+  </data>
+  <data name="MarketingHref" xml:space="preserve">
+    <value>/en/courses/Marketing</value>
   </data>
   <data name="Music" xml:space="preserve">
     <value>Music</value>
   </data>
+  <data name="MusicHref" xml:space="preserve">
+    <value>/en/courses/Music</value>
+  </data>
   <data name="Photograph" xml:space="preserve">
     <value>Photograph</value>
+  </data>
+  <data name="PhotographHref" xml:space="preserve">
+    <value>/en/courses/Photograph</value>
   </data>
   <data name="Records" xml:space="preserve">
     <value>Records</value>
@@ -162,13 +210,22 @@
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="RegisterHref" xml:space="preserve">
+    <value>/en/account/register</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
   <data name="Self-Improvement" xml:space="preserve">
     <value>Self-Improvement</value>
   </data>
+  <data name="Self-ImprovementHref" xml:space="preserve">
+    <value>/en/courses/Self-Improvement</value>
+  </data>
   <data name="Software" xml:space="preserve">
     <value>Software</value>
+  </data>
+  <data name="SoftwareHref" xml:space="preserve">
+    <value>/en/courses/Software</value>
   </data>
 </root>

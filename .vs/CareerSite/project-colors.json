@@ -45,7 +45,22 @@
       "ProjectGuid": "7fa2b6b1-ea56-41d5-b82e-3bff7a7f93d7",
       "DisplayName": "CareerSite.MvcWebUI",
       "ColorIndex": 7
+    },
+    "19beb444-3f2b-4fc5-8f1e-41291e1a7267": {
+      "ProjectGuid": "19beb444-3f2b-4fc5-8f1e-41291e1a7267",
+      "DisplayName": "CareerSite.Entity",
+      "ColorIndex": 8
+    },
+    "5c90029e-a684-4181-86ff-d5c0c8e53718": {
+      "ProjectGuid": "5c90029e-a684-4181-86ff-d5c0c8e53718",
+      "DisplayName": "CareerSite.Core",
+      "ColorIndex": 9
+    },
+    "41159e23-80df-4eb7-9417-f93478e4cfa0": {
+      "ProjectGuid": "41159e23-80df-4eb7-9417-f93478e4cfa0",
+      "DisplayName": "CareerSite.Business",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 11
 }

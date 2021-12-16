@@ -4,7 +4,7 @@ using CareerSite.Core.Abstract;
 using CareerSite.Core.Concrete.EfCore;
 using CareerSite.MvcWebUI.EmailServices;
 using CareerSite.MvcWebUI.Identity;
-using CareerSite.MvcWebUI.Resources.Views;
+using CareerSite.MvcWebUI.Resources;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -165,13 +165,24 @@ namespace CareerSite.MvcWebUI
             {
                 endpoints.MapControllerRoute(
                   name: "allcourses",
-                  pattern: "courses",
+                  pattern: "encourses",
                   defaults: new { controller = "Home", action = "Index" }
               );
 
                 endpoints.MapControllerRoute(
+                  name: "tumkurslar",
+                  pattern: "kurslar",
+                  defaults: new { controller = "Home", action = "Index" }
+              );
+                endpoints.MapControllerRoute(
                   name: "home",
-                  pattern: "courses",
+                  pattern: "en/home",
+                  defaults: new { controller = "Home", action = "Index" }
+              );
+
+                endpoints.MapControllerRoute(
+                  name: "anasayfa",
+                  pattern: "tr/anasayfa",
                   defaults: new { controller = "Home", action = "Index" }
               );
 
@@ -180,7 +191,6 @@ namespace CareerSite.MvcWebUI
                   pattern: "records",
                   defaults: new { controller = "Cart", action = "GetRecords" }
               );
-
 
                 endpoints.MapControllerRoute(
                   name: "checkout",
@@ -196,13 +206,13 @@ namespace CareerSite.MvcWebUI
 
                 endpoints.MapControllerRoute(
                     name: "dashboard",
-                    pattern: "dashboard",
+                    pattern: "{culture?}/dashboard",
                     defaults: new { controller = "Admin", action = "Dashboard" }
                 );
 
                 endpoints.MapControllerRoute(
                    name: "adminuseredit",
-                   pattern: "admin/user/{id?}",
+                   pattern: "{culture?}/admin/user/{id?}",
                    defaults: new { controller = "Admin", action = "UserEdit" }
                );
 
@@ -214,16 +224,15 @@ namespace CareerSite.MvcWebUI
 
                 endpoints.MapControllerRoute(
                     name: "adminroles",
-                    pattern: "admin/role/list",
+                    pattern: "{culture?}/admin/role/list",
                     defaults: new { controller = "Admin", action = "RoleList" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "adminrolecreate",
-                    pattern: "admin/role/create",
+                    pattern: "{culture?}/admin/role/create",
                     defaults: new { controller = "Admin", action = "RoleCreate" }
                 );
-
 
                 endpoints.MapControllerRoute(
                     name: "adminroleedit",
@@ -233,58 +242,85 @@ namespace CareerSite.MvcWebUI
 
                 endpoints.MapControllerRoute(
                     name: "admincourses",
-                    pattern: "admin/courses",
+                    pattern: "{culture?}/admin/courses",
                     defaults: new { controller = "Admin", action = "CourseList" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincoursecreate",
-                    pattern: "admin/courses/create",
+                    pattern: "{culture?}/admin/courses/create",
                     defaults: new { controller = "Admin", action = "CourseCreate" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincourseedit",
-                    pattern: "admin/courses/{id?}",
+                    pattern: "{culture?}/admin/courses/{id?}",
                     defaults: new { controller = "Admin", action = "CourseEdit" }
                 );
 
                 endpoints.MapControllerRoute(
                    name: "admincategories",
-                   pattern: "admin/categories",
+                   pattern: "{culture?}/admin/categories",
                    defaults: new { controller = "Admin", action = "CategoryList" }
                );
 
                 endpoints.MapControllerRoute(
                     name: "admincategorycreate",
-                    pattern: "admin/categories/create",
+                    pattern: "{culture?}/admin/categories/create",
                     defaults: new { controller = "Admin", action = "CategoryCreate" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincategoryedit",
-                    pattern: "admin/categories/{id?}",
+                    pattern: "{culture?}/admin/categories/{id?}",
                     defaults: new { controller = "Admin", action = "CategoryEdit" }
                 );
 
 
+
+
+                endpoints.MapControllerRoute(
+                   name: "register",
+                   pattern: "account/register",
+                   defaults: new { controller = "Account", action = "Register" }
+               );
+
+
+
+
+
                 // localhost/search    
                 endpoints.MapControllerRoute(
-                    name: "search",
+                    name: "searchen",
                     pattern: "search",
-                    defaults: new { controller = "Shop", action = "search" }
+                    defaults: new { controller = "Shop", action = "searchtr" }
+                );
+                endpoints.MapControllerRoute(
+                    name: "searchen",
+                    pattern: "search",
+                    defaults: new { controller = "Shop", action = "searchen" }
                 );
 
                 endpoints.MapControllerRoute(
-                    name: "coursedetails",
+                    name: "coursedetailsen",
                     pattern: "{url}",
-                    defaults: new { controller = "Shop", action = "details" }
+                    defaults: new { controller = "Shop", action = "detailsEn" }
                 );
+                endpoints.MapControllerRoute(
+                   name: "coursedetailstr",
+                   pattern: "{url}",
+                   defaults: new { controller = "Shop", action = "detailsTr" }
+               );
 
                 endpoints.MapControllerRoute(
-                    name: "courses",
-                    pattern: "{culture?}/courses/{category?}",
-                    defaults: new { controller = "Shop", action = "list" }
+                    name: "coursesen",
+                    pattern: "en/courses/{category?}",
+                    defaults: new { controller = "Shop", action = "ListEn" }
+                );
+                endpoints.MapControllerRoute(
+                    name: "coursestr",
+                    pattern: "tr/kurslar/{category?}",
+                    defaults: new { controller = "Shop", action = "ListTr" }
                 );
 
                 endpoints.MapControllerRoute(
@@ -298,13 +334,13 @@ namespace CareerSite.MvcWebUI
                 //);
                 endpoints.MapControllerRoute(
                     name: "tr",
-                    pattern: "tr",
+                    pattern: "{culture}",
                     defaults: new { controller = "Home", action = "Index" }
                 );
 
                 endpoints.MapControllerRoute(
                    name: "default",
-                   pattern: "{culture?}/{controller=Home}/{action=Index}/{id?}"
+                   pattern: "{culture}/{controller=Home}/{action=Index}/{id?}"
                );
 
                 //endpoints.MapControllerRoute(

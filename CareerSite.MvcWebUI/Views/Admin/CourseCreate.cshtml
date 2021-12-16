@@ -8,24 +8,45 @@
         <form asp-controller="Admin" asp-action="CourseCreate" method="POST">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group row">
-            <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+            <label asp-for="NameTr" class="col-sm-2 col-form-label">Türkçe - Kurs Adı</label>
             <div class="col-sm-10">
-                <input class="form-control" asp-for="Name">
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <input class="form-control" asp-for="NameTr">
+                <span asp-validation-for="NameTr" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group row">
-            <label asp-for="Url" class="col-sm-2 col-form-label"></label>
+            <label asp-for="NameEn" class="col-sm-2 col-form-label">English - Course Name</label>
             <div class="col-sm-10">
-                <input class="form-control" asp-for="Url">
-                <span asp-validation-for="Url" class="text-danger"></span>
+                <input class="form-control" asp-for="NameEn">
+                <span asp-validation-for="NameEn" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group row">
-            <label  asp-for="Description" class="col-sm-2 col-form-label"></label>
+            <label asp-for="UrlTr" class="col-sm-2 col-form-label">Türkçe - Url Kısaltması</label>
             <div class="col-sm-10">
-                <textarea id="editor" class="form-control" asp-for="Description"></textarea>
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <input class="form-control" asp-for="UrlTr">
+                <span asp-validation-for="UrlTr" class="text-danger"></span>
+            </div>
+        </div>
+         <div class="form-group row">
+            <label asp-for="UrlEn" class="col-sm-2 col-form-label">English - Url Abbreviation</label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="UrlEn">
+                <span asp-validation-for="UrlEn" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label  asp-for="DescriptionTr" class="col-sm-2 col-form-label">Türkçe - Açıklama</label>
+            <div class="col-sm-10">
+                <textarea id="editor" class="form-control" asp-for="DescriptionTr"></textarea>
+                <span asp-validation-for="DescriptionTr" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label  asp-for="DescriptionEn" class="col-sm-2 col-form-label">English - Description</label>
+            <div class="col-sm-10">
+                <textarea id="editor" class="form-control" asp-for="DescriptionEn"></textarea>
+                <span asp-validation-for="DescriptionEn" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group row">

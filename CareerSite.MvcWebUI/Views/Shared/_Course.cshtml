@@ -1,46 +1,35 @@
 ﻿@model Course
-
-@*<div class="card mb-2">
-    <img class="card-img-top" src="~/img/@Model.ImageUrl" alt="">
-    <div class="card-body">
-    <h5 class="card-title">@Model.Name</h5>
-    <p class="text-monospace">
-    <i class="fas fa-lira-sign"></i>@Model.Price
-    </p>
-    </div>
-    <div class="card-footer text-center">
-    <a asp-controller="shop" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-primary btn-sm">Details</a>
-
-    @if (User.Identity.IsAuthenticated)
+@inject IViewLocalizer Localizer
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
     {
-    <form asp-controller="Cart" asp-action="AddToCart" method="POST" style="display: inline;">
-    <input type="hidden" name="courseId" value="@Model.CourseId">
-    <input type="hidden" name="quantity" value="1">
-    <button type="submit" class="btn btn-primary btn-sm">Add to Cart</button>
-    </form>
+        url = Context.Request.Path.ToString().Remove(4);
     }
-    </div>
-    </div>*@
+}
 
+@if(url == "/tr/" || url == "")
+     @*@if (@Localizer["CategoryName"].Value == "NameTr")*@
+{
     <div class="card mb-4">
         <div class="card-header">
-            <h3 class="my-0 font-weight-normal">@Model.Name</h3>
+            <h3 class="my-0 font-weight-normal">@Model.NameTr</h3>
         </div>
         <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title pricing-card-title"> <i class="fas fa-sm fa-lira-sign"></i>@Model.Price</h2>
 
-            <p class="card-text">@Model.Description</p>
+            <p class="card-text">@Model.DescriptionTr</p>
             <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
 
-                    <a asp-controller="shop" asp-action="Details" asp-route-url="@Model.Url" class="btn btn-sm btn-outline-secondary">İncele</a>
+                    <a asp-controller="shop" asp-action="DetailsTr" asp-route-url="/tr/@Model.UrlTr" class="btn btn-sm btn-outline-secondary">@Localizer["Review"]</a>
 
                     @if (User.Identity.IsAuthenticated)
                     {
                         if (User.IsInRole("admin"))
                         {
-                            <a class="btn btn-sm btn-outline-danger" href="/admin/courses/@Model.CourseId">Düzenle</a>
+                            <a class="btn btn-sm btn-outline-danger" href="/admin/courses/@Model.CourseId">@Localizer["Edit"]</a>
                         }
                     }
                 </div>
@@ -49,11 +38,50 @@
                 <form asp-controller="Cart" asp-action="AddToCart" method="POST" style="display: inline;">
                     <input type="hidden" name="courseId" value="@Model.CourseId">
                     <input type="hidden" name="quantity" value="1">
-                    <button type="submit" class="btn btn-lg btn-block btn-outline-primary">Kayıt ol</button>
+                    <button type="submit" class="btn btn-lg btn-block btn-outline-primary">@Localizer["GetStarted"]</button>
                 </form>
             </div>
         </div>
         <div class="card-footer">
-            <small class="text-muted">Son güncelleme: @Model.DateAdded</small>
+            <small class="text-muted">@Localizer["LastUpdated"] @Model.DateAdded</small>
         </div>
     </div>
+}
+else
+{
+    <div class="card mb-4">
+        <div class="card-header">
+            <h3 class="my-0 font-weight-normal">@Model.NameEn</h3>
+        </div>
+        <img src="~/img/@Model.ImageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="card-title pricing-card-title"> <i class="fas fa-sm fa-lira-sign"></i>@Model.Price</h2>
+
+            <p class="card-text">@Model.DescriptionEn</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+
+                    <a asp-controller="shop" asp-action="DetailsEn" asp-route-url="/en/@Model.UrlEn" class="btn btn-sm btn-outline-secondary">@Localizer["Review"]</a>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("admin"))
+                        {
+                            <a class="btn btn-sm btn-outline-danger" href="/admin/courses/@Model.CourseId">@Localizer["Edit"]</a>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="pt-3">
+                <form asp-controller="Cart" asp-action="AddToCart" method="POST" style="display: inline;">
+                    <input type="hidden" name="courseId" value="@Model.CourseId">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-lg btn-block btn-outline-primary">@Localizer["GetStarted"]</button>
+                </form>
+            </div>
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">@Localizer["LastUpdated"] @Model.DateAdded</small>
+        </div>
+    </div>
+}

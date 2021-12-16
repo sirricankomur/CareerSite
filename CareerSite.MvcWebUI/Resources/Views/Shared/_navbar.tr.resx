@@ -120,41 +120,86 @@
   <data name="Academy" xml:space="preserve">
     <value>Akademi</value>
   </data>
+  <data name="AcademyHref" xml:space="preserve">
+    <value>/tr/courses/akademi</value>
+  </data>
+  <data name="CareerSiteLogo" xml:space="preserve">
+    <value>/tr/anasayfa</value>
+  </data>
   <data name="Dashboard" xml:space="preserve">
     <value>Admin Paneli</value>
+  </data>
+  <data name="DashboardHref" xml:space="preserve">
+    <value>/tr/dashboard</value>
   </data>
   <data name="Design" xml:space="preserve">
     <value>Tasarım</value>
   </data>
+  <data name="DesignHref" xml:space="preserve">
+    <value>/tr/courses/tasarim</value>
+  </data>
   <data name="Finance" xml:space="preserve">
     <value>Finans</value>
+  </data>
+  <data name="FinanceHref" xml:space="preserve">
+    <value>/tr/courses/finans</value>
   </data>
   <data name="Health" xml:space="preserve">
     <value>Sağlık</value>
   </data>
+  <data name="HealthHref" xml:space="preserve">
+    <value>/tr/courses/saglik</value>
+  </data>
   <data name="IT" xml:space="preserve">
     <value>BT</value>
   </data>
-  <data name="Life Style" xml:space="preserve">
+  <data name="ITHref" xml:space="preserve">
+    <value>/tr/courses/bt</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>/tr</value>
+  </data>
+  <data name="LifeStyle" xml:space="preserve">
     <value>Yaşam Tarzı</value>
+  </data>
+  <data name="LifeStyleHref" xml:space="preserve">
+    <value>/tr/courses/yasam-tarzi</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Giriş</value>
   </data>
+  <data name="LogInHref" xml:space="preserve">
+    <value>/tr/account/login</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Çıkış</value>
+  </data>
+  <data name="LogOutHref" xml:space="preserve">
+    <value>/tr/account/logout</value>
   </data>
   <data name="Management" xml:space="preserve">
     <value>İşletme</value>
   </data>
+  <data name="ManagementHref" xml:space="preserve">
+    <value>/tr/courses/isletme</value>
+  </data>
   <data name="Marketing" xml:space="preserve">
     <value>Pazarlama</value>
+  </data>
+  <data name="MarketingHref" xml:space="preserve">
+    <value>/tr/courses/pazarlama</value>
   </data>
   <data name="Music" xml:space="preserve">
     <value>Müzik</value>
   </data>
+  <data name="MusicHref" xml:space="preserve">
+    <value>/tr/courses/muzik</value>
+  </data>
   <data name="Photograph" xml:space="preserve">
     <value>Fotoğraf</value>
+  </data>
+  <data name="PhotographHref" xml:space="preserve">
+    <value>/tr/courses/fotograf</value>
   </data>
   <data name="Records" xml:space="preserve">
     <value>Kayıtlar</value>
@@ -162,13 +207,22 @@
   <data name="Register" xml:space="preserve">
     <value>Kayıt Ol</value>
   </data>
+  <data name="RegisterHref" xml:space="preserve">
+    <value>/tr/account/register</value>
+  </data>
   <data name="Search" xml:space="preserve">
     <value>Ara</value>
   </data>
   <data name="Self-Improvement" xml:space="preserve">
     <value>Kişisel Gelişim</value>
   </data>
+  <data name="Self-ImprovementHref" xml:space="preserve">
+    <value>/tr/courses/kisisel-gelisim</value>
+  </data>
   <data name="Software" xml:space="preserve">
     <value>Yazılım</value>
+  </data>
+  <data name="SoftwareHref" xml:space="preserve">
+    <value>/tr/courses/yazilim</value>
   </data>
 </root>

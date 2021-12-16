@@ -120,7 +120,16 @@
   <data name="en" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="enHref" xml:space="preserve">
+    <value>/en/courses</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
   <data name="tr" xml:space="preserve">
     <value>Turkish</value>
+  </data>
+  <data name="trHref" xml:space="preserve">
+    <value>/tr/courses</value>
   </data>
 </root>

@@ -30,6 +30,7 @@ namespace CareerSite.MvcWebUI.Controllers
         public IActionResult Index()
         {
             var cart = _cartService.GetCartByUserId(_userManager.GetUserId(User));
+
             return View(new CartModel()
             {
                 CartId = cart.Id,
@@ -37,7 +38,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     CartItemId = i.Id,
                     CourseId = i.CourseId,
-                    Name = i.Course.Name,
+                    Name = i.Course.NameTr,
                     Price = (double)i.Course.Price,
                     ImageUrl = i.Course.ImageUrl,
                     Quantity = i.Quantity
@@ -75,7 +76,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     CartItemId = i.Id,
                     CourseId = i.CourseId,
-                    Name = i.Course.Name,
+                    Name = i.Course.NameTr,
                     Price = (double)i.Course.Price,
                     ImageUrl = i.Course.ImageUrl,
                     Quantity = i.Quantity
@@ -101,7 +102,7 @@ namespace CareerSite.MvcWebUI.Controllers
                     {
                         CartItemId = i.Id,
                         CourseId = i.CourseId,
-                        Name = i.Course.Name,
+                        Name = i.Course.NameTr,
                         Price = (double)i.Course.Price,
                         ImageUrl = i.Course.ImageUrl,
                         Quantity = i.Quantity
@@ -156,7 +157,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 recordModel.RecordItems = record.RecordItems.Select(i => new RecordItemModel()
                 {
                     RecordItemId = i.Id,
-                    Name = i.Course.Name,
+                    Name = i.Course.NameTr,
                     Price = (double)i.Price,
                     Quantity = i.Quantity,
                     ImageUrl = i.Course.ImageUrl

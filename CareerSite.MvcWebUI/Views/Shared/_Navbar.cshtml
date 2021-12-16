@@ -2,28 +2,69 @@
 @using Microsoft.AspNetCore.Localization
 @using Microsoft.Extensions.Options
 @inject IViewLocalizer Localizer
+@*@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length > 4)
+    {
+    if (Context.Request.Path.ToString().Remove(4) == "/tr/")
+    {
+    url = "/tr/anasayfa";
+    }
+    else if (Context.Request.Path.ToString().Remove(4) == "/en/")
+    {
+    url = "/en/home";
+    }
+    }
+    else
+    {
+    url = "/tr/anasayfa";
+    }
+
+
+    }*@
+    @{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
+
 
 <div class="container">
 
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-3 d-flex justify-content-start align-items-center">
-
-
                 @if (User.Identity.IsAuthenticated)
                 {
                     if (User.IsInRole("admin"))
                     {
-                        <div class="pr-3">
-                            <a class="btn btn-sm btn-outline-danger" href="/dashboard">@Localizer["Dashboard"]</a>
-                        </div>
+                        @if (url == "/tr/" || url == "")
+                        {
+                            <div class="pr-3">
+                                <a class="btn btn-sm btn-outline-danger" href="/tr/dashboard">Admin Paneli</a>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="pr-3">
+                                <a class="btn btn-sm btn-outline-danger" href="/en/dashboard">Dashboard</a>
+                            </div>
+                        }
                     }
                 }
                 <div>
                     <form action="/search">
                         <div class="input-group input-group-sm">
-
-                            <input name="q" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="@Localizer["Search"]">
+                            @if (url == "/tr/" || url == "")
+                            {
+                                <input name="q" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Ara">
+                            }
+                            else
+                            {
+                                <input name="q" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Search">
+                            }
                             <div class="input-group-append">
                                 <button class="btn btn-outline-dark" type="submit" id="button-addon2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -33,14 +74,18 @@
                             </div>
                         </div>
                     </form>
-
                 </div>
-
-
-
             </div>
             <div class="col-4 pt-3 text-center">
-                <a class="blog-header-logo text-dark" href="/">CareerSite</a>
+                @if (url == "/tr/" || url == "")
+                {
+                <a class="blog-header-logo text-dark" href="/tr/anasayfa">CareerSite</a>
+                }
+                else
+                {
+                <a class="blog-header-logo text-dark" href="/en/home">CareerSite</a>
+                }
+
             </div>
             <div class="col-4 pt-3 d-flex justify-content-end align-items-center">
 
@@ -60,19 +105,40 @@
                             @User.Identity.Name
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="/records">@Localizer["Records"]</a>
-                            <a class="dropdown-item text-danger" href="/account/logout">@Localizer["LogOut"]</a>
+                            @if (url == "/tr/" || url == "")
+                            {
+                                <a class="dropdown-item" href="/records">Kayıtlar</a>
+                                <a class="dropdown-item text-danger" href="/tr/account/logout">Çıkış</a>
+
+                            }
+                            else
+                            {
+                                <a class="dropdown-item" href="/records">Records</a>
+                                <a class="dropdown-item text-danger" href="/en/account/logout">Log out</a>
+                            }
                         </div>
                     </div>
                 }
                 else
                 {
-                    <div class="mr-2">
-                        <a class="btn btn-sm btn-outline-success" href="/account/login">@Localizer["LogIn"]</a>
-                    </div>
-                    <div>
-                        <a class="btn btn-sm btn-outline-primary" href="/account/register">@Localizer["Register"]</a>
-                    </div>
+                    @if (url == "/tr/" || url == "")
+                    {
+                        <div class="mr-2">
+                            <a class="btn btn-sm btn-outline-success" href="/tr/account/login">Giriş</a>
+                        </div>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" href="/tr/account/register">Kayıt Ol</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="mr-2">
+                            <a class="btn btn-sm btn-outline-success" href="/en/account/login">Log in</a>
+                        </div>
+                        <div>
+                            <a class="btn btn-sm btn-outline-primary" href="/en/account/register">Register</a>
+                        </div>
+                    }
                 }
             </div>
         </div>
@@ -80,26 +146,54 @@
 
     <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-            <a class="p-2 text-muted" href="/courses/yazilim">@Localizer["Software"]</a>
-            <a class="p-2 text-muted" href="/courses/saglik">@Localizer["Health"]</a>
-            <a class="p-2 text-muted" href="/courses/muzik">@Localizer["Music"]</a>
-            <a class="p-2 text-muted" href="/courses/akademi">@Localizer["Academy"]</a>
-            <a class="p-2 text-muted" href="/courses/finans">@Localizer["Finance"]</a>
-            <a class="p-2 text-muted" href="/courses/fotograf">@Localizer["Photograph"]</a>
-            <a class="p-2 text-muted" href="/courses/isletme">@Localizer["Management"]</a>
-            <a class="p-2 text-muted" href="/courses/pazarlama">@Localizer["Marketing"]</a>
-            <a class="p-2 text-muted" href="/courses/kisisel-gelisim">@Localizer["Self-Improvement"]</a>
-            <a class="p-2 text-muted" href="/courses/tasarim">@Localizer["Design"]</a>
-            <a class="p-2 text-muted" href="/courses/bt">@Localizer["IT"]</a>
-            <a class="p-2 text-muted" href="/courses/yasam-tarzi">@Localizer["Life Style"]</a>
+            @if (url == "/tr/" || url == "")
+            {
+                <a class="p-2 text-muted" href="/tr/kurslar/yazilim">Yazılım</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/saglik">Sağlık</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/muzik">Müzik</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/akademi">Akademi</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/finans">Finans</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/fotograf">Fotoğraf</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/isletme">Pazarlama</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/pazarlama">Pazarlama</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/kisisel-gelisim">Kişisel Gelişim</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/tasarim">Tasarım</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/bt">BT</a>
+                <a class="p-2 text-muted" href="/tr/kurslar/yasam-tarzi">Yaşam Tarzı</a>
+            }
+            else
+            {
+                <a class="p-2 text-muted" href="/en/courses/software">Software</a>
+                <a class="p-2 text-muted" href="/en/courses/health">Health</a>
+                <a class="p-2 text-muted" href="/en/courses/music">Music</a>
+                <a class="p-2 text-muted" href="/en/courses/academy">Academy</a>
+                <a class="p-2 text-muted" href="/en/courses/finance">Finance</a>
+                <a class="p-2 text-muted" href="/en/courses/photograph">Photograph</a>
+                <a class="p-2 text-muted" href="/en/courses/management">Management</a>
+                <a class="p-2 text-muted" href="/en/courses/marketing">Marketing</a>
+                <a class="p-2 text-muted" href="/en/courses/self-improvement">Self-Improvement</a>
+                <a class="p-2 text-muted" href="/en/courses/design">Design</a>
+                <a class="p-2 text-muted" href="/en/courses/it">IT</a>
+                <a class="p-2 text-muted" href="/en/courses/life-style">Life Style</a>
+
+            }
         </nav>
     </div>
-
-
 </div>
 
-
-
+@* <a class="p-2 text-muted" href="@Localizer["SoftwareHref"]">@Localizer["Software"]</a>
+    <a class="p-2 text-muted" href="@Localizer["HealthHref"]">@Localizer["Health"]</a>
+    <a class="p-2 text-muted" href="@Localizer["MusicHref"]">@Localizer["Music"]</a>
+    <a class="p-2 text-muted" href="@Localizer["AcademyHref"]">@Localizer["Academy"]</a>
+    <a class="p-2 text-muted" href="@Localizer["FinanceHref"]">@Localizer["Finance"]</a>
+    <a class="p-2 text-muted" href="@Localizer["PhotographHref"]">@Localizer["Photograph"]</a>
+    <a class="p-2 text-muted" href="@Localizer["ManagementHref"]">@Localizer["Management"]</a>
+    <a class="p-2 text-muted" href="@Localizer["MarketingHref"]">@Localizer["Marketing"]</a>
+    <a class="p-2 text-muted" href="@Localizer["Self-ImprovementHref"]">@Localizer["Self-Improvement"]</a>
+    <a class="p-2 text-muted" href="@Localizer["DesignHref"]">@Localizer["Design"]</a>
+    <a class="p-2 text-muted" href="@Localizer["ITHref"]">@Localizer["IT"]</a>
+    <a class="p-2 text-muted" href="@Localizer["LifeStyleHref"]">@Localizer["LifeStyle"]</a>
+*@
 @* <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
 

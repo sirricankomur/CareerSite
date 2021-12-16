@@ -1,0 +1,35 @@
+﻿@model CourseDetailModel
+
+<div class="row">
+    <div class="col-md-3">
+        <img src="~/img/@Model.Course.ImageUrl" class="img-fluid">
+    </div>
+    <div class="col-md-9">
+        <h1 class="mb-2">@Model.Course.NameEn</h1>
+
+        @foreach (var item in Model.Categories)
+        {
+            <a asp-controller="shop" asp-action="listEn" asp-route-category="@item.UrlEn" class="btn btn-sm btn-link btn-outline-dark text-dark mb-2">@item.NameEn</a>
+        }
+        <hr>
+        <h2>Course Description</h2>
+        <p style="font-size:larger" class="py-3">@Html.Raw(Model.Course.DescriptionEn)</p>
+
+
+        <h3 class="text-dark mb-3">
+            <i class="fas fa-lira-sign"></i>@Model.Course.Price
+        </h3>
+
+
+        <form asp-controller="Cart" asp-action="AddToCart" method="POST" class="form-inline">
+            <input type="hidden" name="courseId" value="@Model.Course.CourseId">
+
+            <button type="submit" class="btn btn-lg btn-success">
+                Add to Cart
+            </button>
+
+
+        </form>
+
+    </div>
+</div>

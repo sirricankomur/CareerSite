@@ -124,6 +124,7 @@ namespace CareerSite.MvcWebUI.Controllers
             };
             return View(model);
         }
+
         [HttpPost]
         public async Task<IActionResult> RoleEdit(RoleEditModel model)
         {
@@ -222,10 +223,13 @@ namespace CareerSite.MvcWebUI.Controllers
             {
                 var entity = new Course()
                 {
-                    Name = model.Name,
-                    Url = model.Url,
+                    NameTr = model.NameTr,
+                    NameEn = model.NameEn,
+                    UrlTr = model.UrlTr,
+                    UrlEn = model.UrlEn,
                     Price = model.Price,
-                    Description = model.Description,
+                    DescriptionTr = model.DescriptionTr,
+                    DescriptionEn = model.DescriptionEn,
                     ImageUrl = model.ImageUrl
                 };
 
@@ -262,8 +266,10 @@ namespace CareerSite.MvcWebUI.Controllers
             {
                 var entity = new Category()
                 {
-                    Name = model.Name,
-                    Url = model.Url
+                    NameTr = model.NameTr,
+                    NameEn = model.NameEn,
+                    UrlTr = model.UrlTr,
+                    UrlEn = model.UrlEn
                 };
 
                 _categoryService.Create(entity);
@@ -271,7 +277,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 TempData.Put("message", new AlertMessage()
                 {
                     Title = "kayıt eklendi.",
-                    Message = $"{entity.Name} isimli category eklendi.",
+                    Message = $"{entity.NameTr} isimli category eklendi.",
                     AlertType = "success"
                 });
 
@@ -296,11 +302,14 @@ namespace CareerSite.MvcWebUI.Controllers
             var model = new CourseModel()
             {
                 CourseId = entity.CourseId,
-                Name = entity.Name,
-                Url = entity.Url,
+                NameTr = entity.NameTr,
+                NameEn = entity.NameEn,
+                UrlTr = entity.UrlTr,
+                UrlEn = entity.UrlEn,
                 Price = entity.Price,
                 ImageUrl = entity.ImageUrl,
-                Description = entity.Description,
+                DescriptionTr = entity.DescriptionTr,
+                DescriptionEn = entity.DescriptionEn,
                 IsApproved = entity.IsApproved,
                 IsHome = entity.IsHome,
                 SelectedCategories = entity.CourseCategories.Select(i => i.Category).ToList()
@@ -321,10 +330,13 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     return NotFound();
                 }
-                entity.Name = model.Name;
+                entity.NameTr = model.NameTr;
+                entity.NameEn = model.NameEn;
                 entity.Price = model.Price;
-                entity.Url = model.Url;
-                entity.Description = model.Description;
+                entity.UrlTr = model.UrlTr;
+                entity.UrlEn = model.UrlEn;
+                entity.DescriptionTr = model.DescriptionTr;
+                entity.DescriptionEn = model.DescriptionEn;
                 entity.IsHome = model.IsHome;
                 entity.IsApproved = model.IsApproved;
 
@@ -378,8 +390,10 @@ namespace CareerSite.MvcWebUI.Controllers
             var model = new CategoryModel()
             {
                 CategoryId = entity.CategoryId,
-                Name = entity.Name,
-                Url = entity.Url,
+                NameTr = entity.NameTr,
+                NameEn = entity.NameEn,
+                UrlTr = entity.UrlTr,
+                UrlEn = entity.UrlEn,
                 Courses = entity.CourseCategories.Select(p => p.Course).ToList()
             };
             return View(model);
@@ -395,14 +409,16 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     return NotFound();
                 }
-                entity.Name = model.Name;
-                entity.Url = model.Url;
+                entity.NameTr = model.NameTr;
+                entity.NameEn = model.NameEn;
+                entity.UrlTr = model.UrlTr;
+                entity.UrlEn = model.UrlEn;
 
                 _categoryService.Update(entity);
 
                 var msg = new AlertMessage()
                 {
-                    Message = $"{entity.Name} isimli category güncellendi.",
+                    Message = $"{entity.NameTr} isimli category güncellendi.",
                     AlertType = "success"
                 };
 
@@ -423,8 +439,11 @@ namespace CareerSite.MvcWebUI.Controllers
 
             var msg = new AlertMessage()
             {
-                Message = $"{entity.Name} isimli ürün silindi.",
+
+                Message = $"{entity.NameTr} isimli ürün silindi.",
                 AlertType = "danger"
+
+
             };
 
             TempData["message"] = JsonConvert.SerializeObject(msg);
@@ -442,7 +461,7 @@ namespace CareerSite.MvcWebUI.Controllers
 
             var msg = new AlertMessage()
             {
-                Message = $"{entity.Name} isimli category silindi.",
+                Message = $"{entity.NameTr} isimli category silindi.",
                 AlertType = "danger"
             };
 

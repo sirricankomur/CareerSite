@@ -66,12 +66,20 @@ namespace CareerSite.Core.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameEn")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("NameTr")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("UrlEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlTr")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryId");
@@ -82,74 +90,98 @@ namespace CareerSite.Core.Migrations
                         new
                         {
                             CategoryId = 1,
-                            Name = "Yazılım",
-                            Url = "yazilim"
+                            NameEn = "Software",
+                            NameTr = "Yazılım",
+                            UrlEn = "Software",
+                            UrlTr = "yazilim"
                         },
                         new
                         {
                             CategoryId = 2,
-                            Name = "Sağlık",
-                            Url = "saglik"
+                            NameEn = "Health",
+                            NameTr = "Sağlık",
+                            UrlEn = "Health",
+                            UrlTr = "saglik"
                         },
                         new
                         {
                             CategoryId = 3,
-                            Name = "Müzik",
-                            Url = "muzik"
+                            NameEn = "Music",
+                            NameTr = "Müzik",
+                            UrlEn = "Music",
+                            UrlTr = "muzik"
                         },
                         new
                         {
                             CategoryId = 4,
-                            Name = "Akademi",
-                            Url = "akademi"
+                            NameEn = "Academy",
+                            NameTr = "Akademi",
+                            UrlEn = "Academy",
+                            UrlTr = "akademi"
                         },
                         new
                         {
                             CategoryId = 5,
-                            Name = "Finans",
-                            Url = "finans"
+                            NameEn = "Finance",
+                            NameTr = "Finans",
+                            UrlEn = "Finance",
+                            UrlTr = "finans"
                         },
                         new
                         {
                             CategoryId = 6,
-                            Name = "Fotoğraf",
-                            Url = "fotograf"
+                            NameEn = "Photograph",
+                            NameTr = "Fotoğraf",
+                            UrlEn = "Photograph",
+                            UrlTr = "fotograf"
                         },
                         new
                         {
                             CategoryId = 7,
-                            Name = "İşletme",
-                            Url = "isletme"
+                            NameEn = "Management",
+                            NameTr = "İşletme",
+                            UrlEn = "Management",
+                            UrlTr = "isletme"
                         },
                         new
                         {
                             CategoryId = 8,
-                            Name = "Pazarlama",
-                            Url = "pazarlama"
+                            NameEn = "Marketing",
+                            NameTr = "Pazarlama",
+                            UrlEn = "Marketing",
+                            UrlTr = "pazarlama"
                         },
                         new
                         {
                             CategoryId = 9,
-                            Name = "Kişisel Gelişim",
-                            Url = "kisisel-gelisim"
+                            NameEn = "Self-Improvement",
+                            NameTr = "Kişisel Gelişim",
+                            UrlEn = "self-improvement",
+                            UrlTr = "kisisel-gelisim"
                         },
                         new
                         {
                             CategoryId = 10,
-                            Name = "Tasarım",
-                            Url = "tasarim"
+                            NameEn = "Design",
+                            NameTr = "Tasarım",
+                            UrlEn = "Design",
+                            UrlTr = "tasarim"
                         },
                         new
                         {
                             CategoryId = 11,
-                            Name = "BT",
-                            Url = "bt"
+                            NameEn = "IT",
+                            NameTr = "BT",
+                            UrlEn = "it",
+                            UrlTr = "bt"
                         },
                         new
                         {
                             CategoryId = 12,
-                            Name = "Yaşam Tarzı",
-                            Url = "yasam-tarzi"
+                            NameEn = "Life Style",
+                            NameTr = "Yaşam Tarzı",
+                            UrlEn = "Life-Style",
+                            UrlTr = "yasam-tarzi"
                         });
                 });
 
@@ -165,7 +197,10 @@ namespace CareerSite.Core.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("getdate()");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DescriptionEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DescriptionTr")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
@@ -177,7 +212,12 @@ namespace CareerSite.Core.Migrations
                     b.Property<bool>("IsHome")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameEn")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("NameTr")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -185,7 +225,10 @@ namespace CareerSite.Core.Migrations
                     b.Property<double?>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("UrlEn")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlTr")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CourseId");
@@ -197,169 +240,211 @@ namespace CareerSite.Core.Migrations
                         {
                             CourseId = 1,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "İlk izlenimde beden dili en önemlisidir.",
-                            ImageUrl = "1.jpg",
+                            DescriptionEn = "Body language is the most important at first impression.",
+                            DescriptionTr = "İlk izlenimde beden dili en önemlisidir.",
+                            ImageUrl = "beden-dili.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Beden Dili",
+                            NameEn = "Body Language",
+                            NameTr = "Beden Dili",
                             Price = 50.0,
-                            Url = "beden-dili"
+                            UrlEn = "body-language",
+                            UrlTr = "beden-dili"
                         },
                         new
                         {
                             CourseId = 2,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Kendinizi iyi ifade etmenin yolları.",
-                            ImageUrl = "2.jpg",
+                            DescriptionEn = "",
+                            DescriptionTr = "Kendinizi iyi ifade etmenin yolları.",
+                            ImageUrl = "etkili-iletisim.jpg",
                             IsApproved = false,
                             IsHome = false,
-                            Name = "Etkili İletişim",
+                            NameEn = "Effective communication",
+                            NameTr = "Etkili İletişim",
                             Price = 50.0,
-                            Url = "etkili-iletisim"
+                            UrlEn = "effective-communication",
+                            UrlTr = "etkili-iletisim"
                         },
                         new
                         {
                             CourseId = 3,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Sıfırdan uzmanlığa C++ eğitimi",
-                            ImageUrl = "3.jpg",
+                            DescriptionEn = "C++ training from scratch to pro",
+                            DescriptionTr = "Sıfırdan uzmanlığa C++ eğitimi",
+                            ImageUrl = "cpp.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "C++",
+                            NameEn = "C++",
+                            NameTr = "C++",
                             Price = 100.0,
-                            Url = "c++"
+                            UrlEn = "cpp",
+                            UrlTr = "cpp"
                         },
                         new
                         {
                             CourseId = 4,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Sıfırdan uzmanlığa Java eğitimi",
-                            ImageUrl = "4.jpg",
+                            DescriptionEn = "Java training from scratch to pro",
+                            DescriptionTr = "Sıfırdan uzmanlığa Java eğitimi",
+                            ImageUrl = "java.jpg",
                             IsApproved = false,
                             IsHome = false,
-                            Name = "Java",
+                            NameEn = "Java",
+                            NameTr = "Java",
                             Price = 200.0,
-                            Url = "java"
+                            UrlEn = "java",
+                            UrlTr = "java"
                         },
                         new
                         {
                             CourseId = 5,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Sıfırdan uzmanlığa ASP.Net Core eğitimi",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Asp.Net Core training from scratch to pro",
+                            DescriptionTr = "Sıfırdan uzmanlığa ASP.Net Core eğitimi",
+                            ImageUrl = "aspnet-core.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "ASP.Net Core",
+                            NameEn = "ASP.Net Core",
+                            NameTr = "ASP.Net Core",
                             Price = 200.0,
-                            Url = "aspnet-core"
+                            UrlEn = "aspnet-core",
+                            UrlTr = ""
                         },
                         new
                         {
                             CourseId = 6,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Dilinizi doğru kullanıyor musunuz?",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Are you using your language correctly?",
+                            DescriptionTr = "Dilinizi doğru kullanıyor musunuz?",
+                            ImageUrl = "diksiyon.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Diksiyon",
+                            NameEn = "Diction",
+                            NameTr = "Diksiyon",
                             Price = 200.0,
-                            Url = "diksiyon"
+                            UrlEn = "diction",
+                            UrlTr = "diksiyon"
                         },
                         new
                         {
                             CourseId = 7,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Sıfırdan uzmanlığa Python eğitimi",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Python training from scratch to pro",
+                            DescriptionTr = "Sıfırdan uzmanlığa Python eğitimi",
+                            ImageUrl = "python.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Python",
+                            NameEn = "Python",
+                            NameTr = "Python",
                             Price = 150.0,
-                            Url = "python"
+                            UrlEn = "python",
+                            UrlTr = "python"
                         },
                         new
                         {
                             CourseId = 8,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Hayata doğru adım atmanın yolları.",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Ways to take a step towards life.",
+                            DescriptionTr = "Hayata doğru adım atmanın yolları.",
+                            ImageUrl = "kariyer-planlama.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Kariyer Planlama",
+                            NameEn = "Career Planning",
+                            NameTr = "Kariyer Planlama",
                             Price = 20.0,
-                            Url = "kariyer-planlama"
+                            UrlEn = "Career-planning",
+                            UrlTr = "kariyer-planlama"
                         },
                         new
                         {
                             CourseId = 9,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Doğru beslenerek daha dinç hissedin.",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Feel more vigorous by eating right.",
+                            DescriptionTr = "Doğru beslenerek daha dinç hissedin.",
+                            ImageUrl = "dogru-beslenme.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Doğru Beslenme",
+                            NameEn = "Proper Nutrition",
+                            NameTr = "Doğru Beslenme",
                             Price = 30.0,
-                            Url = "dogru-beslenme"
+                            UrlEn = "proper-nutrition",
+                            UrlTr = "dogru-beslenme"
                         },
                         new
                         {
                             CourseId = 10,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Sesinizi doğru kullanıyor musunuz?",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Are you using your voice correctly?",
+                            DescriptionTr = "Sesinizi doğru kullanıyor musunuz?",
+                            ImageUrl = "san.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Şan",
+                            NameEn = "Singing",
+                            NameTr = "Şan",
                             Price = 500.0,
-                            Url = "san"
+                            UrlEn = "singing",
+                            UrlTr = "san"
                         },
                         new
                         {
                             CourseId = 11,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Neyin manevi sedasına dalın.",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Dive into the spiritual sound of Ney.",
+                            DescriptionTr = "Neyin manevi sedasına dalın.",
+                            ImageUrl = "ney.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Ney",
+                            NameEn = "Ney",
+                            NameTr = "Ney",
                             Price = 200.0,
-                            Url = "ney"
+                            UrlEn = "ney",
+                            UrlTr = "ney"
                         },
                         new
                         {
                             CourseId = 12,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Stresinizle baş etmenin yolları",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "",
+                            DescriptionTr = "Stresinizle baş etmenin yolları",
+                            ImageUrl = "stresle-basa-cikma.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Stresle Başa Çıkma",
+                            NameEn = "Coping with Stress",
+                            NameTr = "Stresle Başa Çıkma",
                             Price = 50.0,
-                            Url = "stresle-basa-cikma"
+                            UrlEn = "Coping-with-Stress",
+                            UrlTr = "stresle-basa-cikma"
                         },
                         new
                         {
                             CourseId = 13,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Piyano başlangıç kursu",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Piano beginner course",
+                            DescriptionTr = "Piyano başlangıç kursu",
+                            ImageUrl = "piyano.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Piyano",
+                            NameEn = "Piano",
+                            NameTr = "Piyano",
                             Price = 100.0,
-                            Url = "piyano"
+                            UrlEn = "piano",
+                            UrlTr = "piyano"
                         },
                         new
                         {
                             CourseId = 14,
                             DateAdded = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Description = "Piyano başlangıç kursu",
-                            ImageUrl = "5.jpg",
+                            DescriptionEn = "Yoga beginner course",
+                            DescriptionTr = "Yoga başlangıç kursu",
+                            ImageUrl = "yoga.jpg",
                             IsApproved = true,
                             IsHome = false,
-                            Name = "Yoga",
+                            NameEn = "Yoga",
+                            NameTr = "Yoga",
                             Price = 500.0,
-                            Url = "yoga"
+                            UrlEn = "yoga",
+                            UrlTr = "yoga"
                         });
                 });
 

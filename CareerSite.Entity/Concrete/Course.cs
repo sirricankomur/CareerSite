@@ -9,10 +9,14 @@ namespace CareerSite.Entity.Concrete
     public class Course
     {
         public int CourseId { get; set; }
-        public string Name { get; set; }
-        public string Url { get; set; }
+        public string NameTr { get; set; }
+        public string NameEn { get; set; }
+        public string UrlTr { get; set; }
+        public string UrlEn { get; set; }
+
         public double? Price { get; set; }
-        public string Description { get; set; }
+        public string DescriptionTr { get; set; }
+        public string DescriptionEn { get; set; }
         public string ImageUrl { get; set; }
         public bool IsApproved { get; set; }
         public bool IsHome { get; set; }

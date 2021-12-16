@@ -49,9 +49,13 @@ namespace CareerSite.Business.Concrete
             return _unitofwork.Courses.GetByIdWithCategories(id);
         }
 
-        public int GetCountByCategory(string category)
+        public int GetCountByCategoryTr(string category)
         {
-            return _unitofwork.Courses.GetCountByCategory(category);
+            return _unitofwork.Courses.GetCountByCategoryTr(category);
+        }
+        public int GetCountByCategoryEn(string category)
+        {
+            return _unitofwork.Courses.GetCountByCategoryEn(category);
         }
 
         public List<Course> GetHomePageCourses()
@@ -59,14 +63,23 @@ namespace CareerSite.Business.Concrete
             return _unitofwork.Courses.GetHomePageCourses();
         }
 
-        public Course GetCourseDetails(string url)
+
+        public Course GetCourseDetailsTr(string url)
         {
-            return _unitofwork.Courses.GetCourseDetails(url);
+            return _unitofwork.Courses.GetCourseDetailsTr(url);
+        }
+        public Course GetCourseDetailsEn(string url)
+        {
+            return _unitofwork.Courses.GetCourseDetailsEn(url);
         }
 
-        public List<Course> GetCoursesByCategory(string name, int page, int pageSize)
+        public List<Course> GetCoursesByCategoryTr(string name, int page, int pageSize)
         {
-            return _unitofwork.Courses.GetCoursesByCategory(name, page, pageSize);
+            return _unitofwork.Courses.GetCoursesByCategoryTr(name, page, pageSize);
+        }
+        public List<Course> GetCoursesByCategoryEn(string name, int page, int pageSize)
+        {
+            return _unitofwork.Courses.GetCoursesByCategoryEn(name, page, pageSize);
         }
 
         //public List<Course> GetNavbarByCategory(string name)
@@ -74,10 +87,15 @@ namespace CareerSite.Business.Concrete
         //    return _unitofwork.Courses.GetNavbarByCategory(name);
         //}
 
-        public List<Course> GetSearchResult(string searchString)
+        public List<Course> GetSearchResultTr(string searchString)
         {
-            return _unitofwork.Courses.GetSearchResult(searchString);
+            return _unitofwork.Courses.GetSearchResultTr(searchString);
         }
+        public List<Course> GetSearchResultEn(string searchString)
+        {
+            return _unitofwork.Courses.GetSearchResultEn(searchString);
+        }
+
 
         public void Update(Course entity)
         {
@@ -107,7 +125,7 @@ namespace CareerSite.Business.Concrete
         {
             var isValid = true;
 
-            if (string.IsNullOrEmpty(entity.Name))
+            if (string.IsNullOrEmpty(entity.NameTr) || string.IsNullOrEmpty(entity.NameEn))
             {
                 ErrorMessage += "ürün ismi girmelisiniz.\n";
                 isValid = false;

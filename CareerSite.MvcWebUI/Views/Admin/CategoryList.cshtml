@@ -1,10 +1,19 @@
 ﻿@model CategoryListViewModel
+@inject IViewLocalizer Localizer
+
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
 
 <div class="row">
     <div class="col-md-12">
-        <h1 class="h3">Admin Categories</h1>
+        <h1 class="h3">@Localizer["Categories"]</h1>
         <hr>
-        <a class="btn btn-primary btn-sm" href="/admin/categories/create">Add Category</a>
+        <a class="btn btn-primary btn-sm" href="@Localizer["AddCategoryHref"]">@Localizer["AddCategory"]</a>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
@@ -20,13 +29,20 @@
                     {
                         <tr>
                             <td>@item.CategoryId</td>
-                            <td>@item.Name</td>
+                            @if (url == "/tr/" || url == "")
+                            {
+                                <td>@item.NameTr</td>
+                            }
+                            else
+                            {
+                                <td>@item.NameEn</td>
+                            }
                             <td>
-                                <a href="/admin/categories/@item.CategoryId" class="btn btn-primary btn-sm mr-2">Edit</a>
+                                <a href="@Localizer["EditHref"]/@item.CategoryId" class="btn btn-primary btn-sm mr-2">@Localizer["Edit"]</a>
 
-                                <form action="/admin/deletecategory" method="POST" style="display: inline;">
+                                <form action="@Localizer["DeleteHref"]" method="POST" style="display: inline;">
                                     <input type="hidden" name="categoryId" value="@item.CategoryId">
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm">@Localizer["Delete"]</button>
                                 </form>
                             </td>
                         </tr>
@@ -35,7 +51,7 @@
                 else
                 {
                     <div class="alert alert-warning">
-                        <h3>No Categories</h3>
+                        <h3>@Localizer["NoCategories"]</h3>
                     </div>
                 }
 

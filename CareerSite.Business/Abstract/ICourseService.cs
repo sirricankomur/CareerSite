@@ -11,13 +11,17 @@ namespace CareerSite.Business.Abstract
     {
         Course GetById(int id);
         Course GetByIdWithCategories(int id);
-        Course GetCourseDetails(string url);
-        List<Course> GetCoursesByCategory(string name, int page, int pageSize);
+        Course GetCourseDetailsTr(string url);
+        Course GetCourseDetailsEn(string url);
+        List<Course> GetCoursesByCategoryTr(string name, int page, int pageSize);
+        List<Course> GetCoursesByCategoryEn(string name, int page, int pageSize);
         //List<Course> GetNavbarByCategory(string name);
-        int GetCountByCategory(string category);
+        int GetCountByCategoryTr(string category);
+        int GetCountByCategoryEn(string category);
 
         List<Course> GetHomePageCourses();
-        List<Course> GetSearchResult(string searchString);
+        List<Course> GetSearchResultTr(string searchString);
+        List<Course> GetSearchResultEn(string searchString);
         List<Course> GetAll();
         bool Create(Course entity);
         void Update(Course entity);

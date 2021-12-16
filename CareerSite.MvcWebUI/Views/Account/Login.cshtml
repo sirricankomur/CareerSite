@@ -1,30 +1,32 @@
 ﻿@model LoginModel
+@inject IViewLocalizer Localizer
+
 
 <div class="row">
     <div class="col-md-8 mx-auto">
         <br />
-        <h1 class="h3">Giriş</h1>
-        <p>Giriş yaparak eğitimlere kayıt olabilirsin.</p>
+        <h1 class="h3">@Localizer["LogInTitle"]</h1>
+        <p>@Localizer["LogInSubTitle"]</p>
         <hr>
         <form asp-controller="Account" asp-action="Login" method="POST">
             <div class="form-group">
-                <label asp-for="Email">Email address</label>
+                <label asp-for="Email">@Localizer["Email"]</label>
                 <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small><span asp-validation-for="Email" class="text-danger text-muted"></span></small>
             </div>
             <div class="form-group">
-                <label asp-for="Password">Password</label>
+                <label asp-for="Password">@Localizer["Password"]</label>
                 <input asp-for="Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 <small><span asp-validation-for="Password" class="text-danger text-muted"></span></small>
             </div>
             <div class="form-group form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Beni hatırla!</label>
+                <label class="form-check-label" for="exampleCheck1">@Localizer["RememberMe"]</label>
             </div>
             <div class="form-group">
                 <div>
-                    <button type="submit" class="btn btn-primary">Giriş</button>
-                    <a href="/account/forgotpassword" class="btn btn-link">Şifremi Unuttum</a>
+                    <button type="submit" class="btn btn-primary">@Localizer["LogInTitle"]</button>
+                    <a href="@Localizer["ForgotPasswordHref"]" class="btn btn-link">@Localizer["Forget"]</a>
                 </div>
             </div>
         </form>

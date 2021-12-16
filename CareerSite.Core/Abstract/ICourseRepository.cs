@@ -9,14 +9,20 @@ namespace CareerSite.Core.Abstract
 {
     public interface ICourseRepository : IRepository<Course>
     {
-        Course GetCourseDetails(string url);
+        Course GetCourseDetailsTr(string url);
+        Course GetCourseDetailsEn(string url);
         Course GetByIdWithCategories(int id);
-        List<Course> GetCoursesByCategory(string name, int page, int pageSize);
+        List<Course> GetCoursesByCategoryTr(string name, int page, int pageSize);
+        List<Course> GetCoursesByCategoryEn(string name, int page, int pageSize);
+
         //List<Course> GetNavbarByCategory(string name);
 
-        List<Course> GetSearchResult(string searchString);
+        List<Course> GetSearchResultTr(string searchString);
+        List<Course> GetSearchResultEn(string searchString);
         List<Course> GetHomePageCourses();
-        int GetCountByCategory(string category);
+        int GetCountByCategoryTr(string category);
+        int GetCountByCategoryEn(string category);
+
         void Update(Course entity, int[] categoryIds);
     }
 }
