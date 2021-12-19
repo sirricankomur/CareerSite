@@ -124,7 +124,13 @@
     <value>/tr/courses/akademi</value>
   </data>
   <data name="CareerSiteLogo" xml:space="preserve">
-    <value>/tr/anasayfa</value>
+    <value>/tr/home/index</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Sepet</value>
+  </data>
+  <data name="CartHref" xml:space="preserve">
+    <value>/tr/cart</value>
   </data>
   <data name="Dashboard" xml:space="preserve">
     <value>Admin Paneli</value>
@@ -204,6 +210,9 @@
   <data name="Records" xml:space="preserve">
     <value>Kayıtlar</value>
   </data>
+  <data name="RecordsHref" xml:space="preserve">
+    <value>/tr/records</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Kayıt Ol</value>
   </data>
@@ -212,6 +221,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Ara</value>
+  </data>
+  <data name="SearchHref" xml:space="preserve">
+    <value>/tr/search</value>
   </data>
   <data name="Self-Improvement" xml:space="preserve">
     <value>Kişisel Gelişim</value>

@@ -1,48 +1,62 @@
 ﻿@model List<RecordListModel>
+@inject IViewLocalizer Localizer
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
 
-<h1 class="text-center">Kayıtlarım</h1>
+<h1 class="text-center">@Localizer["MyRecords"]</h1>
 <hr>
+
 @foreach (var record in Model)
 {
     <table class="table">
         <thead class="bg-dark text-light text-center">
             <tr>
-                <th colspan="5">Kişi Bilgileri</th>
+                <th colspan="5">@Localizer["PersonInfo"]</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td><span class="font-weight-bold">Kayıt Numarası: </span>#@record.RecordNumber</td>
-                <td><span class="font-weight-bold">Adı: </span>@record.FirstName</td>
-                <td><span class="font-weight-bold">Soyadı: </span>@record.LastName</td>
-                <td><span class="font-weight-bold">E-posta: </span>@record.Email</td>
-                <td><span class="font-weight-bold">Telefon: </span>@record.Phone</td>
+                <td><span class="font-weight-bold">@Localizer["RecordNo"]: </span>#@record.RecordNumber</td>
+                <td><span class="font-weight-bold">@Localizer["FirstName"]: </span>@record.FirstName</td>
+                <td><span class="font-weight-bold">@Localizer["LastName"]: </span>@record.LastName</td>
+                <td><span class="font-weight-bold">@Localizer["Email"]: </span>@record.Email</td>
+                <td><span class="font-weight-bold">@Localizer["Phone"]: </span>@record.Phone</td>
             </tr>
         </tbody>
     </table>
     <table class="table mb-6">
         <thead class="bg-dark text-light text-center">
             <tr>
-                <th>Kurslar <span class="badge badge-primary badge-pill">@record.RecordItems.Count</span></th>
-                <th>Kayıt Durumu</th>
+                <th>@Localizer["Courses"] <span class="badge badge-primary badge-pill">@record.RecordItems.Count</span></th>
+                <th>@Localizer["RecordState"]</th>
 
-                <th>Fiyat</th>
+                <th>@Localizer["Price"]</th>
             </tr>
         </thead>
         <tbody class="text-center">
             @foreach (var recordItem in record.RecordItems)
             {
                 <tr>
-                    <th>
-                        @recordItem.Name
-                    </th>
-                    @if (@record.RecordState.ToString() == "completed")
+                    @if (url == "/tr/" || url == "")
                     {
-                        <td class="text-success">Başarılı</td>
+                        <th>@recordItem.NameTr</th>
                     }
                     else
                     {
-                        <td class="text-danger">Başarısız</td>
+                        <th>@recordItem.NameEn</th>
+                    }
+                    @if (@record.RecordState.ToString() == "completed")
+                    {
+                        <td class="text-success">@Localizer["Success"]</td>
+                    }
+                    else
+                    {
+                        <td class="text-danger">@Localizer["UnSuccess"]</td>
                     }
                     <td>@recordItem.Price.ToString("c")</td>
 
@@ -53,16 +67,12 @@
 
         <tfoot class="text-center bg-dark text-light">
             <tr>
-                <th>Ödeme Tipi</th>
+                <th>@Localizer["PaymentType"]</th>
                 <td>@record.PaymentType</td>
-                <td class="bg-success"><span class="font-weight-bold">Toplam: </span>@record.TotalPrice().ToString("c")</td>
-                @*<td class="bg-success font-weight-bold text-light" style="font-size:x-large">
-                    Toplam:
-                    <h2 class="card-title pricing-card-title display"> @record.TotalPrice().ToString("c")</h2>
-                    </td>*@
+                <td class="bg-success"><span class="font-weight-bold">@Localizer["Total"]: </span>@record.TotalPrice().ToString("c")</td>
             </tr>
         </tfoot>
     </table>
 
-    <hr class="py-4"/>
+    <hr class="py-4" />
 }

@@ -1,80 +1,120 @@
 ﻿@model CourseModel
+@inject IViewLocalizer Localizer
 
-<h1 class="h3">Edit Course</h1>
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
+
+<h1 class="h3">@Localizer["EditCourse"]</h1>
 <hr>
 
 <form asp-controller="Admin" asp-action="CourseEdit" method="POST" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-12">
-             <div asp-validation-summary="All" class="text-danger"></div>
+            <div asp-validation-summary="All" class="text-danger"></div>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8">
-        
+
             <input type="hidden" name="CourseId" value="@Model.CourseId">
             <div class="form-group row">
-                <label asp-for="NameTr" class="col-sm-2 col-form-label"></label>
+                <label asp-for="NameTr" class="col-sm-2 col-form-label">@Localizer["NameTr"]</label>
                 <div class="col-sm-10">
                     <input class="form-control" asp-for="NameTr">
                     <span asp-validation-for="NameTr" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="UrlTr" class="col-sm-2 col-form-label"></label>
+                <label asp-for="NameEn" class="col-sm-2 col-form-label">@Localizer["NameEn"]</label>
                 <div class="col-sm-10">
-                    <input class="form-control" asp-for="UrlTr">
-                    <span asp-validation-for="UrlTr" class="text-danger"></span>
+                    <input class="form-control" asp-for="NameEn">
+                    <span asp-validation-for="NameEn" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label  asp-for="DescriptionTr" class="col-sm-2 col-form-label"></label>
+                <label asp-for="Url" class="col-sm-2 col-form-label">@Localizer["Url"]</label>
+                <div class="col-sm-10">
+                    <input class="form-control" asp-for="Url">
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="DescriptionTr" class="col-sm-2 col-form-label">@Localizer["DescriptionTr"]</label>
                 <div class="col-sm-10">
                     <textarea id="editor" class="form-control" asp-for="DescriptionTr"></textarea>
                     <span asp-validation-for="DescriptionTr" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label  asp-for="Price" class="col-sm-2 col-form-label"></label>
+                <label asp-for="DescriptionEn" class="col-sm-2 col-form-label">@Localizer["DescriptionEn"]</label>
+                <div class="col-sm-10">
+                    <textarea id="editor" class="form-control" asp-for="DescriptionEn"></textarea>
+                    <span asp-validation-for="DescriptionEn" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label asp-for="Price" class="col-sm-2 col-form-label">@Localizer["Price"]</label>
                 <div class="col-sm-10">
                     <input class="form-control" asp-for="Price">
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="ImageUrl" class="col-sm-2 col-form-label"></label>
+                <label asp-for="ImageUrl" class="col-sm-2 col-form-label">@Localizer["ImageUrl"]</label>
                 <div class="col-sm-10">
                     <input type="hidden" asp-for="ImageUrl">
-                    <img src="~/img/@Model.ImageUrl" width="80"/>
+                    <img src="~/img/@Model.ImageUrl" width="80" />
                     <input type="file" name="file">
                 </div>
-            </div>            
+            </div>
 
             <div class="form-group row">
                 <div class="col-sm-10 offset-sm-2">
-                    <button type="submit" class="btn btn-primary">Save Course</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["SaveCourse"]</button>
                 </div>
             </div>
-        
+
         </div>
         <div class="col-md-4">
-          
+
             @for (int i = 0; i < Model.SelectedCategories.Count; i++)
             {
                 <input type="hidden" name="SelectedCategories[@i].CategoryId" value="@Model.SelectedCategories[@i].CategoryId">
-                <input type="hidden" name="SelectedCategories[@i].Name" value="@Model.SelectedCategories[@i].NameTr">
+                @if (url == "/tr/" || url == "")
+                {
+                    <input type="hidden" name="SelectedCategories[@i].Name" value="@Model.SelectedCategories[@i].NameTr">
+                }
+                else
+                {
+                    <input type="hidden" name="SelectedCategories[@i].Name" value="@Model.SelectedCategories[@i].NameEn">
+
+                }
             }
 
             @foreach (var item in (List<Category>)ViewBag.Categories)
             {
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" 
-                    class="custom-control-input" 
-                    name="categoryIds"
-                    value="@item.CategoryId"
-                    id="category_@(item.CategoryId)" 
-                    @(Model.SelectedCategories.Any(i=>i.CategoryId==item.CategoryId)?"checked":"")>
-                    <label class="custom-control-label" for="category_@(item.CategoryId)">@item.NameTr</label>
+                    <input type="checkbox"
+                       class="custom-control-input"
+                       name="categoryIds"
+                       value="@item.CategoryId"
+                       id="category_@(item.CategoryId)"
+                       @(Model.SelectedCategories.Any(i=>i.CategoryId==item.CategoryId)?"checked":"")>
+                    @if (url == "/tr/" || url == "")
+                    {
+                        <label class="custom-control-label" for="category_@(item.CategoryId)">@item.NameTr</label>
+                    }
+                    else
+                    {
+                        <label class="custom-control-label" for="category_@(item.CategoryId)">@item.NameEn</label>
+                    }
                 </div>
             }
 
@@ -82,12 +122,12 @@
 
             <div class="custom-control custom-checkbox">
                 <input asp-for="IsApproved" type="checkbox" class="custom-control-input">
-                <label asp-for="IsApproved" class="custom-control-label"></label>
+                <label asp-for="IsApproved" class="custom-control-label">@Localizer["IsApproved"]</label>
             </div>
 
             <div class="custom-control custom-checkbox">
                 <input asp-for="IsHome" type="checkbox" class="custom-control-input">
-                <label asp-for="IsHome" class="custom-control-label"></label>
+                <label asp-for="IsHome" class="custom-control-label">@Localizer["IsHome"]</label>
             </div>
 
         </div>
@@ -97,10 +137,10 @@
 
 @section Scripts
 {
-    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
-    <script src="/modules/ckeditor/ckeditor.js"></script>
-    <script>
-        CKEDITOR.replace('editor');
-    </script>
+<script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+<script src="/modules/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('editor');
+</script>
 }

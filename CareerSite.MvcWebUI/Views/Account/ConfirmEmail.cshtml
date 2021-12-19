@@ -1,8 +1,10 @@
-﻿<hr />
-<h1 class="text-center">Giriş yapıp eğitimlere kayıt olabilirsiniz!</h1>
+﻿@inject IViewLocalizer Localizer
+
+<hr />
+<h1 class="text-center">@Localizer["ConfirmEmailTitle"]</h1>
 <hr />
 
 <div class="d-flex justify-content-center pt-4">
     
-    <a class="btn btn-lg btn-outline-success" href="/account/login">Giriş yapın.</a>
+    <a class="btn btn-lg btn-outline-success" href="/account/login">@Localizer["LogIn"]</a>
 </div>

@@ -18,8 +18,7 @@ namespace CareerSite.Core.Configurations
             builder.Property(m => m.NameTr).IsRequired().HasMaxLength(100);
             builder.Property(m => m.NameEn).IsRequired().HasMaxLength(100);
 
-            builder.Property(m => m.DateAdded).HasDefaultValueSql("getdate()");  // mssql
-            // builder.Property(m=>m.DateAdded).HasDefaultValueSql ("date('now')");   // sqlite            
+            builder.Property(m => m.DateAdded).HasDefaultValueSql("getdate()");
         }
 
     }

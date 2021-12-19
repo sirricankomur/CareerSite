@@ -121,7 +121,7 @@
     <value>İngilizce</value>
   </data>
   <data name="enHref" xml:space="preserve">
-    <value>/en/home</value>
+    <value>/en/home/index</value>
   </data>
   <data name="Languages" xml:space="preserve">
     <value>Diller</value>
@@ -130,6 +130,6 @@
     <value>Türkçe</value>
   </data>
   <data name="trHref" xml:space="preserve">
-    <value>/tr/anasayfa</value>
+    <value>/tr/home/index</value>
   </data>
 </root>

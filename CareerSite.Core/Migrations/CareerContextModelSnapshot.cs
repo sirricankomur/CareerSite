@@ -76,10 +76,7 @@ namespace CareerSite.Core.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("UrlEn")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UrlTr")
+                    b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CategoryId");
@@ -92,96 +89,84 @@ namespace CareerSite.Core.Migrations
                             CategoryId = 1,
                             NameEn = "Software",
                             NameTr = "Yazılım",
-                            UrlEn = "Software",
-                            UrlTr = "yazilim"
+                            Url = "yazilim"
                         },
                         new
                         {
                             CategoryId = 2,
                             NameEn = "Health",
                             NameTr = "Sağlık",
-                            UrlEn = "Health",
-                            UrlTr = "saglik"
+                            Url = "saglik"
                         },
                         new
                         {
                             CategoryId = 3,
                             NameEn = "Music",
                             NameTr = "Müzik",
-                            UrlEn = "Music",
-                            UrlTr = "muzik"
+                            Url = "muzik"
                         },
                         new
                         {
                             CategoryId = 4,
                             NameEn = "Academy",
                             NameTr = "Akademi",
-                            UrlEn = "Academy",
-                            UrlTr = "akademi"
+                            Url = "akademi"
                         },
                         new
                         {
                             CategoryId = 5,
                             NameEn = "Finance",
                             NameTr = "Finans",
-                            UrlEn = "Finance",
-                            UrlTr = "finans"
+                            Url = "finans"
                         },
                         new
                         {
                             CategoryId = 6,
                             NameEn = "Photograph",
                             NameTr = "Fotoğraf",
-                            UrlEn = "Photograph",
-                            UrlTr = "fotograf"
+                            Url = "fotograf"
                         },
                         new
                         {
                             CategoryId = 7,
                             NameEn = "Management",
                             NameTr = "İşletme",
-                            UrlEn = "Management",
-                            UrlTr = "isletme"
+                            Url = "isletme"
                         },
                         new
                         {
                             CategoryId = 8,
                             NameEn = "Marketing",
                             NameTr = "Pazarlama",
-                            UrlEn = "Marketing",
-                            UrlTr = "pazarlama"
+                            Url = "pazarlama"
                         },
                         new
                         {
                             CategoryId = 9,
                             NameEn = "Self-Improvement",
                             NameTr = "Kişisel Gelişim",
-                            UrlEn = "self-improvement",
-                            UrlTr = "kisisel-gelisim"
+                            Url = "kisisel-gelisim"
                         },
                         new
                         {
                             CategoryId = 10,
                             NameEn = "Design",
                             NameTr = "Tasarım",
-                            UrlEn = "Design",
-                            UrlTr = "tasarim"
+                            Url = "tasarim"
                         },
                         new
                         {
                             CategoryId = 11,
                             NameEn = "IT",
                             NameTr = "BT",
-                            UrlEn = "it",
-                            UrlTr = "bt"
+                            Url = "bt"
                         },
                         new
                         {
                             CategoryId = 12,
                             NameEn = "Life Style",
                             NameTr = "Yaşam Tarzı",
-                            UrlEn = "Life-Style",
-                            UrlTr = "yasam-tarzi"
+                            Url = "yasam-tarzi"
                         });
                 });
 
@@ -225,10 +210,7 @@ namespace CareerSite.Core.Migrations
                     b.Property<double?>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("UrlEn")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UrlTr")
+                    b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CourseId");
@@ -244,12 +226,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "İlk izlenimde beden dili en önemlisidir.",
                             ImageUrl = "beden-dili.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Body Language",
                             NameTr = "Beden Dili",
                             Price = 50.0,
-                            UrlEn = "body-language",
-                            UrlTr = "beden-dili"
+                            Url = "beden-dili"
                         },
                         new
                         {
@@ -259,12 +240,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Kendinizi iyi ifade etmenin yolları.",
                             ImageUrl = "etkili-iletisim.jpg",
                             IsApproved = false,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Effective communication",
                             NameTr = "Etkili İletişim",
                             Price = 50.0,
-                            UrlEn = "effective-communication",
-                            UrlTr = "etkili-iletisim"
+                            Url = "etkili-iletisim"
                         },
                         new
                         {
@@ -274,12 +254,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Sıfırdan uzmanlığa C++ eğitimi",
                             ImageUrl = "cpp.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "C++",
                             NameTr = "C++",
                             Price = 100.0,
-                            UrlEn = "cpp",
-                            UrlTr = "cpp"
+                            Url = "cpp"
                         },
                         new
                         {
@@ -289,12 +268,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Sıfırdan uzmanlığa Java eğitimi",
                             ImageUrl = "java.jpg",
                             IsApproved = false,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Java",
                             NameTr = "Java",
                             Price = 200.0,
-                            UrlEn = "java",
-                            UrlTr = "java"
+                            Url = "java"
                         },
                         new
                         {
@@ -304,12 +282,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Sıfırdan uzmanlığa ASP.Net Core eğitimi",
                             ImageUrl = "aspnet-core.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "ASP.Net Core",
                             NameTr = "ASP.Net Core",
                             Price = 200.0,
-                            UrlEn = "aspnet-core",
-                            UrlTr = ""
+                            Url = ""
                         },
                         new
                         {
@@ -319,12 +296,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Dilinizi doğru kullanıyor musunuz?",
                             ImageUrl = "diksiyon.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Diction",
                             NameTr = "Diksiyon",
                             Price = 200.0,
-                            UrlEn = "diction",
-                            UrlTr = "diksiyon"
+                            Url = "diksiyon"
                         },
                         new
                         {
@@ -334,12 +310,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Sıfırdan uzmanlığa Python eğitimi",
                             ImageUrl = "python.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Python",
                             NameTr = "Python",
                             Price = 150.0,
-                            UrlEn = "python",
-                            UrlTr = "python"
+                            Url = "python"
                         },
                         new
                         {
@@ -349,12 +324,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Hayata doğru adım atmanın yolları.",
                             ImageUrl = "kariyer-planlama.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Career Planning",
                             NameTr = "Kariyer Planlama",
                             Price = 20.0,
-                            UrlEn = "Career-planning",
-                            UrlTr = "kariyer-planlama"
+                            Url = "kariyer-planlama"
                         },
                         new
                         {
@@ -364,12 +338,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Doğru beslenerek daha dinç hissedin.",
                             ImageUrl = "dogru-beslenme.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Proper Nutrition",
                             NameTr = "Doğru Beslenme",
                             Price = 30.0,
-                            UrlEn = "proper-nutrition",
-                            UrlTr = "dogru-beslenme"
+                            Url = "dogru-beslenme"
                         },
                         new
                         {
@@ -379,12 +352,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Sesinizi doğru kullanıyor musunuz?",
                             ImageUrl = "san.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Singing",
                             NameTr = "Şan",
                             Price = 500.0,
-                            UrlEn = "singing",
-                            UrlTr = "san"
+                            Url = "san"
                         },
                         new
                         {
@@ -394,12 +366,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Neyin manevi sedasına dalın.",
                             ImageUrl = "ney.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Ney",
                             NameTr = "Ney",
                             Price = 200.0,
-                            UrlEn = "ney",
-                            UrlTr = "ney"
+                            Url = "ney"
                         },
                         new
                         {
@@ -409,12 +380,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Stresinizle baş etmenin yolları",
                             ImageUrl = "stresle-basa-cikma.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Coping with Stress",
                             NameTr = "Stresle Başa Çıkma",
                             Price = 50.0,
-                            UrlEn = "Coping-with-Stress",
-                            UrlTr = "stresle-basa-cikma"
+                            Url = "stresle-basa-cikma"
                         },
                         new
                         {
@@ -424,12 +394,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Piyano başlangıç kursu",
                             ImageUrl = "piyano.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Piano",
                             NameTr = "Piyano",
                             Price = 100.0,
-                            UrlEn = "piano",
-                            UrlTr = "piyano"
+                            Url = "piyano"
                         },
                         new
                         {
@@ -439,12 +408,11 @@ namespace CareerSite.Core.Migrations
                             DescriptionTr = "Yoga başlangıç kursu",
                             ImageUrl = "yoga.jpg",
                             IsApproved = true,
-                            IsHome = false,
+                            IsHome = true,
                             NameEn = "Yoga",
                             NameTr = "Yoga",
                             Price = 500.0,
-                            UrlEn = "yoga",
-                            UrlTr = "yoga"
+                            Url = "yoga"
                         });
                 });
 

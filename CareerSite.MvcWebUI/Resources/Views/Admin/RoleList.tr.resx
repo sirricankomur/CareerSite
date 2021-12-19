@@ -127,7 +127,7 @@
     <value>Sil</value>
   </data>
   <data name="DeleteHref" xml:space="preserve">
-    <value>/tr/admin/deletecourse</value>
+    <value>/tr/admin/role/delete</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Düzenle</value>

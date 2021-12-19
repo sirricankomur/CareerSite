@@ -23,11 +23,6 @@ namespace CareerSite.Core.Concrete.EfCore
 
         }
 
-        /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=.\SQLExpress;Initial Catalog=CareerSite;Integrated Security=True");
-        }*/
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CourseConfiguration());

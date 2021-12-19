@@ -11,7 +11,6 @@ namespace CareerSite.MvcWebUI.Models
         public string RecordNumber { get; set; }
         public DateTime RecordDate { get; set; }
         public string UserId { get; set; }
-
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -29,12 +28,4 @@ namespace CareerSite.MvcWebUI.Models
         }
     }
 
-    public class RecordItemModel
-    {
-        public int RecordItemId { get; set; }
-        public double Price { get; set; }
-        public string Name { get; set; }
-        public string ImageUrl { get; set; }
-        public int Quantity { get; set; }
-    }
 }

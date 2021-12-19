@@ -1,16 +1,14 @@
 ﻿using CareerSite.Business.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 
 namespace CareerSite.MvcWebUI.ViewComponents
 {
     public class CategoriesViewComponent : ViewComponent
     {
         private ICategoryService _categoryService;
-
         public CategoriesViewComponent(ICategoryService categoryService)
         {
-            _categoryService = categoryService;
+            this._categoryService = categoryService;
         }
         public IViewComponentResult Invoke()
         {

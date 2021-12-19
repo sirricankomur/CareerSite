@@ -14,50 +14,31 @@ namespace CareerSite.MvcWebUI.Controllers
             this._courseService = courseService;
         }
 
-        // localhost/products/telefon?page=1
-        public IActionResult ListTr(string category, int page = 1)
+        public IActionResult List(string category, int page = 1)
         {
             const int pageSize = 6;
             var courseViewModel = new CourseListViewModel()
             {
                 PageInfo = new PageInfo()
                 {
-                    TotalItems = _courseService.GetCountByCategoryTr(category),
+                    TotalItems = _courseService.GetCountByCategory(category),
                     CurrentPage = page,
                     ItemsPerPage = pageSize,
                     CurrentCategory = category
                 },
-                Courses = _courseService.GetCoursesByCategoryTr(category, page, pageSize)
+                Courses = _courseService.GetCoursesByCategory(category, page, pageSize)
             };
 
             return View(courseViewModel);
         }
 
-        public IActionResult ListEn(string category, int page = 1)
-        {
-            const int pageSize = 6;
-            var courseViewModel = new CourseListViewModel()
-            {
-                PageInfo = new PageInfo()
-                {
-                    TotalItems = _courseService.GetCountByCategoryEn(category),
-                    CurrentPage = page,
-                    ItemsPerPage = pageSize,
-                    CurrentCategory = category
-                },
-                Courses = _courseService.GetCoursesByCategoryEn(category, page, pageSize)
-            };
-
-            return View(courseViewModel);
-        }
-
-        public IActionResult DetailsTr(string url)
+        public IActionResult Details(string url)
         {
             if (url == null)
             {
                 return NotFound();
             }
-            Course course = _courseService.GetCourseDetailsTr(url);
+            Course course = _courseService.GetCourseDetails(url);
 
             if (course == null)
             {
@@ -70,40 +51,11 @@ namespace CareerSite.MvcWebUI.Controllers
             });
         }
 
-        public IActionResult DetailsEn(string url)
-        {
-            if (url == null)
-            {
-                return NotFound();
-            }
-            Course course = _courseService.GetCourseDetailsEn(url);
-
-            if (course == null)
-            {
-                return NotFound();
-            }
-            return View(new CourseDetailModel
-            {
-                Course = course,
-                Categories = course.CourseCategories.Select(i => i.Category).ToList()
-            });
-        }
-
-        public IActionResult SearchTr(string q)
+        public IActionResult Search(string q)
         {
             var courseViewModel = new CourseListViewModel()
             {
-                Courses = _courseService.GetSearchResultTr(q)
-            };
-
-            return View(courseViewModel);
-        }
-
-        public IActionResult SearchEn(string q)
-        {
-            var courseViewModel = new CourseListViewModel()
-            {
-                Courses = _courseService.GetSearchResultEn(q)
+                Courses = _courseService.GetSearchResult(q)
             };
 
             return View(courseViewModel);

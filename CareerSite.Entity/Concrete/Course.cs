@@ -11,9 +11,7 @@ namespace CareerSite.Entity.Concrete
         public int CourseId { get; set; }
         public string NameTr { get; set; }
         public string NameEn { get; set; }
-        public string UrlTr { get; set; }
-        public string UrlEn { get; set; }
-
+        public string Url { get; set; }
         public double? Price { get; set; }
         public string DescriptionTr { get; set; }
         public string DescriptionEn { get; set; }

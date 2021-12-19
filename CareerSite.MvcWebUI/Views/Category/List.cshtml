@@ -1,6 +1,5 @@
 ﻿@model CategoryListViewModel
 
-
 @{
     var categories = Model.Categories;
 }
@@ -13,10 +12,4 @@
 
     <div class="row">   
         @await Html.PartialAsync("_navbar", categories) 
-       @* @foreach (var category in categories)
-        {    
-            <div class="col-md-4">
-                @await Html.PartialAsync("_category", category)   
-        </div>       
-        }   *@
     </div>

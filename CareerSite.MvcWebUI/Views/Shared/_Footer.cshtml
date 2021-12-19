@@ -2,25 +2,15 @@
 
 <footer class="container pt-4 my-md-5 pt-md-5 border-top text-center">
     <small class="d-block mb-3 text-muted">&copy 2021-2022 CareerSite</small>
-    @* <form asp-action="CultureManagement" asp-controller="Home" method="post" asp-route-returnUrl="@returnUrl">
-        <select name="culture" asp-for="@requestCulture.RequestCulture.UICulture.Name" asp-items="cultureItems"
-        onchange="this.form.submit();">
-        </select>
-        </form>
-        <select name="language" id="language">
-        <option value="tr"><a href="/tr/">@Localizer["tr"]</a></option>
-        <option value="en"><a href="/en/">@Localizer["en"]</a></option>
-        </select>*@
 
     <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-sm btn-outline-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             @Localizer["Languages"]
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-            <a class="dropdown-item" href="/tr/anasayfa">@Localizer["tr"]</a>
-            <a class="dropdown-item" href="/en/home">@Localizer["en"]</a>
+            <a class="dropdown-item" href="@Localizer["trHref"]">@Localizer["tr"]</a>
+            <a class="dropdown-item" href="@Localizer["enHref"]">@Localizer["en"]</a>
         </div>
     </div>
-    @*        <p style="font-size:18px" class="d-block mb-3 text-muted">&copy 2021-2022 CareerSite</p>*@
 </footer>

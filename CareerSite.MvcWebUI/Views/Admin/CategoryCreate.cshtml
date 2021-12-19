@@ -1,42 +1,36 @@
 ﻿@model CategoryModel
+@inject IViewLocalizer Localizer
 
-<h1 class="h3">Create Category</h1>
+<h1 class="h3">@Localizer["CreateCategory"]</h1>
 <hr>
 <div class="row">
     <div class="col-md-8">
         <form asp-controller="Admin" asp-action="CategoryCreate" method="POST">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group row">
-                <label asp-for="NameTr" class="col-sm-3 col-form-label text-right">Türkçe - Kategori Adı</label>
+                <label asp-for="NameTr" class="col-sm-3 col-form-label text-right">@Localizer["NameTr"]</label>
                 <div class="col-sm-9">
                     <input class="form-control" asp-for="NameTr">
                     <span asp-validation-for="NameTr" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="NameEn" class="col-sm-3 col-form-label text-right">English - Category Name</label>
+                <label asp-for="NameEn" class="col-sm-3 col-form-label text-right">@Localizer["NameEn"]</label>
                 <div class="col-sm-9">
                     <input class="form-control" asp-for="NameEn">
                     <span asp-validation-for="NameEn" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
-                <label asp-for="UrlTr" class="col-sm-3 col-form-label text-right">Türkçe - Url Kısaltması</label>
+                <label asp-for="Url" class="col-sm-3 col-form-label text-right">@Localizer["Url"]</label>
                 <div class="col-sm-9">
-                    <input class="form-control" asp-for="UrlTr">
-                    <span asp-validation-for="UrlTr" class="text-danger"></span>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label asp-for="UrlEn" class="col-sm-3 col-form-label text-right">English - Url Abbreviation</label>
-                <div class="col-sm-9">
-                    <input class="form-control" asp-for="UrlEn">
-                    <span asp-validation-for="UrlEn" class="text-danger"></span>
+                    <input class="form-control" asp-for="Url">
+                    <span asp-validation-for="Url" class="text-danger"></span>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="col-sm-9 offset-sm-3">
-                    <button type="submit" class="btn btn-primary">Save Category</button>
+                    <button type="submit" class="btn btn-primary">@Localizer["SaveCategory"]</button>
                 </div>
             </div>
         </form>

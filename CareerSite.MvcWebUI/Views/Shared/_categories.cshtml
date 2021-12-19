@@ -1,7 +1,19 @@
 ﻿@model Category
-
- <div class="list-group">
-   
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
+<div class="list-group">
+    @if (url == "/tr/" || url == "")
+    {
         <a href="#" class="list-group-item list-group-item-action">@Model.NameTr</a>
-    
+    }
+    else
+    {
+        <a href="#" class="list-group-item list-group-item-action">@Model.NameEn</a>
+
+    }
 </div>   

@@ -117,14 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="headerParagraph" xml:space="preserve">
+  <data name="HeaderParagraph" xml:space="preserve">
     <value>Every education is a step that will make you reach your dreams. Are you ready for change?</value>
   </data>
-  <data name="headerSubTitle" xml:space="preserve">
+  <data name="HeaderSubTitle" xml:space="preserve">
     <value>It's Time To Take A Step For Your Career</value>
   </data>
-  <data name="headerTitle" xml:space="preserve">
-    <value />
+  <data name="HeaderTitle" xml:space="preserve">
+    <value>Create Your Opportunity</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Log in</value>

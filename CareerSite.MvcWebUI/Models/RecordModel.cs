@@ -14,7 +14,6 @@
         public string ExpirationMonth { get; set; }
         public string ExpirationYear { get; set; }
         public string Cvc { get; set; }
-
         public CartModel CartModel { get; set; }
     }
 }

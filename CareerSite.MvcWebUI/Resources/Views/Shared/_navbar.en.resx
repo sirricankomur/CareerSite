@@ -124,7 +124,13 @@
     <value>/en/courses/Academy</value>
   </data>
   <data name="CareerSiteLogo" xml:space="preserve">
-    <value>/en/home</value>
+    <value>/en/home/index</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>Cart</value>
+  </data>
+  <data name="CartHref" xml:space="preserve">
+    <value>/en/cart</value>
   </data>
   <data name="Dashboard" xml:space="preserve">
     <value>Dashboard</value>
@@ -143,9 +149,6 @@
   </data>
   <data name="FinanceHref" xml:space="preserve">
     <value>/en/courses/Finance</value>
-  </data>
-  <data name="GetStarted" xml:space="preserve">
-    <value />
   </data>
   <data name="Health" xml:space="preserve">
     <value>Health</value>
@@ -207,6 +210,9 @@
   <data name="Records" xml:space="preserve">
     <value>Records</value>
   </data>
+  <data name="RecordsHref" xml:space="preserve">
+    <value>/en/records</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
@@ -215,6 +221,9 @@
   </data>
   <data name="Search" xml:space="preserve">
     <value>Search</value>
+  </data>
+  <data name="SearchHref" xml:space="preserve">
+    <value>/en/search</value>
   </data>
   <data name="Self-Improvement" xml:space="preserve">
     <value>Self-Improvement</value>

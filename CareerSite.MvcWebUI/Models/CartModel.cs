@@ -14,5 +14,5 @@ namespace CareerSite.MvcWebUI.Models
         }
     }
 
-
+   
 }

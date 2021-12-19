@@ -1,50 +1,21 @@
 ﻿@inject IViewLocalizer Localizer
-@{
-    string url = "";
-    if (Context.Request.Path.ToString().Length >= 4)
+
+<div class="jumbotron bg-dark text-light">
+    <h1 class="display-4">@Localizer["HeaderTitle"]</h1>
+    <p class="lead">@Localizer["HeaderSubTitle"]</p>
+    <hr class="my-4 bg-light">
+    <p>@Localizer["HeaderParagraph"]</p>
+    @if (!User.Identity.IsAuthenticated)
     {
-        url = Context.Request.Path.ToString().Remove(4);
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <a class="btn btn-lg btn-outline-light" href="@Localizer["LogInHref"]">@Localizer["LogIn"]</a>
+            </div>
+            <div class="btn-group mr-2" role="group" aria-label="Second group">
+                <a class="btn btn-lg btn-outline-light" href="@Localizer["RegisterHref"]">@Localizer["Register"]</a>
+            </div>
+        </div>
     }
-}
-@if (url == "/tr/" || url == "")
-{
-    <div class="jumbotron bg-dark text-light">
+</div>
 
-        <h1 class="display-4">Kendine Fırsat Yarat</h1>
-        <p class="lead">Kariyerin İçin Adım Atma Vakti Geldi</p>
-        <hr class="my-4 bg-light">
-        <p>Her eğitim seni hayallerine ulaştıracak bir adımdır. Değişime hazır mısın?</p>
-        @if (!User.Identity.IsAuthenticated)
-        {
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                    <a class="btn btn-lg btn-outline-light" href="/tr/account/login">Giriş</a>
-                </div>
-                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                    <a class="btn btn-lg btn-outline-light" href="/tr/account/register">Kayıt ol</a>
-                </div>
-            </div>
-        }
-    </div>
-}
-else
-{
-    <div class="jumbotron bg-dark text-light">
 
-        <h1 class="display-4">Create Your Opportunity</h1>
-        <p class="lead">It's Time To Take A Step For Your Career</p>
-        <hr class="my-4 bg-light">
-        <p>Every education is a step that will make you reach your dreams. Are you ready for change?</p>
-        @if (!User.Identity.IsAuthenticated)
-        {
-            <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-2" role="group" aria-label="First group">
-                    <a class="btn btn-lg btn-outline-light" href="/en/account/login">Log in</a>
-                </div>
-                <div class="btn-group mr-2" role="group" aria-label="Second group">
-                    <a class="btn btn-lg btn-outline-light" href="/en/account/register">Register</a>
-                </div>
-            </div>
-        }
-    </div>
-}

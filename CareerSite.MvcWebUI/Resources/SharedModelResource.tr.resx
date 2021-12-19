@@ -129,6 +129,9 @@
   <data name="LastName" xml:space="preserve">
     <value>Soyad</value>
   </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Giriş</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Şifre</value>
   </data>

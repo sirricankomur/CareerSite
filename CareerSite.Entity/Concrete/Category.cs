@@ -11,8 +11,7 @@ namespace CareerSite.Entity.Concrete
         public int CategoryId { get; set; }
         public string NameTr { get; set; }
         public string NameEn { get; set; }
-        public string UrlTr { get; set; }
-        public string UrlEn { get; set; }
+        public string Url { get; set; }
         public List<CourseCategory> CourseCategories { get; set; }
     }
 }

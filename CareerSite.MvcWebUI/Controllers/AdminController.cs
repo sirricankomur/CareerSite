@@ -99,7 +99,7 @@ namespace CareerSite.MvcWebUI.Controllers
         }
 
         public IActionResult UserList()
-        {
+        {        
             return View(_userManager.Users);
         }
 
@@ -124,7 +124,6 @@ namespace CareerSite.MvcWebUI.Controllers
             };
             return View(model);
         }
-
         [HttpPost]
         public async Task<IActionResult> RoleEdit(RoleEditModel model)
         {
@@ -225,8 +224,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     NameTr = model.NameTr,
                     NameEn = model.NameEn,
-                    UrlTr = model.UrlTr,
-                    UrlEn = model.UrlEn,
+                    Url = model.Url,
                     Price = model.Price,
                     DescriptionTr = model.DescriptionTr,
                     DescriptionEn = model.DescriptionEn,
@@ -268,8 +266,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     NameTr = model.NameTr,
                     NameEn = model.NameEn,
-                    UrlTr = model.UrlTr,
-                    UrlEn = model.UrlEn
+                    Url = model.Url
                 };
 
                 _categoryService.Create(entity);
@@ -304,8 +301,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 CourseId = entity.CourseId,
                 NameTr = entity.NameTr,
                 NameEn = entity.NameEn,
-                UrlTr = entity.UrlTr,
-                UrlEn = entity.UrlEn,
+                Url = entity.Url,
                 Price = entity.Price,
                 ImageUrl = entity.ImageUrl,
                 DescriptionTr = entity.DescriptionTr,
@@ -333,8 +329,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 entity.NameTr = model.NameTr;
                 entity.NameEn = model.NameEn;
                 entity.Price = model.Price;
-                entity.UrlTr = model.UrlTr;
-                entity.UrlEn = model.UrlEn;
+                entity.Url = model.Url;
                 entity.DescriptionTr = model.DescriptionTr;
                 entity.DescriptionEn = model.DescriptionEn;
                 entity.IsHome = model.IsHome;
@@ -392,8 +387,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 CategoryId = entity.CategoryId,
                 NameTr = entity.NameTr,
                 NameEn = entity.NameEn,
-                UrlTr = entity.UrlTr,
-                UrlEn = entity.UrlEn,
+                Url = entity.Url,
                 Courses = entity.CourseCategories.Select(p => p.Course).ToList()
             };
             return View(model);
@@ -411,8 +405,7 @@ namespace CareerSite.MvcWebUI.Controllers
                 }
                 entity.NameTr = model.NameTr;
                 entity.NameEn = model.NameEn;
-                entity.UrlTr = model.UrlTr;
-                entity.UrlEn = model.UrlEn;
+                entity.Url = model.Url;
 
                 _categoryService.Update(entity);
 
@@ -439,11 +432,8 @@ namespace CareerSite.MvcWebUI.Controllers
 
             var msg = new AlertMessage()
             {
-
                 Message = $"{entity.NameTr} isimli ürün silindi.",
                 AlertType = "danger"
-
-
             };
 
             TempData["message"] = JsonConvert.SerializeObject(msg);

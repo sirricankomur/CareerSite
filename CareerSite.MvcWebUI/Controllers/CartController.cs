@@ -30,7 +30,6 @@ namespace CareerSite.MvcWebUI.Controllers
         public IActionResult Index()
         {
             var cart = _cartService.GetCartByUserId(_userManager.GetUserId(User));
-
             return View(new CartModel()
             {
                 CartId = cart.Id,
@@ -38,7 +37,8 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     CartItemId = i.Id,
                     CourseId = i.CourseId,
-                    Name = i.Course.NameTr,
+                    NameTr = i.Course.NameTr,
+                    NameEn = i.Course.NameEn,
                     Price = (double)i.Course.Price,
                     ImageUrl = i.Course.ImageUrl,
                     Quantity = i.Quantity
@@ -76,7 +76,8 @@ namespace CareerSite.MvcWebUI.Controllers
                 {
                     CartItemId = i.Id,
                     CourseId = i.CourseId,
-                    Name = i.Course.NameTr,
+                    NameTr = i.Course.NameTr,
+                    NameEn = i.Course.NameEn,
                     Price = (double)i.Course.Price,
                     ImageUrl = i.Course.ImageUrl,
                     Quantity = i.Quantity
@@ -102,7 +103,8 @@ namespace CareerSite.MvcWebUI.Controllers
                     {
                         CartItemId = i.Id,
                         CourseId = i.CourseId,
-                        Name = i.Course.NameTr,
+                        NameTr = i.Course.NameTr,
+                        NameEn = i.Course.NameEn,
                         Price = (double)i.Course.Price,
                         ImageUrl = i.Course.ImageUrl,
                         Quantity = i.Quantity
@@ -130,7 +132,7 @@ namespace CareerSite.MvcWebUI.Controllers
             }
             return View(model);
         }
-        
+
         public IActionResult GetRecords()
         {
             var userId = _userManager.GetUserId(User);
@@ -157,7 +159,8 @@ namespace CareerSite.MvcWebUI.Controllers
                 recordModel.RecordItems = record.RecordItems.Select(i => new RecordItemModel()
                 {
                     RecordItemId = i.Id,
-                    Name = i.Course.NameTr,
+                    NameTr = i.Course.NameTr,
+                    NameEn = i.Course.NameEn,
                     Price = (double)i.Price,
                     Quantity = i.Quantity,
                     ImageUrl = i.Course.ImageUrl
@@ -195,11 +198,11 @@ namespace CareerSite.MvcWebUI.Controllers
             record.City = model.City;
             record.Note = model.Note;
 
-            record.RecordItems = new List<Entity.Concrete.RecordItem>();
+            record.RecordItems = new List<RecordItem>();
 
             foreach (var item in model.CartModel.CartItems)
             {
-                var recordItem = new CareerSite.Entity.Concrete.RecordItem()
+                var recordItem = new RecordItem()
                 {
                     Price = item.Price,
                     Quantity = item.Quantity,
@@ -210,7 +213,7 @@ namespace CareerSite.MvcWebUI.Controllers
             _recordService.Create(record);
         }
 
-        
+
         private Payment PaymentProcess(RecordModel model)
         {
             Options options = new Options();
@@ -238,10 +241,12 @@ namespace CareerSite.MvcWebUI.Controllers
             paymentCard.RegisterCard = 0;
             request.PaymentCard = paymentCard;
 
-            //  paymentCard.CardNumber = "5528790000000008";
-            // paymentCard.ExpireMonth = "12";
-            // paymentCard.ExpireYear = "2030";
-            // paymentCard.Cvc = "123";
+            /* ÖRNEK KART BİLGİLERİ
+                paymentCard.CardNumber = "5528790000000008";
+                paymentCard.ExpireMonth = "12";
+                paymentCard.ExpireYear = "2030";
+                paymentCard.Cvc = "123";
+            */
 
             Buyer buyer = new Buyer();
             buyer.Id = "BY789";
@@ -282,7 +287,7 @@ namespace CareerSite.MvcWebUI.Controllers
             {
                 basketItem = new BasketItem();
                 basketItem.Id = item.CourseId.ToString();
-                basketItem.Name = item.Name;
+                basketItem.Name = item.NameTr;
                 basketItem.Category1 = "Telefon";
                 basketItem.Price = item.Price.ToString();
                 basketItem.ItemType = BasketItemType.PHYSICAL.ToString();
@@ -291,7 +296,7 @@ namespace CareerSite.MvcWebUI.Controllers
             request.BasketItems = basketItems;
             return Payment.Create(request, options);
         }
-       
+
 
     }
 }

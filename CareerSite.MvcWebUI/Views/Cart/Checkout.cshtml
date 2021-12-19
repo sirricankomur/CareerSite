@@ -1,100 +1,115 @@
 ﻿@model RecordModel
-
-<h1>Ödeme Sayfası</h1>
+@inject IViewLocalizer Localizer
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
+<h1>@Localizer["PaymentPage"]</h1>
 <hr>
 <div class="row">
     <div class="col-md-8">
-        <h4 class="pt-3">Sipariş Detayı</h4>
+        <h4 class="pt-3">@Localizer["RecordDetail"]</h4>
         <hr class="mb-3">
 
         <form method="POST" asp-controller="Cart" asp-action="Checkout">
             <input type="hidden" name="cartId" value="0">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label asp-for="@Model.FirstName">Ad</label>
-                    <input asp-for="@Model.FirstName" class="form-control" placeholder="Adınızı girin">
+                    <label asp-for="@Model.FirstName">@Localizer["FirstName"]</label>
+                    <input asp-for="@Model.FirstName" class="form-control" placeholder="@Localizer["FirstNamePlace"]">
                 </div>
                 <div class="col-md-6">
-                    <label asp-for="@Model.LastName">Soyad</label>
-                    <input asp-for="@Model.LastName" class="form-control" placeholder="Soyadınızı girin">
+                    <label asp-for="@Model.LastName">@Localizer["LastName"]</label>
+                    <input asp-for="@Model.LastName" class="form-control" placeholder="@Localizer["LastNamePlace"]">
                 </div>
             </div>
             <div class="mb-3">
-                <label asp-for="@Model.Address">Adres</label>
-                <textarea asp-for="@Model.Address" class="form-control" placeholder="Adresinizi girin"></textarea>
+                <label asp-for="@Model.Address">@Localizer["Address"]</label>
+                <textarea asp-for="@Model.Address" class="form-control" placeholder="@Localizer["AddressPlace"]"></textarea>
             </div>
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label asp-for="@Model.City">Şehir</label>
-                    <input asp-for="@Model.City" class="form-control" placeholder="Şehrinizi girin">
+                    <label asp-for="@Model.City">@Localizer["City"]</label>
+                    <input asp-for="@Model.City" class="form-control" placeholder="@Localizer["CityPlace"]">
                 </div>
                 <div class="col-md-4">
-                    <label asp-for="@Model.Phone">Telefon</label>
-                    <input asp-for="@Model.Phone" class="form-control" placeholder="Telefon numaranızı girin">
+                    <label asp-for="@Model.Phone">@Localizer["Phone"]</label>
+                    <input asp-for="@Model.Phone" class="form-control" placeholder="@Localizer["PhonePlace"]">
                 </div>
                 <div class="col-md-4">
-                    <label asp-for="@Model.Email">E-posta</label>
-                    <input asp-for="@Model.Email" class="form-control" placeholder="E-posta adresinizi girin">
+                    <label asp-for="@Model.Email">@Localizer["Email"]</label>
+                    <input asp-for="@Model.Email" class="form-control" placeholder="@Localizer["EmailPlace"]">
                 </div>
             </div>
-            <h4 class="pt-3">Ödeme Bilgileri</h4>
+            <h4 class="pt-3">@Localizer["PaymentInfo"]</h4>
             <hr class="mb-3">
             <div class="row mb-3">
                 <div class="col-md-6">
-                    <label asp-for="@Model.CardName">Banka Adı</label>
-                    <input asp-for="@Model.CardName" class="form-control" placeholder="Banka adını girin">
+                    <label asp-for="@Model.CardName">@Localizer["CardName"]</label>
+                    <input asp-for="@Model.CardName" class="form-control" placeholder="@Localizer["CardNamePlace"]">
                 </div>
                 <div class="col-md-6">
-                    <label asp-for="@Model.CardNumber">Kart Numarası</label>
-                    <input asp-for="@Model.CardNumber" class="form-control" placeholder="Kart numarasını girin">
+                    <label asp-for="@Model.CardNumber">@Localizer["CardNumber"]</label>
+                    <input asp-for="@Model.CardNumber" class="form-control" placeholder="@Localizer["CardNumberPlace"]">
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-4">
-                    <label asp-for="@Model.ExpirationMonth">Ay</label>
-                    <input asp-for="@Model.ExpirationMonth" class="form-control" placeholder="Kart S.K.T. 'Ay' bilgisini girin">
+                    <label asp-for="@Model.ExpirationMonth">@Localizer["ExpirationMonth"]</label>
+                    <input asp-for="@Model.ExpirationMonth" class="form-control" placeholder="@Localizer["ExpirationMonthPlace"]">
                 </div>
                 <div class="col-md-4">
-                    <label asp-for="@Model.ExpirationYear">Yıl</label>
-                    <input asp-for="@Model.ExpirationYear" class="form-control" placeholder="Kart S.K.T. 'Yıl' bilgisini girin">
+                    <label asp-for="@Model.ExpirationYear">@Localizer["ExpirationYear"]</label>
+                    <input asp-for="@Model.ExpirationYear" class="form-control" placeholder="@Localizer["ExpirationYearPlace"]">
                 </div>
                 <div class="col-md-4">
-                    <label asp-for="@Model.Cvc">Cvc</label>
-                    <input asp-for="@Model.Cvc" class="form-control" placeholder="Cvc girin">
+                    <label asp-for="@Model.Cvc">@Localizer["Cvc"]</label>
+                    <input asp-for="@Model.Cvc" class="form-control" placeholder="@Localizer["CvcPlace"]">
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Ödeme yap</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">@Localizer["Pay"]</button>
         </form>
     </div>
     <div class="col-md-4">
         <h4 class="mb-3">
-            <span>Kayıt Özeti</span>
+            <span>@Localizer["RecordSummary"]</span>
         </h4>
         <hr />
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between">
-                 <div>
-                        <h5>Kurs Miktarı</h5>
-                    </div>
-                     <span class="text-muted">@Model.CartModel.CartItems.Count Kurs</span>
+                <div>
+                    <h5>@Localizer["CourseQuantity"]</h5>
+                </div>
+                <span class="text-muted">@Model.CartModel.CartItems.Count @Localizer["Course"]</span>
             </li>
             @foreach (var item in Model.CartModel.CartItems)
             {
                 <li class="list-group-item d-flex justify-content-between">
                     <div>
-                        <h6>@item.Name</h6>
+                        @if (url == "/tr/" || url == "")
+                        {
+                            <h6>@item.NameTr</h6>
+                        }
+                        else
+                        {
+                            <h6>@item.NameEn</h6>
+
+                        }
                     </div>
-                    <span class="text-muted">@item.Price.ToString("c")</span>
+                    <span class="text-muted"><i class="fas fa-sm fa-lira-sign"></i>@item.Price</span>
                 </li>
             }
 
             <li class="list-group-item d-flex justify-content-between">
-                 <div>
-                        <h4>Toplam</h4>
-                    </div>
+                <div>
+                    <h4>Toplam@Localizer["Total"]</h4>
+                </div>
 
-                 <h4><strong>@Model.CartModel.TotalPrice().ToString("c")</strong></h4>
+                <h4><strong><i class="fas fa-sm fa-lira-sign"></i>@Model.CartModel.TotalPrice()</strong></h4>
             </li>
         </ul>
 

@@ -1,5 +1,4 @@
 ﻿@model List<Category>
-@inject IViewLocalizer Localizer
 @{
     string url = "";
     if (Context.Request.Path.ToString().Length >= 4)
@@ -8,33 +7,29 @@
     }
 }
 <div class="list-group">
-    
- @if(url == "/tr/" || url == "")
-    @*@if (@Localizer["CategoryName"].Value == "NameTr")*@
+    @if (url == "/tr/" || url == "")
     {
-        <a href="/tr/kurslar" style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action bg-secondary text-light">Tüm Kurslar</a>
 
-        @foreach (var item in Model)
-        {
-
-            <a asp-controller="Shop" asp-action="ListTr" asp-route-category="@item.UrlTr"
-       style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == item.UrlTr?"active":"")">
-                @item.NameTr
-            </a>
-        }
+        <a href="/tr/courses" style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action bg-secondary text-light">Tüm Kurslar</a>
     }
     else
     {
         <a href="/en/courses" style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action bg-secondary text-light">All Courses</a>
 
-        @foreach (var item in Model)
-        {
-
-            <a asp-controller="Shop" asp-action="ListEn" asp-route-category="@item.UrlEn"
-       style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == item.UrlEn?"active":"")">
-                @item.NameEn
-            </a>
-        }
     }
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Shop" asp-action="List" asp-route-category="@item.Url"
+       style="font-size: large; font-weight: 500; text-align: center" class="list-group-item list-group-item-action @(ViewBag.SelectedCategory == item.Url?"active":"")">
+            @if (url == "/tr/" || url == "")
+            {
+                @item.NameTr
+            }
+            else
+            {
+                @item.NameEn
 
+            }
+        </a>
+    }
 </div>

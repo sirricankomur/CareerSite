@@ -1,100 +1,134 @@
 ﻿@model CategoryModel
-
-<h1 class="h3">Edit Category</h1>
+@inject IViewLocalizer Localizer
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
+<h1 class="h3">@Localizer["EditCategory"]</h1>
 <hr>
 
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-controller="Admin" asp-action="CategoryEdit" method="POST">
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <input type="hidden" name="CategoryId" value="@Model.CategoryId">
-        <div class="form-group row">
-            <label asp-for="NameTr" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input class="form-control" asp-for="NameTr">
-                 <span asp-validation-for="NameTr" class="text-danger"></span>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="hidden" name="CategoryId" value="@Model.CategoryId">
+            <div class="form-group row">
+                <label asp-for="NameTr" class="col-sm-4 col-form-label text-right">@Localizer["NameTr"]</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="NameTr">
+                    <span asp-validation-for="NameTr" class="text-danger"></span>
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label asp-for="UrlTr" class="col-sm-2 col-form-label"></label>
-            <div class="col-sm-10">
-                <input class="form-control" asp-for="UrlTr">
-                 <span asp-validation-for="UrlTr" class="text-danger"></span>
+            <div class="form-group row">
+                <label asp-for="NameEn" class="col-sm-4 col-form-label text-right">@Localizer["NameEn"]</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="NameEn">
+                    <span asp-validation-for="NameEn" class="text-danger"></span>
+                </div>
             </div>
-        </div>       
-        <div class="form-group row">
-            <div class="col-sm-10 offset-sm-2">
-                <button type="submit" class="btn btn-primary">Save Category</button>
+            <div class="form-group row">
+                <label asp-for="Url" class="col-sm-4 col-form-label text-right">@Localizer["UrlTr"]</label>
+                <div class="col-sm-8">
+                    <input class="form-control" asp-for="Url">
+                    <span asp-validation-for="Url" class="text-danger"></span>
+                </div>
             </div>
-        </div>
+            <div class="form-group row">
+                <div class="col-sm-10 offset-sm-4">
+                    <button type="submit" class="btn btn-primary text-right">@Localizer["SaveCategory"]</button>
+                </div>
+            </div>
 
-         <div id="courses">
+            <div id="courses">
 
-            @for (int i = 0; i < Model.Courses.Count; i++)
-            {
-                <input type="hidden" name="Courses[@i].CourseId" value="@Model.Courses[@i].CourseId">
-                <input type="hidden" name="Courses[@i].ImageUrl" value="@Model.Courses[@i].ImageUrl">
-                <input type="hidden" name="Courses[@i].Name" value="@Model.Courses[@i].NameTr">
-                <input type="hidden" name="Courses[@i].Price" value="@Model.Courses[@i].Price">
-                <input type="hidden" name="Courses[@i].IsApproved" value="@Model.Courses[@i].IsApproved.ToString()">                                   
-            }
+                @for (int i = 0; i < Model.Courses.Count; i++)
+                {
+                    <input type="hidden" name="Courses[@i].CourseId" value="@Model.Courses[@i].CourseId">
+                    <input type="hidden" name="Courses[@i].ImageUrl" value="@Model.Courses[@i].ImageUrl">
+                    @if (url == "/tr/" || url == "")
+                    {
+                        <input type="hidden" name="Courses[@i].Name" value="@Model.Courses[@i].NameTr">
+                    }
+                    else
+                    {
+                        <input type="hidden" name="Courses[@i].Name" value="@Model.Courses[@i].NameEn">
 
-        </div>
+                    }
+                    <input type="hidden" name="Courses[@i].Price" value="@Model.Courses[@i].Price">
+                    <input type="hidden" name="Courses[@i].IsApproved" value="@Model.Courses[@i].IsApproved.ToString()">
+                }
+
+            </div>
 
 
-    </form>
+        </form>
     </div>
-    <div class="col-md-8">        
+    <div class="col-md-6">
         <div class="row">
-            <div class="col-md-12">   
-              
+            <div class="col-md-12">
+
                 <table class="table table-bordered table-sm">
                     <thead>
                         <tr>
                             <td style="width: 30px;">Id</td>
-                            <td style="width: 100px;">Image</td>
-                            <td>Name</td>
-                            <td style="width: 20px;">Price</td>
-                            <td style="width: 20px;">Onaylı</td>
+                            <td style="width: 100px;">@Localizer["Image"]</td>
+                            <td>@Localizer["NameTr"]</td>
+                            <td style="width: 20px;">@Localizer["Price"]</td>
+                            <td style="width: 20px;">@Localizer["Approved"]</td>
                             <td style="width: 150px;"></td>
                         </tr>
                     </thead>
                     <tbody>
-                        @if(Model.Courses.Count>0)
+                        @if (Model.Courses.Count > 0)
                         {
                             @foreach (var item in Model.Courses)
-                                {
-                                    <tr>
-                                        <td>@item.CourseId</td>
-                                        <td><img src="~/img/@item.ImageUrl" width="80"></td>
+                            {
+                                <tr>
+                                    <td>@item.CourseId</td>
+                                    <td><img src="~/img/@item.ImageUrl" width="80"></td>
+                                    @if (url == "/tr/" || url == "")
+                                    {
                                         <td>@item.NameTr</td>
-                                        <td>@item.Price</td>                                       
-                                        <td>
-                                            @if(item.IsApproved)
-                                            {
-                                                <i class="fas fa-check-circle"></i>
-                                            }else{
-                                                <i class="fas fa-times-circle"></i>
-                                            }
-                                        </td>
-                                        <td>
-                                            <a href="/admin/courses/@item.CourseId" class="btn btn-primary btn-sm mr-2">Edit</a>
-                                            
-                                            <form action="/admin/deletefromcategory" method="POST" style="display: inline;">
-                                                <input type="hidden" name="courseId" value="@item.CourseId">
-                                                <input type="hidden" name="categoryId" value="@Model.CategoryId">
-                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                            </form>
-                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.NameEn</td>
+
+                                    }
+                                    <td>@item.Price</td>
+                                    <td>
+                                        @if (item.IsApproved)
+                                        {
+                                            <i class="fas fa-check-circle"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fas fa-times-circle"></i>
+                                        }
+                                    </td>
+                                    <td>
+                                        <a href="@Localizer["EditHref"]/@item.CourseId" class="btn btn-primary btn-sm mr-2">@Localizer["Edit"]</a>
+
+                                        <form action="@Localizer["DeleteHref"]" method="POST" style="display: inline;">
+                                            <input type="hidden" name="courseId" value="@item.CourseId">
+                                            <input type="hidden" name="categoryId" value="@Model.CategoryId">
+                                            <button type="submit" class="btn btn-danger btn-sm">@Localizer["Delete"]</button>
+                                        </form>
+                                    </td>
                                 </tr>
-                                }
-                        }else{
+                            }
+                        }
+                        else
+                        {
                             <div class="alert alert-warning">
-                                <h3>No Courses</h3>
+                                <h3>@Localizer["NoCourses"]</h3>
                             </div>
                         }
 
-                    
+
                     </tbody>
                 </table>
             </div>
@@ -104,6 +138,6 @@
 
 @section Scripts
 {
-    <script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+<script src="/modules/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }

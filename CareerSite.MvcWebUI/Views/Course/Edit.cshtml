@@ -1,28 +1,31 @@
 ﻿@model Course
+@inject IViewLocalizer Localizer
 
 <form method="POST">
     <input type="hidden" name="CourseId" value="@Model.CourseId"/>
     <div class="form-group">
-        <label for="Name">Name</label>
+        <label for="Name">@Localizer["NameTr"]</label>
         <input asp-for="NameTr" value="@Model.NameTr" class="form-control">
     </div>
     <div class="form-group">
-        <label for="Price">Price</label>
+        <label for="Name">@Localizer["NameEn"]</label>
+        <input asp-for="NameEn" value="@Model.NameEn" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="Price">@Localizer["Price"]</label>
         <input asp-for="Price" value="@Model.Price" class="form-control">
     </div>
     <div class="form-group">
-        <label for="Description">Description</label>
+        <label for="Description">@Localizer["DescriptionTr"]</label>
         <textarea asp-for="DescriptionTr" value="@Model.DescriptionTr" class="form-control"></textarea>
     </div>
+      <div class="form-group">
+        <label for="Description">@Localizer["DescriptionEn"]</label>
+        <textarea asp-for="DescriptionEn" value="@Model.DescriptionEn" class="form-control"></textarea>
+    </div>
     <div class="form-group">
-        <label for="ImageUrl">ImageUrl</label>
+        <label for="ImageUrl">@Localizer["ImageUrl"]</label>
         <input asp-for="ImageUrl" value="@Model.ImageUrl" class="form-control">
     </div>
-    @* <div class="form-group">
-        <label for="CategoryId">CategoryId</label>
-        <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
-            <option selected disabled>Seçiniz</option>
-        </select>
-    </div> *@
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">@Localizer["Save"]</button>
 </form>

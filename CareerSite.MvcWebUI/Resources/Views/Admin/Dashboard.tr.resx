@@ -133,7 +133,7 @@
     <value>Ana Sayfa</value>
   </data>
   <data name="HomeHref" xml:space="preserve">
-    <value>/en/home</value>
+    <value>/tr/home/index</value>
   </data>
   <data name="LogOut" xml:space="preserve">
     <value>Çıkış</value>

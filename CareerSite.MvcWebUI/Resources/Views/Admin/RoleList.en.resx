@@ -127,7 +127,7 @@
     <value>Delete</value>
   </data>
   <data name="DeleteHref" xml:space="preserve">
-    <value>/admin/role/delete</value>
+    <value>/en/admin/role/delete</value>
   </data>
   <data name="Edit" xml:space="preserve">
     <value>Edit</value>

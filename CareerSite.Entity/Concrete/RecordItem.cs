@@ -11,10 +11,8 @@ namespace CareerSite.Entity.Concrete
         public int Id { get; set; }
         public int RecordId { get; set; }
         public Record Record { get; set; }
-
         public int CourseId { get; set; }
         public Course Course { get; set; }
-
         public double Price { get; set; }
         public int Quantity { get; set; }
     }

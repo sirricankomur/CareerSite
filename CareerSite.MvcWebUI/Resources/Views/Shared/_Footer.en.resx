@@ -121,7 +121,7 @@
     <value>English</value>
   </data>
   <data name="enHref" xml:space="preserve">
-    <value>/en/courses</value>
+    <value>/en/home/index</value>
   </data>
   <data name="Languages" xml:space="preserve">
     <value>Languages</value>
@@ -130,6 +130,6 @@
     <value>Turkish</value>
   </data>
   <data name="trHref" xml:space="preserve">
-    <value>/tr/courses</value>
+    <value>/tr/home/index</value>
   </data>
 </root>

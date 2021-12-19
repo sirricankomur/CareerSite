@@ -20,7 +20,6 @@ namespace CareerSite.MvcWebUI.Extensions
                     }
                     catch (System.Exception)
                     {
-                        // loglama
                         throw;
                     }
                 }
@@ -33,7 +32,6 @@ namespace CareerSite.MvcWebUI.Extensions
                     }
                     catch (System.Exception)
                     {
-                        // loglama
                         throw;
                     }
                 }

@@ -34,6 +34,7 @@ namespace CareerSite.MvcWebUI
         private readonly IConfiguration _configuration;
         private const string trCulture = "tr";
         private const string enCulture = "en";
+
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -48,19 +49,16 @@ namespace CareerSite.MvcWebUI
 
             services.Configure<IdentityOptions>(options =>
             {
-                // password
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 3;
                 options.Password.RequireNonAlphanumeric = false;
 
-                // Lockout                
                 options.Lockout.MaxFailedAccessAttempts = 5;
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
                 options.Lockout.AllowedForNewUsers = true;
 
-                // options.User.AllowedUserNameCharacters = "";
                 options.User.RequireUniqueEmail = true;
                 options.SignIn.RequireConfirmedEmail = true;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
@@ -68,15 +66,16 @@ namespace CareerSite.MvcWebUI
 
             services.ConfigureApplicationCookie(options =>
             {
+
                 options.LoginPath = "/account/login";
                 options.LogoutPath = "/account/logout";
-                options.AccessDeniedPath = "/account/accessdenied";
+                options.AccessDeniedPath = "/{culture}/account/accessdenied";
                 options.SlidingExpiration = true;
                 options.ExpireTimeSpan = TimeSpan.FromDays(30);
                 options.Cookie = new CookieBuilder
                 {
                     HttpOnly = true,
-                    Name = ".ShopApp.Security.Cookie",
+                    Name = ".CareerSite.Security.Cookie",
                     SameSite = SameSiteMode.Strict
                 };
             });
@@ -96,17 +95,25 @@ namespace CareerSite.MvcWebUI
                      _configuration["EmailSender:UserName"],
                      _configuration["EmailSender:Password"])
                 );
+            services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
 
-            services.AddControllersWithViews();
+            services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(opt => opt.DataAnnotationLocalizerProvider = (type, factory) =>
+            {
+                var assemblyName = new AssemblyName(typeof(SharedModelResource).GetTypeInfo().Assembly.FullName);
+                return factory.Create(nameof(SharedModelResource), assemblyName.Name);
+
+            });
+
+
 
             services.AddLocalization(opt => { opt.ResourcesPath = "Resources"; });
 
             services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization(opt => opt.DataAnnotationLocalizerProvider = (type, factory) =>
-              {
-                  var assemblyName = new AssemblyName(typeof(SharedModelResource).GetTypeInfo().Assembly.FullName);
-                  return factory.Create(nameof(SharedModelResource), assemblyName.Name);
+            {
+                var assemblyName = new AssemblyName(typeof(SharedModelResource).GetTypeInfo().Assembly.FullName);
+                return factory.Create(nameof(SharedModelResource), assemblyName.Name);
 
-              });
+            });
 
 
 
@@ -114,8 +121,8 @@ namespace CareerSite.MvcWebUI
             {
                 var supportedCultures = new List<CultureInfo>
                 {
-                    new CultureInfo(trCulture),
-                    new CultureInfo(enCulture)
+                                new CultureInfo(trCulture),
+                                new CultureInfo(enCulture)
                 };
 
                 opt.DefaultRequestCulture = new RequestCulture(trCulture);
@@ -124,17 +131,16 @@ namespace CareerSite.MvcWebUI
 
                 opt.RequestCultureProviders = new List<IRequestCultureProvider>
                 {
-                    new QueryStringRequestCultureProvider(),
-                    new CookieRequestCultureProvider(),
-                    new AcceptLanguageHeaderRequestCultureProvider()
+                                new QueryStringRequestCultureProvider(),
+                                new CookieRequestCultureProvider(),
+                                new AcceptLanguageHeaderRequestCultureProvider()
                 };
 
                 opt.RequestCultureProviders = new[] {new RouteDataRequestCultureProvider()
-                {
-                    Options = opt
-                } };
+                            {
+                                Options = opt
+                            } };
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -157,7 +163,6 @@ namespace CareerSite.MvcWebUI
             app.UseAuthentication();
             app.UseRouting();
             app.UseAuthorization();
-
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
 
@@ -165,54 +170,37 @@ namespace CareerSite.MvcWebUI
             {
                 endpoints.MapControllerRoute(
                   name: "allcourses",
-                  pattern: "encourses",
-                  defaults: new { controller = "Home", action = "Index" }
-              );
-
-                endpoints.MapControllerRoute(
-                  name: "tumkurslar",
-                  pattern: "kurslar",
-                  defaults: new { controller = "Home", action = "Index" }
-              );
-                endpoints.MapControllerRoute(
-                  name: "home",
-                  pattern: "en/home",
-                  defaults: new { controller = "Home", action = "Index" }
-              );
-
-                endpoints.MapControllerRoute(
-                  name: "anasayfa",
-                  pattern: "tr/anasayfa",
+                  pattern: "{culture}/courses",
                   defaults: new { controller = "Home", action = "Index" }
               );
 
                 endpoints.MapControllerRoute(
                   name: "records",
-                  pattern: "records",
+                  pattern: "{culture}/records",
                   defaults: new { controller = "Cart", action = "GetRecords" }
               );
 
                 endpoints.MapControllerRoute(
                   name: "checkout",
-                  pattern: "checkout",
+                  pattern: "{culture}/checkout",
                   defaults: new { controller = "Cart", action = "Checkout" }
               );
 
                 endpoints.MapControllerRoute(
                     name: "cart",
-                    pattern: "cart",
+                    pattern: "{culture}/cart",
                     defaults: new { controller = "Cart", action = "Index" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "dashboard",
-                    pattern: "{culture?}/dashboard",
+                    pattern: "{culture}/dashboard",
                     defaults: new { controller = "Admin", action = "Dashboard" }
                 );
 
                 endpoints.MapControllerRoute(
                    name: "adminuseredit",
-                   pattern: "{culture?}/admin/user/{id?}",
+                   pattern: "{culture}/admin/user/{id?}",
                    defaults: new { controller = "Admin", action = "UserEdit" }
                );
 
@@ -224,129 +212,84 @@ namespace CareerSite.MvcWebUI
 
                 endpoints.MapControllerRoute(
                     name: "adminroles",
-                    pattern: "{culture?}/admin/role/list",
+                    pattern: "{culture}/admin/role/list",
                     defaults: new { controller = "Admin", action = "RoleList" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "adminrolecreate",
-                    pattern: "{culture?}/admin/role/create",
+                    pattern: "{culture}/admin/role/create",
                     defaults: new { controller = "Admin", action = "RoleCreate" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "adminroleedit",
-                    pattern: "admin/role/{id?}",
+                    pattern: "{culture}/admin/role/{id?}",
                     defaults: new { controller = "Admin", action = "RoleEdit" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincourses",
-                    pattern: "{culture?}/admin/courses",
+                    pattern: "{culture}/admin/courses",
                     defaults: new { controller = "Admin", action = "CourseList" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincoursecreate",
-                    pattern: "{culture?}/admin/courses/create",
+                    pattern: "{culture}/admin/courses/create",
                     defaults: new { controller = "Admin", action = "CourseCreate" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincourseedit",
-                    pattern: "{culture?}/admin/courses/{id?}",
+                    pattern: "{culture}/admin/courses/{id?}",
                     defaults: new { controller = "Admin", action = "CourseEdit" }
                 );
 
                 endpoints.MapControllerRoute(
                    name: "admincategories",
-                   pattern: "{culture?}/admin/categories",
+                   pattern: "{culture}/admin/categories",
                    defaults: new { controller = "Admin", action = "CategoryList" }
                );
 
                 endpoints.MapControllerRoute(
                     name: "admincategorycreate",
-                    pattern: "{culture?}/admin/categories/create",
+                    pattern: "{culture}/admin/categories/create",
                     defaults: new { controller = "Admin", action = "CategoryCreate" }
                 );
 
                 endpoints.MapControllerRoute(
                     name: "admincategoryedit",
-                    pattern: "{culture?}/admin/categories/{id?}",
+                    pattern: "{culture}/admin/categories/{id?}",
                     defaults: new { controller = "Admin", action = "CategoryEdit" }
                 );
 
-
-
+                endpoints.MapControllerRoute(
+                        name: "search",
+                        pattern: "{culture}/search",
+                        defaults: new { controller = "Shop", action = "search" }
+                    );
 
                 endpoints.MapControllerRoute(
-                   name: "register",
-                   pattern: "account/register",
-                   defaults: new { controller = "Account", action = "Register" }
-               );
-
-
-
-
-
-                // localhost/search    
-                endpoints.MapControllerRoute(
-                    name: "searchen",
-                    pattern: "search",
-                    defaults: new { controller = "Shop", action = "searchtr" }
-                );
-                endpoints.MapControllerRoute(
-                    name: "searchen",
-                    pattern: "search",
-                    defaults: new { controller = "Shop", action = "searchen" }
+                    name: "coursedetails",
+                    pattern: "{culture}/{url}",
+                    defaults: new { controller = "Shop", action = "details" }
                 );
 
                 endpoints.MapControllerRoute(
-                    name: "coursedetailsen",
-                    pattern: "{url}",
-                    defaults: new { controller = "Shop", action = "detailsEn" }
+                    name: "courses",
+                    pattern: "{culture}/courses/{category?}",
+                    defaults: new { controller = "Shop", action = "list" }
                 );
                 endpoints.MapControllerRoute(
-                   name: "coursedetailstr",
-                   pattern: "{url}",
-                   defaults: new { controller = "Shop", action = "detailsTr" }
-               );
-
-                endpoints.MapControllerRoute(
-                    name: "coursesen",
-                    pattern: "en/courses/{category?}",
-                    defaults: new { controller = "Shop", action = "ListEn" }
-                );
-                endpoints.MapControllerRoute(
-                    name: "coursestr",
-                    pattern: "tr/kurslar/{category?}",
-                    defaults: new { controller = "Shop", action = "ListTr" }
+                    name: "culturehome",
+                    pattern: "{culture}/{controller=Home}/{action=Index}/{id?}"
                 );
 
                 endpoints.MapControllerRoute(
-                    name: "homesite",
-                    pattern: "",
-                    defaults: new { controller = "Home", action = "Index" }
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
                 );
-                //endpoints.MapControllerRoute(
-                //    name: "en",
-                //   pattern: "{culture=en}/{controller=Home}/{action=Index}/{id?}"
-                //);
-                endpoints.MapControllerRoute(
-                    name: "tr",
-                    pattern: "{culture}",
-                    defaults: new { controller = "Home", action = "Index" }
-                );
-
-                endpoints.MapControllerRoute(
-                   name: "default",
-                   pattern: "{culture}/{controller=Home}/{action=Index}/{id?}"
-               );
-
-                //endpoints.MapControllerRoute(
-                //    name: "default",
-                //    pattern: "{controller=Home}/{action=Index}/{id?}"
-                //);
 
 
             });

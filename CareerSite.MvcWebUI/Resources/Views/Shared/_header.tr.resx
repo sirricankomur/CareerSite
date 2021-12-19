@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="headerParagraph" xml:space="preserve">
+  <data name="HeaderParagraph" xml:space="preserve">
     <value>Her eğitim seni hayallerine ulaştıracak bir adımdır. Değişime hazır mısın?</value>
   </data>
-  <data name="headerSubTitle" xml:space="preserve">
+  <data name="HeaderSubTitle" xml:space="preserve">
     <value>Kariyerin İçin Adım Atma Vakti Geldi</value>
   </data>
-  <data name="headerTitle" xml:space="preserve">
+  <data name="HeaderTitle" xml:space="preserve">
     <value>Kendine Fırsat Yarat</value>
   </data>
   <data name="LogIn" xml:space="preserve">

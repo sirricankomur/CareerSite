@@ -16,14 +16,10 @@ namespace CareerSite.MvcWebUI.Models
         [StringLength(100, MinimumLength = 5, ErrorMessage = "Kategori için 5-100 arasında değer giriniz.")]
         public string NameEn { get; set; }
 
+        [Required(ErrorMessage = "Url zorunludur.")]
+        [StringLength(100, MinimumLength = 5, ErrorMessage = "Url için 5-100 arasında değer giriniz.")]
 
-        [Required(ErrorMessage = "UrlTr zorunludur.")]
-        [StringLength(100, MinimumLength = 5, ErrorMessage = "UrlTr için 5-100 arasında değer giriniz.")]
-        public string UrlTr { get; set; }
-
-        [Required(ErrorMessage = "UrlTr zorunludur.")]
-        [StringLength(100, MinimumLength = 5, ErrorMessage = "UrlTr için 5-100 arasında değer giriniz.")]
-        public string UrlEn { get; set; }
+        public string Url { get; set; }
 
         public List<Course> Courses { get; set; }
     }

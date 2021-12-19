@@ -3,11 +3,8 @@ using CareerSite.MvcWebUI.EmailServices;
 using CareerSite.MvcWebUI.Extensions;
 using CareerSite.MvcWebUI.Identity;
 using CareerSite.MvcWebUI.Models;
-using CareerSite.MvcWebUI.Resources;
 using Microsoft.AspNetCore.Identity;
-//using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Localization;
 using System.Threading.Tasks;
 
 namespace CareerSite.MvcWebUI.Controllers
@@ -15,18 +12,16 @@ namespace CareerSite.MvcWebUI.Controllers
     [AutoValidateAntiforgeryToken]
     public class AccountController : Controller
     {
-        private IStringLocalizer<SharedModelResource> _localizer;
         private UserManager<User> _userManager;
         private SignInManager<User> _signInManager;
         private IEmailSender _emailSender;
         private ICartService _cartService;
-        public AccountController(ICartService cartService, UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender emailSender, IStringLocalizer<SharedModelResource> localizer)
+        public AccountController(ICartService cartService, UserManager<User> userManager, SignInManager<User> signInManager, IEmailSender emailSender)
         {
             _cartService = cartService;
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
-            _localizer = localizer;
         }
         public IActionResult Login(string ReturnUrl = null)
         {
@@ -73,8 +68,6 @@ namespace CareerSite.MvcWebUI.Controllers
 
         public IActionResult Register()
         {
-            
-
             return View();
         }
 
@@ -112,7 +105,6 @@ namespace CareerSite.MvcWebUI.Controllers
             }
 
             ModelState.AddModelError("", "Bilinmeyen hata oldu lütfen tekrar deneyiniz.");
-            
             return View(model);
         }
         public async Task<IActionResult> Logout()

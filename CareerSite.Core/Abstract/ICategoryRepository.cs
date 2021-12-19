@@ -10,7 +10,6 @@ namespace CareerSite.Core.Abstract
     public interface ICategoryRepository : IRepository<Category>
     {
         Category GetByIdWithCourses(int categoryId);
-
         void DeleteFromCategory(int courseId, int categoryId);
     }
 }

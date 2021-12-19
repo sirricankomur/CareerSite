@@ -1,4 +1,13 @@
 ﻿@model Course
+@inject IViewLocalizer Localizer
+
+@{
+    string url = "";
+    if (Context.Request.Path.ToString().Length >= 4)
+    {
+        url = Context.Request.Path.ToString().Remove(4);
+    }
+}
 
 @section Categories
 {
@@ -12,13 +21,20 @@
                 <img src="~/img/@Model.ImageUrl" class="card-img">
             </div>
             <div class="col-md-9">
-                
+                @if (url == "/tr/" || url == "")
+                {
                     <h5 class="card-title">@Model.NameTr</h5>
                     <p class="card-text">@Model.DescriptionTr</p>
-                    <p class="card-text">
-                        <small class="text-muted">3 days ago</small>
-                    </p>
-            
+                }
+                else
+                {
+                    <h5 class="card-title">@Model.NameEn</h5>
+                    <p class="card-text">@Model.DescriptionEn</p>
+                }
+                <p class="card-text">
+                    <small class="text-muted">@Localizer["LastEdited"]: @Model.DateAdded</small>
+                </p>
+
             </div>
         </div>
     </div>
