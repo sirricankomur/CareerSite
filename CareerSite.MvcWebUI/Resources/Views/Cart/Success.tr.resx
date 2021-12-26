@@ -120,4 +120,7 @@
   <data name="Success" xml:space="preserve">
     <value>Başarılı</value>
   </data>
+  <data name="SuccessInfo" xml:space="preserve">
+    <value>Ödemeniz başarıyla alındı.</value>
+  </data>
 </root>

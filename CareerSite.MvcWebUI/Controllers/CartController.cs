@@ -217,8 +217,8 @@ namespace CareerSite.MvcWebUI.Controllers
         private Payment PaymentProcess(RecordModel model)
         {
             Options options = new Options();
-            options.ApiKey = "sandbox-OqrwiIrlhVmMGGqoi27fmxzPq7qA34S4";
-            options.SecretKey = "sandbox-2bjKKuGoIoOpF6B0QLED1nWlA1QZj9YH";
+            options.ApiKey = "sandbox-RHwpgmY7bhuqLRNamgcy3LjkSloHGBNc";
+            options.SecretKey = "sandbox-8zKZBx6nW9m6BiQ0tkN9SjX9I8YySp8k";
             options.BaseUrl = "https://sandbox-api.iyzipay.com";
 
             CreatePaymentRequest request = new CreatePaymentRequest();

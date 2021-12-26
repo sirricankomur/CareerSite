@@ -120,4 +120,7 @@
   <data name="Success" xml:space="preserve">
     <value>Success</value>
   </data>
+  <data name="SuccessInfo" xml:space="preserve">
+    <value>Your payment has been received successfully.</value>
+  </data>
 </root>
